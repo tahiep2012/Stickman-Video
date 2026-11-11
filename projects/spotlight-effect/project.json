@@ -1,0 +1,2584 @@
+{
+  "version": 1,
+  "style": "B1",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "font": "NotoSans.ttf",
+  "voice": {
+    "path": "silent_track.m4a",
+    "lead": 0,
+    "tail": 0,
+    "contains_sfx": false
+  },
+  "captions": [
+    {
+      "start": 0,
+      "end": 1.365,
+      "text": "Hãy thành thật với chính mình:"
+    },
+    {
+      "start": 1.365,
+      "end": 3.777,
+      "text": "Đã bao giờ bạn bước vào một quán cà phê đông người và"
+    },
+    {
+      "start": 3.777,
+      "end": 5.146,
+      "text": "cảm thấy như hàng chục ánh mắt"
+    },
+    {
+      "start": 5.146,
+      "end": 6.744,
+      "text": "đang đồng loạt đổ dồn về phía mình?"
+    },
+    {
+      "start": 7.36,
+      "end": 9.508,
+      "text": "Bạn bước đi gượng gạo, chỉnh lại từng nếp áo,"
+    },
+    {
+      "start": 9.508,
+      "end": 11.417,
+      "text": "bối rối không biết nên để hai tay ở đâu."
+    },
+    {
+      "start": 12.03,
+      "end": 13.518,
+      "text": "Hay tệ hơn: Bạn lỡ nói một câu"
+    },
+    {
+      "start": 13.518,
+      "end": 15.403,
+      "text": "ngớ ngẩn trong cuộc họp ba ngày trước,"
+    },
+    {
+      "start": 15.403,
+      "end": 17.505,
+      "text": "và đến tận đêm nay, khi đang nằm trùm chăn,"
+    },
+    {
+      "start": 17.505,
+      "end": 19.435,
+      "text": "câu nói ấy lại bất ngờ dội về trong đầu"
+    },
+    {
+      "start": 19.435,
+      "end": 21.514,
+      "text": "khiến bạn xấu hổ đến mức co rúm người lại."
+    },
+    {
+      "start": 21.93,
+      "end": 23.171,
+      "text": "Bạn đinh ninh rằng đồng nghiệp"
+    },
+    {
+      "start": 23.171,
+      "end": 24.537,
+      "text": "vẫn đang cười thầm sau lưng mình."
+    },
+    {
+      "start": 25.16,
+      "end": 26.843,
+      "text": "Chúng ta sống mỗi ngày như thể luôn có"
+    },
+    {
+      "start": 26.843,
+      "end": 28.658,
+      "text": "một chiếc máy quay vô hình chĩa thẳng vào"
+    },
+    {
+      "start": 28.658,
+      "end": 30.932,
+      "text": "mặt, ghi lại từng cử chỉ, từng khuyết điểm nhỏ nhất."
+    },
+    {
+      "start": 31.36,
+      "end": 32.679,
+      "text": "Chúng ta sợ bị đánh giá,"
+    },
+    {
+      "start": 32.679,
+      "end": 35.373,
+      "text": "sợ bị chê cười, sợ làm trò hề trước mắt thiên hạ."
+    },
+    {
+      "start": 35.99,
+      "end": 37.826,
+      "text": "Nhưng hôm nay, trên kênh Cõi Vô Thức,"
+    },
+    {
+      "start": 37.826,
+      "end": 39.584,
+      "text": "tôi sẽ nói cho bạn nghe một sự thật"
+    },
+    {
+      "start": 39.584,
+      "end": 41.845,
+      "text": "phũ phàng nhưng giải phóng nhất cuộc đời bạn:"
+    },
+    {
+      "start": 41.845,
+      "end": 44.127,
+      "text": "Chẳng một ai thực sự quan tâm đến bạn đâu!"
+    },
+    {
+      "start": 44.74,
+      "end": 46.219,
+      "text": "Bạn không hề khác thường hay lập dị."
+    },
+    {
+      "start": 46.65,
+      "end": 48.668,
+      "text": "Tâm trí bạn chỉ đang bị thao túng bởi"
+    },
+    {
+      "start": 48.668,
+      "end": 51.013,
+      "text": "một ảo tưởng tâm lý học kinh điển mang tên:"
+    },
+    {
+      "start": 51.013,
+      "end": 53.653,
+      "text": "Hiệu ứng Ánh đèn Sân khấu (Spotlight Effect) ."
+    },
+    {
+      "start": 54.28,
+      "end": 56.503,
+      "text": "Hãy cùng nhau bóc trần chiếc bẫy này để hiểu"
+    },
+    {
+      "start": 56.503,
+      "end": 58.373,
+      "text": "tại sao bộ não lại tự hành hạ bạn như"
+    },
+    {
+      "start": 58.373,
+      "end": 60.043,
+      "text": "vậy, và làm thế nào để bạn vứt bỏ"
+    },
+    {
+      "start": 60.043,
+      "end": 61.966,
+      "text": "gánh nặng phán xét một lần và mãi mãi."
+    },
+    {
+      "start": 62.59,
+      "end": 65.26,
+      "text": "Trong đời sống thường nhật,"
+    },
+    {
+      "start": 65.26,
+      "end": 69.734,
+      "text": "nỗi ám ảnh bị phán xét len lỏi vào từng hành vi nhỏ nhặt nhất,"
+    },
+    {
+      "start": 69.734,
+      "end": 71.899,
+      "text": "bào mòn dần sự tự tin của bạn:"
+    },
+    {
+      "start": 72.52,
+      "end": 74.989,
+      "text": "Thứ nhất: Nỗi sợ \"vết bẩn vô hình\"."
+    },
+    {
+      "start": 75.61,
+      "end": 77.404,
+      "text": "Buổi sáng đi làm, bạn vô tình để một"
+    },
+    {
+      "start": 77.404,
+      "end": 79.298,
+      "text": "giọt cà phê nhỏ dính vào mép áo sơ mi."
+    },
+    {
+      "start": 79.73,
+      "end": 81.977,
+      "text": "Cả ngày hôm đó đối với bạn trở thành một cực hình."
+    },
+    {
+      "start": 82.4,
+      "end": 85.102,
+      "text": "Bạn dùng tay che lại, cúi gằm mặt khi đi qua hành lang,"
+    },
+    {
+      "start": 85.102,
+      "end": 86.844,
+      "text": "và nghĩ rằng bất kỳ ai nhìn về phía"
+    },
+    {
+      "start": 86.844,
+      "end": 89.033,
+      "text": "bạn đều đang âm thầm chê bai bạn luộm thuộm."
+    },
+    {
+      "start": 89.66,
+      "end": 93.322,
+      "text": "Thứ hai: Sự tê liệt giao tiếp xã hội (Social Freezing)."
+    },
+    {
+      "start": 93.94,
+      "end": 96.151,
+      "text": "Bạn có một ý tưởng xuất sắc trong buổi thảo luận,"
+    },
+    {
+      "start": 96.151,
+      "end": 97.414,
+      "text": "nhưng bạn không dám giơ tay."
+    },
+    {
+      "start": 97.83,
+      "end": 99.409,
+      "text": "Giọng nói bên trong cản bạn lại:"
+    },
+    {
+      "start": 99.409,
+      "end": 101.875,
+      "text": "\"Nếu mình nói lắp thì sao? Nếu câu hỏi này quá ngớ"
+    },
+    {
+      "start": 101.875,
+      "end": 103.912,
+      "text": "ngẩn thì sao? Họ sẽ coi thường mình mất.\""
+    },
+    {
+      "start": 103.912,
+      "end": 105.054,
+      "text": "Cuối cùng, bạn im lặng,"
+    },
+    {
+      "start": 105.054,
+      "end": 106.666,
+      "text": "để rồi nhìn một người khác nói ra"
+    },
+    {
+      "start": 106.666,
+      "end": 108.425,
+      "text": "ý tưởng tương tự và được tán thưởng."
+    },
+    {
+      "start": 109.05,
+      "end": 113.353,
+      "text": "Thứ ba: Ảo tưởng về sự thấu suốt (Illusion of Transparency)."
+    },
+    {
+      "start": 113.97,
+      "end": 115.356,
+      "text": "Khi bạn đứng lên thuyết trình,"
+    },
+    {
+      "start": 115.356,
+      "end": 117.482,
+      "text": "tim bạn đập nhanh, lòng bàn tay hơi đổ mồ hôi."
+    },
+    {
+      "start": 117.9,
+      "end": 118.96,
+      "text": "Bạn lập tức cho rằng:"
+    },
+    {
+      "start": 118.96,
+      "end": 121.533,
+      "text": "\"Toàn bộ khán phòng đang thấy rõ mình đang run rẩy,"
+    },
+    {
+      "start": 121.533,
+      "end": 124.134,
+      "text": "họ biết tỏng mình đang sợ hãi.\" Nhưng sự thật là gì?"
+    },
+    {
+      "start": 124.55,
+      "end": 125.299,
+      "text": "Nhìn từ bên ngoài,"
+    },
+    {
+      "start": 125.299,
+      "end": 127.172,
+      "text": "bạn trông hoàn toàn bình thường và điềm tĩnh."
+    },
+    {
+      "start": 127.79,
+      "end": 128.808,
+      "text": "Bạn có bao giờ tự hỏi:"
+    },
+    {
+      "start": 128.808,
+      "end": 130.31,
+      "text": "Tại sao chúng ta lại tự giam cầm"
+    },
+    {
+      "start": 130.31,
+      "end": 131.999,
+      "text": "bản thân trong một sân khấu ảo giác,"
+    },
+    {
+      "start": 131.999,
+      "end": 134.034,
+      "text": "nơi chúng ta vừa là diễn viên chính vụng về,"
+    },
+    {
+      "start": 134.034,
+      "end": 135.443,
+      "text": "vừa tự biến tất cả những người"
+    },
+    {
+      "start": 135.443,
+      "end": 137.134,
+      "text": "xung quanh thành giám khảo khó tính?"
+    },
+    {
+      "start": 137.76,
+      "end": 140.582,
+      "text": "Các nhà tâm lý học thực nghiệm đã"
+    },
+    {
+      "start": 140.582,
+      "end": 143.746,
+      "text": "giải phẫu nỗi sợ này qua những nghiên"
+    },
+    {
+      "start": 143.746,
+      "end": 146.111,
+      "text": "cứu và cơ chế sinh học xác thực:"
+    },
+    {
+      "start": 146.75,
+      "end": 151.24,
+      "text": "1. Thí nghiệm chiếc áo xấu xí của Thomas Gilovich (Năm 2000)"
+    },
+    {
+      "start": 151.86,
+      "end": 153.773,
+      "text": "Giáo sư Thomas Gilovich cùng các cộng sự"
+    },
+    {
+      "start": 153.773,
+      "end": 155.686,
+      "text": "tại Đại học Cornell đã tiến hành một thí"
+    },
+    {
+      "start": 155.686,
+      "end": 156.489,
+      "text": "nghiệm kinh điển."
+    },
+    {
+      "start": 156.91,
+      "end": 158.734,
+      "text": "Họ yêu cầu một nhóm sinh viên mặc một"
+    },
+    {
+      "start": 158.734,
+      "end": 160.903,
+      "text": "chiếc áo phông in hình ca sĩ Barry Manilow —"
+    },
+    {
+      "start": 160.903,
+      "end": 162.825,
+      "text": "chiếc áo được đánh giá là cực kỳ kỳ cục"
+    },
+    {
+      "start": 162.825,
+      "end": 164.895,
+      "text": "và quê mùa vào thời điểm đó — rồi bước vào"
+    },
+    {
+      "start": 164.895,
+      "end": 166.21,
+      "text": "một căn phòng đầy người lạ."
+    },
+    {
+      "start": 166.83,
+      "end": 169.344,
+      "text": "Trước khi bước vào, các sinh viên ước tính"
+    },
+    {
+      "start": 169.344,
+      "end": 171.558,
+      "text": "rằng sẽ có ít nhất 50% số người trong"
+    },
+    {
+      "start": 171.558,
+      "end": 174.26,
+      "text": "phòng chú ý và nhận ra chiếc áo nực cười của họ."
+    },
+    {
+      "start": 174.88,
+      "end": 176.06,
+      "text": "Kết quả thực tế thì sao?"
+    },
+    {
+      "start": 176.47,
+      "end": 179.781,
+      "text": "Khi các nhà nghiên cứu phỏng vấn những người trong phòng,"
+    },
+    {
+      "start": 179.781,
+      "end": 182.105,
+      "text": "chỉ có vỏn vẹn 23% nhận ra chiếc áo!"
+    },
+    {
+      "start": 182.73,
+      "end": 184.466,
+      "text": "Hơn một nửa số người bị người mặc tưởng"
+    },
+    {
+      "start": 184.466,
+      "end": 186.291,
+      "text": "là đang \"soi mói\" thực chất chẳng buồn để"
+    },
+    {
+      "start": 186.291,
+      "end": 186.642,
+      "text": "mắt tới."
+    },
+    {
+      "start": 187.06,
+      "end": 189.993,
+      "text": "Hiện tượng này được các nhà khoa học đặt tên chính thức là:"
+    },
+    {
+      "start": 189.993,
+      "end": 192.429,
+      "text": "Spotlight Effect (Hiệu ứng Ánh đèn Sân khấu) ."
+    },
+    {
+      "start": 193.05,
+      "end": 196.44,
+      "text": "2. Thiên kiến quy ngã (Egocentric Bias)"
+    },
+    {
+      "start": 197.07,
+      "end": 198.663,
+      "text": "Bộ não của chúng ta được lập trình để"
+    },
+    {
+      "start": 198.663,
+      "end": 200.557,
+      "text": "trải nghiệm thế giới hoàn toàn thông qua góc"
+    },
+    {
+      "start": 200.557,
+      "end": 201.365,
+      "text": "nhìn ngôi thứ nhất."
+    },
+    {
+      "start": 201.79,
+      "end": 203.339,
+      "text": "Bạn ở cùng với cơ thể, cảm xúc,"
+    },
+    {
+      "start": 203.339,
+      "end": 205.263,
+      "text": "suy nghĩ và những lo âu của chính mình"
+    },
+    {
+      "start": 205.263,
+      "end": 207.187,
+      "text": "suốt 24 giờ một ngày, 7 ngày một tuần."
+    },
+    {
+      "start": 207.82,
+      "end": 210.644,
+      "text": "Chính vì bạn là tâm điểm tuyệt đối trong vũ trụ của riêng bạn,"
+    },
+    {
+      "start": 210.644,
+      "end": 212.535,
+      "text": "hạch hạnh nhân (Amygdala) và vỏ não trước"
+    },
+    {
+      "start": 212.535,
+      "end": 214.287,
+      "text": "trán mặc định ngoại suy rằng: những gì"
+    },
+    {
+      "start": 214.287,
+      "end": 215.856,
+      "text": "hiển hiện rõ ràng đối với bạn cũng"
+    },
+    {
+      "start": 215.856,
+      "end": 217.794,
+      "text": "phải hiển hiện rõ ràng đối với người khác."
+    },
+    {
+      "start": 218.22,
+      "end": 220.064,
+      "text": "Bạn phóng đại tầm quan trọng của từng hành"
+    },
+    {
+      "start": 220.064,
+      "end": 221.82,
+      "text": "động mình làm lên gấp nhiều lần thực tế."
+    },
+    {
+      "start": 222.44,
+      "end": 225.15,
+      "text": "3. Bản năng sinh tồn từ thời nguyên thủy"
+    },
+    {
+      "start": 225.77,
+      "end": 226.992,
+      "text": "Hàng chục ngàn năm trước,"
+    },
+    {
+      "start": 226.992,
+      "end": 230.023,
+      "text": "việc bị bộ tộc ruồng bỏ hoặc chê cười đồng nghĩa với cái chết."
+    },
+    {
+      "start": 230.44,
+      "end": 232.577,
+      "text": "Não bộ tiến hóa để phát triển một cơ chế"
+    },
+    {
+      "start": 232.577,
+      "end": 234.713,
+      "text": "cảnh báo cực kỳ nhạy bén đối với sự chấp"
+    },
+    {
+      "start": 234.713,
+      "end": 235.61,
+      "text": "thuận của xã hội."
+    },
+    {
+      "start": 236.23,
+      "end": 238.312,
+      "text": "Mỗi khi bạn cảm thấy mình có nguy cơ \"mất mặt\","
+    },
+    {
+      "start": 238.312,
+      "end": 239.839,
+      "text": "não bộ phát tín hiệu nguy hiểm như"
+    },
+    {
+      "start": 239.839,
+      "end": 241.591,
+      "text": "thể bạn đang đứng trước một con thú dữ."
+    },
+    {
+      "start": 242.02,
+      "end": 243.711,
+      "text": "Nhưng trong xã hội văn minh ngày nay,"
+    },
+    {
+      "start": 243.711,
+      "end": 246.179,
+      "text": "cơ chế phòng vệ lỗi thời này không còn bảo vệ bạn nữa,"
+    },
+    {
+      "start": 246.179,
+      "end": 247.87,
+      "text": "nó đang biến thành một nhà tù tâm lý."
+    },
+    {
+      "start": 248.48,
+      "end": 251.686,
+      "text": "Cái giá đắt nhất của việc sống dưới"
+    },
+    {
+      "start": 251.686,
+      "end": 254.617,
+      "text": "ánh đèn sân khấu ảo tưởng là gì?"
+    },
+    {
+      "start": 255.23,
+      "end": 256.632,
+      "text": "Đó là bạn bắt đầu sống cuộc đời"
+    },
+    {
+      "start": 256.632,
+      "end": 258.576,
+      "text": "của một \"người xem\", thay vì người cầm lái."
+    },
+    {
+      "start": 259,
+      "end": 261.255,
+      "text": "Bạn không dám ăn mặc theo phong cách mình thích,"
+    },
+    {
+      "start": 261.255,
+      "end": 263.253,
+      "text": "không dám theo đuổi đam mê kỳ lạ của mình,"
+    },
+    {
+      "start": 263.253,
+      "end": 265.155,
+      "text": "không dám mở lời với người mình cảm mến,"
+    },
+    {
+      "start": 265.155,
+      "end": 266.634,
+      "text": "và từ chối những cơ hội bứt phá"
+    },
+    {
+      "start": 266.634,
+      "end": 268.303,
+      "text": "chỉ vì sợ bị phán xét nếu thất bại."
+    },
+    {
+      "start": 268.92,
+      "end": 270.846,
+      "text": "Bạn thu nhỏ bản thân lại để vừa vặn với"
+    },
+    {
+      "start": 270.846,
+      "end": 273.018,
+      "text": "một khuôn mẫu vô hình mà xã hội thậm chí còn"
+    },
+    {
+      "start": 273.018,
+      "end": 274.384,
+      "text": "chẳng buồn dựng lên cho bạn."
+    },
+    {
+      "start": 274.81,
+      "end": 276.613,
+      "text": "Bạn tiêu tốn hàng ngàn giờ quý báu để"
+    },
+    {
+      "start": 276.613,
+      "end": 278.758,
+      "text": "dằn vặt về những lỗi lầm mà những người xung"
+    },
+    {
+      "start": 278.758,
+      "end": 280.444,
+      "text": "quanh đã quên sạch chỉ sau 10 giây."
+    },
+    {
+      "start": 281.05,
+      "end": 287.708,
+      "text": "Làm thế nào để bạn giải phóng bản thân khỏi nỗi ám ảnh này?"
+    },
+    {
+      "start": 288.13,
+      "end": 290.777,
+      "text": "Hãy áp dụng 3 bước can thiệp nhận thức thực tế dưới đây:"
+    },
+    {
+      "start": 291.39,
+      "end": 296.022,
+      "text": "Bước 1: Khắc cốt ghi tâm \"Quy tắc 18/40/60\""
+    },
+    {
+      "start": 296.64,
+      "end": 299.774,
+      "text": "Tiến sĩ Daniel Amen từng chia sẻ một quy tắc tâm lý sâu sắc:"
+    },
+    {
+      "start": 300.38,
+      "end": 303.11,
+      "text": "Ở tuổi 18, bạn lo lắng về việc mọi người nghĩ gì về bạn."
+    },
+    {
+      "start": 303.73,
+      "end": 305.242,
+      "text": "Ở tuổi 40, bạn bắt đầu không còn"
+    },
+    {
+      "start": 305.242,
+      "end": 307.131,
+      "text": "quan tâm người khác nghĩ gì về mình nữa."
+    },
+    {
+      "start": 307.76,
+      "end": 310.344,
+      "text": "Và đến tuổi 60, bạn nhận ra một sự thật giải thoát:"
+    },
+    {
+      "start": 310.344,
+      "end": 311.856,
+      "text": "Họ chưa từng nghĩ gì về bạn cả!"
+    },
+    {
+      "start": 312.48,
+      "end": 314.06,
+      "text": "Mỗi người ngoài kia đều đang bận rộn"
+    },
+    {
+      "start": 314.06,
+      "end": 315.683,
+      "text": "với \"ngọn đèn sân khấu\" của riêng họ."
+    },
+    {
+      "start": 316.1,
+      "end": 317.533,
+      "text": "Họ mải lo về khoản nợ của họ,"
+    },
+    {
+      "start": 317.533,
+      "end": 319.212,
+      "text": "cân nặng của họ, công việc của họ."
+    },
+    {
+      "start": 319.63,
+      "end": 321.404,
+      "text": "Họ không có thời gian và năng lượng"
+    },
+    {
+      "start": 321.404,
+      "end": 323.33,
+      "text": "rảnh rỗi để làm khán giả phán xét bạn."
+    },
+    {
+      "start": 323.75,
+      "end": 324.247,
+      "text": "Hãy ghi nhớ:"
+    },
+    {
+      "start": 324.247,
+      "end": 325.589,
+      "text": "Bạn chỉ là một nhân vật phụ lướt"
+    },
+    {
+      "start": 325.589,
+      "end": 327.351,
+      "text": "qua trong bộ phim cuộc đời của người khác."
+    },
+    {
+      "start": 327.97,
+      "end": 329.655,
+      "text": "Bước 2: Sử dụng liệu pháp"
+    },
+    {
+      "start": 329.655,
+      "end": 332.352,
+      "text": "\"Đặt góc nhìn ra ngoài\" (Shifting Focus)"
+    },
+    {
+      "start": 332.83,
+      "end": 334.197,
+      "text": "Khi bạn bước vào một căn phòng"
+    },
+    {
+      "start": 334.197,
+      "end": 335.609,
+      "text": "đông người và cơn lo âu ập đến,"
+    },
+    {
+      "start": 335.609,
+      "end": 338.164,
+      "text": "hãy lập tức chuyển hướng chú ý từ bên trong ra bên ngoài."
+    },
+    {
+      "start": 338.59,
+      "end": 341.084,
+      "text": "Thay vì tự soi xét: \"Tướng đi của mình có kỳ không?"
+    },
+    {
+      "start": 341.084,
+      "end": 342.405,
+      "text": "Trông mình có ngố không?\" ,"
+    },
+    {
+      "start": 342.405,
+      "end": 344.647,
+      "text": "hãy chuyển ánh nhìn sang môi trường xung quanh:"
+    },
+    {
+      "start": 344.647,
+      "end": 346.506,
+      "text": "\"Bức tranh trên tường kia vẽ gì nhỉ?\","
+    },
+    {
+      "start": 346.506,
+      "end": 348.653,
+      "text": "\"Đôi giày của người kia màu sắc thật thú vị\","
+    },
+    {
+      "start": 348.653,
+      "end": 351.18,
+      "text": "\"Đồng nghiệp mình hôm nay trông có vẻ đang mệt mỏi\" ."
+    },
+    {
+      "start": 351.8,
+      "end": 353.216,
+      "text": "Khi bạn chủ động quan sát thế"
+    },
+    {
+      "start": 353.216,
+      "end": 354.827,
+      "text": "giới thay vì quan sát chính mình,"
+    },
+    {
+      "start": 354.827,
+      "end": 357.519,
+      "text": "ánh đèn sân khấu ảo trong não bạn sẽ lập tức bị dập tắt."
+    },
+    {
+      "start": 358.14,
+      "end": 358.709,
+      "text": "Bước 3:"
+    },
+    {
+      "start": 358.709,
+      "end": 360.617,
+      "text": "Thử thách giải phóng \"Cố tình"
+    },
+    {
+      "start": 360.617,
+      "end": 363.708,
+      "text": "làm điều ngớ ngẩn nhỏ\" (Mishap Desensitization)"
+    },
+    {
+      "start": 364.33,
+      "end": 366.636,
+      "text": "Nỗi sợ chỉ biến mất khi bạn đối mặt trực tiếp với nó."
+    },
+    {
+      "start": 367.06,
+      "end": 369.843,
+      "text": "Hãy thử một bài tập nhỏ: Cố tình đi một đôi tất cọc cạch,"
+    },
+    {
+      "start": 369.843,
+      "end": 371.378,
+      "text": "hoặc giả vờ làm rơi một cây bút"
+    },
+    {
+      "start": 371.378,
+      "end": 373.359,
+      "text": "trong phòng họp rồi thản nhiên nhặt lên."
+    },
+    {
+      "start": 373.98,
+      "end": 376.47,
+      "text": "Bạn sẽ kinh ngạc nhận ra: Bầu trời không hề sụp đổ."
+    },
+    {
+      "start": 376.89,
+      "end": 379.171,
+      "text": "Chẳng ai chạy đến chỉ trích hay đuổi bạn ra ngoài."
+    },
+    {
+      "start": 379.59,
+      "end": 381.19,
+      "text": "Khi nhận thức trực tiếp thấy rằng"
+    },
+    {
+      "start": 381.19,
+      "end": 382.644,
+      "text": "sự cố chẳng gây ra hậu quả gì,"
+    },
+    {
+      "start": 382.644,
+      "end": 385.364,
+      "text": "não bộ của bạn sẽ tự động xóa bỏ phản xạ sợ hãi phán xét."
+    },
+    {
+      "start": 385.98,
+      "end": 389.151,
+      "text": "Cuộc đời này quá ngắn ngủi để bạn sống"
+    },
+    {
+      "start": 389.151,
+      "end": 392.071,
+      "text": "như một diễn viên luôn lo sợ bị chê"
+    },
+    {
+      "start": 392.071,
+      "end": 393.013,
+      "text": "bai kịch bản."
+    },
+    {
+      "start": 393.64,
+      "end": 395.646,
+      "text": "Những người thực sự yêu thương bạn sẽ không"
+    },
+    {
+      "start": 395.646,
+      "end": 397.513,
+      "text": "phán xét bạn vì một vài khoảnh khắc vụng"
+    },
+    {
+      "start": 397.513,
+      "end": 397.651,
+      "text": "về."
+    },
+    {
+      "start": 398.05,
+      "end": 399.791,
+      "text": "Còn những kẻ vội vàng phán xét bạn?"
+    },
+    {
+      "start": 400.21,
+      "end": 401.734,
+      "text": "Họ sẽ quên sạch bạn vào ngày mai,"
+    },
+    {
+      "start": 401.734,
+      "end": 403.186,
+      "text": "vậy tại sao bạn lại trao cho họ"
+    },
+    {
+      "start": 403.186,
+      "end": 404.966,
+      "text": "quyền kiểm soát cuộc đời mình hôm nay?"
+    },
+    {
+      "start": 405.58,
+      "end": 408.165,
+      "text": "Hãy tắt chiếc đèn sân khấu đó đi, hít một hơi thật sâu,"
+    },
+    {
+      "start": 408.165,
+      "end": 409.998,
+      "text": "và tự tin bước ra ngoài làm chính mình."
+    },
+    {
+      "start": 410.62,
+      "end": 412.856,
+      "text": "Nếu thông điệp hôm nay mang lại cho bạn"
+    },
+    {
+      "start": 412.856,
+      "end": 414.978,
+      "text": "sự nhẹ nhõm và tự do, hãy nhấn Like ,"
+    },
+    {
+      "start": 414.978,
+      "end": 416.908,
+      "text": "chia sẻ video này đến một người bạn"
+    },
+    {
+      "start": 416.908,
+      "end": 419.554,
+      "text": "đang bị mắc kẹt trong overthinking, và đừng quên"
+    },
+    {
+      "start": 419.554,
+      "end": 421.64,
+      "text": "bấm Đăng ký kênh Cõi Vô Thức để đồng"
+    },
+    {
+      "start": 421.64,
+      "end": 424.131,
+      "text": "hành cùng chúng tôi trên hành trình giải mã"
+    },
+    {
+      "start": 424.131,
+      "end": 424.73,
+      "text": "tâm lý học."
+    },
+    {
+      "start": 425.35,
+      "end": 426.709,
+      "text": "Hãy để lại bình luận bên dưới:"
+    },
+    {
+      "start": 426.709,
+      "end": 429.199,
+      "text": "Khoảnh khắc ngớ ngẩn nào từng khiến bạn xấu hổ cả tuần,"
+    },
+    {
+      "start": 429.199,
+      "end": 431.056,
+      "text": "nhưng giờ nhìn lại thấy chẳng ai bận tâm?"
+    },
+    {
+      "start": 431.48,
+      "end": 432.635,
+      "text": "Cảm ơn bạn đã lắng nghe,"
+    },
+    {
+      "start": 432.635,
+      "end": 434.416,
+      "text": "và hẹn gặp lại trong video tiếp theo!"
+    }
+  ],
+  "shots": [
+    {
+      "start": 0,
+      "end": 7.36,
+      "layers": [
+        {
+          "type": "text",
+          "text": "QUÁN CÀ PHÊ ĐÔNG NGƯỜI",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CẢM GIÁC HÀNG CHỤC ÁNH MẮT DÒM NGÓ",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_01.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/camera-handdrawn.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 7.36,
+      "end": 12.03,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BƯỚC ĐI GƯỢNG GẠO",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "TAY CHÂN BỐI RỐI KHÔNG BIẾT ĐỂ ĐÂU",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_02.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 12.03,
+      "end": 21.93,
+      "layers": [
+        {
+          "type": "text",
+          "text": "MỘT CÂU NÓI NGỚ NGẨN",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "ĐÊM TRÙM CHĂN XẤU HỔ CO RÚM NGƯỜI",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_03.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-note-crayon.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 21.93,
+      "end": 31.36,
+      "layers": [
+        {
+          "type": "text",
+          "text": "CHIẾC MÁY QUAY VÔ HÌNH",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "GHI LẠI TỪNG CỬ CHỈ VÀ KHUYẾT ĐIỂM",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_04.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/camera-handdrawn.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 31.36,
+      "end": 41.845,
+      "layers": [
+        {
+          "type": "text",
+          "text": "NỖI SỢ PHÁN XÉT",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "SỢ LÀM TRÒ HỀ TRƯỚC MẮT THIÊN HẠ",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_05.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        }
+      ]
+    },
+    {
+      "start": 41.845,
+      "end": 51.013,
+      "layers": [
+        {
+          "type": "text",
+          "text": "SỰ THẬT GIẢI PHÓNG",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CHẲNG MỘT AI THỰC SỰ QUAN TÂM ĐÂU!",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 0,
+          "x": 80,
+          "y": 40,
+          "w": 440
+        },
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 51.013,
+      "end": 62.59,
+      "layers": [
+        {
+          "type": "text",
+          "text": "SPOTLIGHT EFFECT",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "HIỆU ỨNG ÁNH ĐÈN SÂN KHẤU ẢO TƯỞNG",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_07.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-bulb-crayon.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 62.59,
+      "end": 89.66,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BIỂU HIỆN 1: VẾT BẨN VÔ HÌNH",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "MỘT GIỌT CÀ PHÊ NHỎ TRÊN ÁO SƠ MI",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_08.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-note-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 89.66,
+      "end": 112.52,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BIỂU HIỆN 2: SOCIAL FREEZING",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "TÊ LIỆT GIAO TIẾP - KHÔNG DÁM PHÁT BIỂU",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_09.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        }
+      ]
+    },
+    {
+      "start": 112.52,
+      "end": 137.76,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BIỂU HIỆN 3: ILLUSION OF TRANSPARENCY",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "ẢO TƯỞNG VỀ SỰ THẤU SUỐT",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_10.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 137.76,
+      "end": 162.75,
+      "layers": [
+        {
+          "type": "text",
+          "text": "SÂN KHẤU ẢO GIÁC",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "VỪA LÀ DIỄN VIÊN, VỪA BỊ SOi MÓI",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 2,
+          "x": 740,
+          "y": 40,
+          "w": 440
+        },
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 162.75,
+      "end": 186.83,
+      "layers": [
+        {
+          "type": "text",
+          "text": "THÍ NGHIỆM CHIẾC ÁO XẤU XÍ",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "GIÁO SƯ THOMAS GILOVICH (CORNELL, 2000)",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_12.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/calendar-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 186.83,
+      "end": 213.05,
+      "layers": [
+        {
+          "type": "text",
+          "text": "DỰ ĐOÁN 50% vs THỰC TẾ 23%",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "HƠN MỘT NỬA CHẲNG BUỒN ĐỂ MẮT TỚI",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_13.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-bulb-crayon.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 213.05,
+      "end": 242.44,
+      "layers": [
+        {
+          "type": "text",
+          "text": "THIÊN KIẾN QUY NGÃ",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "EGOCENTRIC BIAS - TÂM ĐIỂM VŨ TRỤ RIÊNG",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_14.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/script-page-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 242.44,
+      "end": 268.48,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BẢN NĂNG THỜI NGUYÊN THỦY",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "SỢ BỊ BẦY ĐÀN RUỒNG BỎ LÀ NGUY HIỂM",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 2,
+          "x": 740,
+          "y": 40,
+          "w": 440
+        }
+      ]
+    },
+    {
+      "start": 268.48,
+      "end": 301.05,
+      "layers": [
+        {
+          "type": "text",
+          "text": "CÁI GIÁ ĐẮT ĐỎ",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "SỐNG LÀM NGƯỜI XEM THAY VÌ CẦM LÁI",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 1,
+          "x": 80,
+          "y": 40,
+          "w": 440
+        },
+        {
+          "type": "image",
+          "path": "@b1/camera-handdrawn.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 301.05,
+      "end": 332.48,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BƯỚC 1: QUY TẮC 18 / 40 / 60",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "TIẾN SĨ DANIEL AMEN - SỰ THẬT GIẢI THOÁT",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_17.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-note-crayon.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 332.48,
+      "end": 358.14,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BẬN RỘN VỚI ĐÈN SÂN KHẤU RIÊNG",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "BẠN CHỈ LÀ NHÂN VẬT PHỤ TRONG PHIM HỌ",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_18.png",
+          "x": 70,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-bulb-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 358.14,
+      "end": 388.14,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BƯỚC 2: SHIFTING FOCUS",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "ĐẶT GÓC NHÌN RA NGOÀI MÔI TRƯỜNG",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_19.png",
+          "x": 730,
+          "y": 15,
+          "w": 460
+        },
+        {
+          "type": "image",
+          "path": "@b1/open-source-crayon.png",
+          "x": 150,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 388.14,
+      "end": 416.89,
+      "layers": [
+        {
+          "type": "text",
+          "text": "BƯỚC 3: MISHAP DESENSITIZATION",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CỐ TÌNH LÀM ĐIỀU NGỚ NGẨN NHỎ",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 2,
+          "x": 80,
+          "y": 40,
+          "w": 440
+        },
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 416.89,
+      "end": 428.62,
+      "layers": [
+        {
+          "type": "text",
+          "text": "TẮT ĐÈN SÂN KHẤU ẢO TƯỞNG",
+          "x": 90,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 90,
+          "y": 165,
+          "w": 380,
+          "color": "#191916",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "TỰ DO BƯỚC RA LÀM CHÍNH MÌNH",
+          "x": 90,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 1,
+          "x": 740,
+          "y": 40,
+          "w": 440
+        }
+      ]
+    },
+    {
+      "start": 428.62,
+      "end": 434.416,
+      "layers": [
+        {
+          "type": "text",
+          "text": "CÕI VÔ THỨC",
+          "x": 540,
+          "y": 105,
+          "size": 44,
+          "bold": true,
+          "color": "#EC4338"
+        },
+        {
+          "type": "underline",
+          "x": 540,
+          "y": 165,
+          "w": 380,
+          "color": "#EC4338",
+          "lineWidth": 5,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.5,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "LIKE • CHIA SẺ • ĐĂNG KÝ KÊNH",
+          "x": 540,
+          "y": 195,
+          "size": 30,
+          "bold": false,
+          "color": "#55606E"
+        },
+        {
+          "type": "pose",
+          "pose": 0,
+          "x": 80,
+          "y": 40,
+          "w": 440
+        },
+        {
+          "type": "image",
+          "path": "@b1/youtube-crayon.png",
+          "x": 600,
+          "y": 320,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 0.8,
+              "angle": 0.04
+            },
+            {
+              "t": 1.6,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "arrow",
+          "x": 820,
+          "y": 400,
+          "w": 180,
+          "keys": [
+            {
+              "t": 0.3,
+              "progress": 0
+            },
+            {
+              "t": 0.9,
+              "progress": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sfx": []
+}
