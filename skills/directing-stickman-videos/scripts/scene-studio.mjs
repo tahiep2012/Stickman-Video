@@ -4,14 +4,21 @@
  * 
  * Features:
  * 1. Style Anchor & Prompt Generation for Antigravity's image-generator subagent.
- * 2. Background Transparency Processing (via sharp) for clean 2D stickman overlays.
- * 3. Hero-Centric Layout Builder: spacious, uncluttered, super-sized illustrations (w: 640-660),
- *    zero redundant subtitle text, and dynamic micro-animations.
- * 4. Audio Muxer: easily attaches real narration voiceover to the rendered MP4.
+ * 2. Background Transparency & Zero-Edge-Cut Normalization:
+ *    - Automatically removes white/off-white background.
+ *    - Trims transparent borders and resizes to 85% safe canvas.
+ *    - Guarantees 100% self-contained standalone figures with safety margins (zero cut edges).
+ * 3. Hero-Centric Layout Builder:
+ *    - Spacious, uncluttered, super-sized centered illustrations (w: 640).
+ *    - ZERO redundant topic badges or underlined clutter (pure cinematic focus).
+ * 4. Zero-Duplicate Shot Validator:
+ *    - Checks sha256 hashes of all shot images to ensure 100% unique artwork across scenes.
+ * 5. Audio Muxer: easily attaches real narration voiceover to the rendered MP4.
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { execSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
@@ -21,157 +28,119 @@ const sharp = require('sharp');
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-export const B1_STYLE_ANCHOR = `Minimalist 2D hand-drawn stick figure, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, isolated on pure white background (#FFFFFF), no 3D shading, consistent line weight, cozy hand-drawn illustration style.`;
+export const B1_STYLE_ANCHOR = `Minimalist 2D hand-drawn stick figure, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, isolated on solid pure white background (#FFFFFF), strictly 2D flat, no 3D shading, no gradients, no shadows, consistent line weight, cozy hand-drawn illustration style, completely standalone figure not touching image boundaries.`;
 
 /**
- * Convert a white background into transparent PNG
- * @param {string} inputPath 
- * @param {string} outputPath 
- * @param {number} threshold 
+ * Convert a white/off-white background into transparent square PNG with guaranteed safety margin
+ * @param {string|Buffer} input 
+ * @param {string} [outputPath] 
+ * @param {number} [targetSize=900]
+ * @param {number} [threshold=215] 
  */
-export async function makeTransparent(inputPath, outputPath, threshold = 238) {
-  const { data, info } = await sharp(inputPath)
-    .ensureAlpha()
-    .raw()
-    .toBuffer({ resolveWithObject: true });
+export async function toTransparentSquare(input, outputPath = null, targetSize = 900, threshold = 215) {
+  const buf = typeof input === 'string' ? fs.readFileSync(input) : input;
+  const raw = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
 
-  for (let i = 0; i < data.length; i += 4) {
-    const r = data[i], g = data[i + 1], b = data[i + 2];
-    if (r >= threshold && g >= threshold && b >= threshold) {
-      data[i + 3] = 0; // transparent
+  for (let i = 0; i < raw.data.length; i += 4) {
+    if (raw.data[i] >= threshold && raw.data[i + 1] >= (threshold - 5) && raw.data[i + 2] >= (threshold - 10)) {
+      raw.data[i + 3] = 0;
     }
   }
 
-  await sharp(data, { raw: info })
+  // Trim whitespace
+  const trimmed = await sharp(raw.data, { raw: raw.info }).trim().png().toBuffer();
+
+  // Normalize size to 85% of target canvas to prevent any border clipping
+  const contentSize = Math.round(targetSize * 0.85);
+  const resized = await sharp(trimmed)
+    .resize({ width: contentSize, height: contentSize, fit: 'inside' })
     .png()
-    .toFile(outputPath);
+    .toBuffer();
+
+  const meta = await sharp(resized).metadata();
+  const left = Math.round((targetSize - meta.width) / 2);
+  const top = Math.round((targetSize - meta.height) / 2);
+
+  const finalBuf = await sharp(resized)
+    .extend({
+      top: top,
+      bottom: targetSize - meta.height - top,
+      left: left,
+      right: targetSize - meta.width - left,
+      background: { r: 0, g: 0, b: 0, alpha: 0 }
+    })
+    .png()
+    .toBuffer();
+
+  if (outputPath) {
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, finalBuf);
+  }
+  return finalBuf;
 }
 
 /**
- * Process all jpg/png files in a directory to transparent png
- * @param {string} dir 
+ * Validate that all shots in a project directory have 100% unique artwork
+ * @param {string} scenesDir 
+ * @param {number} totalShots 
  */
-export async function processDirectory(dir) {
-  const files = fs.readdirSync(dir);
-  let count = 0;
-  for (const f of files) {
-    if (/\.(jpe?g|png)$/i.test(f) && !f.endsWith('_transparent.png') && !f.startsWith('_temp_')) {
-      const fullPath = path.join(dir, f);
-      const outName = f.replace(/\.(jpe?g|png)$/i, '.png');
-      const tempPath = path.join(dir, `_temp_${outName}`);
-      await makeTransparent(fullPath, tempPath);
-      fs.copyFileSync(tempPath, path.join(dir, outName));
-      fs.unlinkSync(tempPath);
-      count++;
+export function validateUniqueness(scenesDir, totalShots) {
+  const hashes = new Map();
+  const duplicates = [];
+
+  for (let i = 1; i <= totalShots; i++) {
+    const pad = String(i).padStart(2, '0');
+    const f = path.join(scenesDir, `shot_${pad}.png`);
+    if (!fs.existsSync(f)) {
+      throw new Error(`[Uniqueness Gate] Missing shot file: ${f}`);
+    }
+    const buf = fs.readFileSync(f);
+    const hash = crypto.createHash('sha256').update(buf).digest('hex');
+    if (hashes.has(hash)) {
+      duplicates.push({ shot: pad, original: hashes.get(hash) });
+    } else {
+      hashes.set(hash, pad);
     }
   }
-  return count;
+
+  if (duplicates.length > 0) {
+    throw new Error(`[Uniqueness Gate Failed] Found ${duplicates.length} duplicate shots: ` +
+      duplicates.map(d => `Shot ${d.shot} duplicates Shot ${d.original}`).join(', '));
+  }
+
+  return { uniqueCount: hashes.size, total: totalShots, status: 'pass' };
 }
 
 /**
- * Build an upgraded project.json layout with enlarged hero illustrations
- * and zero redundant text clutter.
+ * Build a pure cinematic project.json layout:
+ * - Centered, prominent hero illustrations (w: 640).
+ * - ZERO Topic Badges, ZERO underlined clutter.
+ * - Perfectly aligned with subtitles.
+ * @param {string} projectPath 
  */
-export function buildHeroLayout(projectPath, shotTitles = [], shotConfigs = []) {
+export function buildPureCinematicLayout(projectPath) {
   const project = JSON.parse(fs.readFileSync(projectPath, 'utf8'));
 
   project.shots = project.shots.map((shot, index) => {
     const pad = String(index + 1).padStart(2, '0');
-    const title = shotTitles[index] || `PHÂN CẢNH ${pad}`;
-    const config = shotConfigs[index] || { layout: 'center' };
     const heroPath = `scenes/shot_${pad}.png`;
-
-    const layers = [];
-    const isCenter = config.layout === 'center';
-    const headerX = 80;
-    const headerY = 50;
-    const titleWidth = Math.min(title.length * 28 + 20, 520);
-
-    // 1. Topic Badge
-    layers.push({
-      type: 'text',
-      text: title,
-      x: headerX,
-      y: headerY,
-      size: 42,
-      bold: true,
-      color: '#191916',
-    });
-
-    // 2. Animated underline
-    layers.push({
-      type: 'underline',
-      x: headerX,
-      y: headerY + 58,
-      w: Math.max(260, titleWidth),
-      color: '#191916',
-      lineWidth: 4,
-      keys: [
-        { t: 0, progress: 0 },
-        { t: 0.45, progress: 1 },
-      ],
-    });
-
-    // 3. Hero Stickman Illustration (Super-sized: w: 640 - 660)
-    if (isCenter) {
-      layers.push({
-        type: 'image',
-        path: heroPath,
-        x: 320,
-        y: 25,
-        w: 650,
-        keys: [
-          { t: 0, y: 40, alpha: 0.85 },
-          { t: 0.5, y: 25, alpha: 1.0 },
-        ],
-      });
-    } else {
-      // Two-column split layout: Left prop + Right hero
-      if (config.prop) {
-        layers.push({
-          type: 'image',
-          path: config.prop,
-          x: 120,
-          y: 190,
-          w: 300,
-          keys: [
-            { t: 0, angle: -0.05 },
-            { t: 1.0, angle: 0.04 },
-            { t: 2.0, angle: 0 },
-          ],
-        });
-      } else if (config.arrow) {
-        layers.push({
-          type: 'arrow',
-          x: config.arrow.x,
-          y: config.arrow.y,
-          w: config.arrow.w,
-          color: '#191916',
-          lineWidth: 4,
-          keys: [
-            { t: 0, progress: 0 },
-            { t: 0.6, progress: 1 },
-          ],
-        });
-      }
-
-      layers.push({
-        type: 'image',
-        path: heroPath,
-        x: 580,
-        y: 20,
-        w: 640,
-        keys: [
-          { t: 0, y: 38, alpha: 0.85 },
-          { t: 0.45, y: 20, alpha: 1.0 },
-        ],
-      });
-    }
 
     return {
       start: shot.start,
       end: shot.end,
-      layers,
+      layers: [
+        {
+          type: 'image',
+          path: heroPath,
+          x: 320,
+          y: 35,
+          w: 640,
+          keys: [
+            { t: 0, y: 50, alpha: 0.85 },
+            { t: 0.5, y: 35, alpha: 1.0 },
+          ],
+        }
+      ],
     };
   });
 
@@ -200,21 +169,22 @@ async function main() {
   if (cmd === 'transparent') {
     const target = args[0];
     if (!target) throw new Error('Specify file or directory');
-    if (fs.statSync(target).isDirectory()) {
-      const n = await processDirectory(target);
-      console.log(JSON.stringify({ processed: n, directory: target }));
-    } else {
-      const out = args[1] || target.replace(/\.[^.]+$/, '.png');
-      await makeTransparent(target, out);
-      console.log(JSON.stringify({ input: target, output: out }));
-    }
+    const out = args[1] || target.replace(/\.[^.]+$/, '.png');
+    await toTransparentSquare(target, out);
+    console.log(JSON.stringify({ input: target, output: out, status: 'normalized_transparent' }));
+  } else if (cmd === 'validate-unique') {
+    const [scenesDir, count] = args;
+    if (!scenesDir || !count) throw new Error('Usage: scene-studio.mjs validate-unique <scenes_dir> <total_count>');
+    const res = validateUniqueness(scenesDir, parseInt(count, 10));
+    console.log(JSON.stringify(res));
   } else if (cmd === 'mux-audio') {
     const [video, audio, out] = args;
-    if (!video || !audio) throw new Error('Usage: scene-studio.mjs mux-audio <film.mp4> <narration.m4a|mp3> [output.mp4]');
+    if (!video || !audio) throw new Error('Usage: scene-studio.mjs mux-audio <film.mp4> <voice.m4a|mp3> [output.mp4]');
     muxAudio(video, audio, out);
   } else {
     console.log(`Usage:`);
-    console.log(`  node scene-studio.mjs transparent <file_or_dir> [output_file]`);
+    console.log(`  node scene-studio.mjs transparent <file> [output_file]`);
+    console.log(`  node scene-studio.mjs validate-unique <scenes_dir> <count>`);
     console.log(`  node scene-studio.mjs mux-audio <film.mp4> <voice.m4a|mp3> [output.mp4]`);
   }
 }

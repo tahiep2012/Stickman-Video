@@ -995,31 +995,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/camera-handdrawn.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_01.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1091,31 +1070,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/camera-handdrawn.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_04.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1212,31 +1170,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/idea-bulb-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_08.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1283,31 +1220,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/clapper-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_10.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1404,31 +1320,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/script-page-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_14.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1500,31 +1395,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/idea-bulb-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_17.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1571,31 +1445,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/open-source-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_19.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1717,31 +1570,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/clapper-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_24.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1788,31 +1620,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/calendar-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_26.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1884,31 +1695,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/open-source-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_29.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -1930,31 +1720,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/open-source-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_30.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -2001,31 +1770,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/idea-bulb-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_32.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -2072,31 +1820,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/clapper-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_34.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -2143,31 +1870,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/idea-note-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_36.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
@@ -2214,31 +1920,10 @@
       "layers": [
         {
           "type": "image",
-          "path": "@b1/youtube-crayon.png",
-          "x": 120,
-          "y": 190,
-          "w": 280,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_38.png",
-          "x": 580,
+          "x": 320,
           "y": 35,
-          "w": 620,
+          "w": 640,
           "keys": [
             {
               "t": 0,
