@@ -1,0 +1,194 @@
+{
+  "fingerprint": "dd79c402aa595524287a38f5cad1a2537b79d8ac7cef3967c3cbe1a848a28571",
+  "preview_seconds": null,
+  "output": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\output\\film.mp4",
+  "output_sha256": "3367a708d2d63206b870bc6c3763f97f4d7089e0cfaf285b6da753a804800846",
+  "original_voice_sha256": "d7576363d39c63d74c0ca4a5a5b4ca6cbce02e78af5ef845b2781ed3a304d36b",
+  "original_voice_duration": 441.140998,
+  "voice_rate": "unchanged; leading/trailing padding only",
+  "frames": 13235,
+  "duration": 441.166667,
+  "cache_hits": 2,
+  "shot_count": 41,
+  "full_decode": "pass",
+  "caption_count": 161,
+  "human_review": "required; technical checks are not acceptance",
+  "inputs": [
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\NotoSans.ttf",
+      "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_01.png",
+      "sha256": "a5bdf9b295108576046d50dec3466d7fa986d755ba60660d88a67107a5e0b633"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_02.png",
+      "sha256": "690485d71fd6c80f0c6fb995fec8e5bc2ff64d0d17bbe857a03ad5bdda7ef867"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_03.png",
+      "sha256": "ae56b8f8d1fbdd290dd5aa9de35e019a74252ec23f01c61aceea15c103dbbeed"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_04.png",
+      "sha256": "f756e734e636db7f400bef6eda925cfeff8dcfc25de240d75ac90d4c15eddefb"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_05.png",
+      "sha256": "38f848c06c1e37ebc2ddbd52488e76a8fea3856166cdd61235d3086e77f50d3c"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_06.png",
+      "sha256": "d35aac2b2b157e194aaa07cf34e1366cded669282d6c5ce5c6ba59fa105dfb26"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_07.png",
+      "sha256": "f846a183e7f43c145891bf0a4135ec964307cfb7873d6fc5f733da87e5424296"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_08.png",
+      "sha256": "e98c08431a50fdcaa54a2ea8b4c2b0a103e19f5820f88750c4f705a08653dd02"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_09.png",
+      "sha256": "29406e9d591b35e6c3eb51677bbcf7a7b28dca6a8783ba0036e930cc2580ba4a"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_10.png",
+      "sha256": "86c3671b9cea39c00c44b1bc978b9460dc7fad2d2048464387fe37c9c2c8451b"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_11.png",
+      "sha256": "7799989724d11e77cb522400b6c80facbf3262abe415d54e44d0a902f70f69dc"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_12.png",
+      "sha256": "1c7720961e03cf8160f64fef5c3ec2bd234075115a741edc9d503c0d8bbb5a7e"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_13.png",
+      "sha256": "fb47f1bba7b6f2033ca13ffa11b91e8589cac4db6dddd3db3002266aa25e3a64"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_14.png",
+      "sha256": "9a78b38d5c6e61da562482d82f1030875300253af4df439c9b198ff48d08d883"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_15.png",
+      "sha256": "f33e8e4055b17247593c1129489be419e4f85307b3238d556134909ffe7fea6c"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_16.png",
+      "sha256": "8f8dc49dc769d260bad4c94fcc1658dfb327ef07fd4dade268589f9b5cfd686b"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_17.png",
+      "sha256": "4b0a9bc4f9283dec7b8eb5ae74fda20517cdcb2b775833404e96dc2cc138eb26"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_18.png",
+      "sha256": "fa52a764e8cb262d74ea021031eeb5107f842c41bcaf3c5f880be310895fea26"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_19.png",
+      "sha256": "5ec2448da030de4a1f1301ae7f86b9ad7a790247d335bc3ad757c9499327cb79"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_20.png",
+      "sha256": "979ed8b606a8e7a6919b546f7e83a01512525b1ca8e6161069e60c923910ce0a"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_21.png",
+      "sha256": "efe83f3a61534f93e32e51b7acf7e253e94f1721a548fc2079645fe3bcd8af23"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_22.png",
+      "sha256": "c748f7bf40d39d8a46e227499c461f7106bb10b2f85143633a033cd07978b62d"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_23.png",
+      "sha256": "8757225a2fd827a1e8055d98e0e6facb49ee7f3ca275e0beebcb680f16f6cf8d"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_24.png",
+      "sha256": "c3fa36395110698866d87df5186f5e260c7a585aaf81f924192c61fe4c3464f5"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_25.png",
+      "sha256": "f213fd9b12f0f73832cdeeaed4079bb92034315b9f883cd97c8b797852ae1983"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_26.png",
+      "sha256": "e115f117facf905bdc0ab9590002db4ef67a2708bde032c84541466b40870b5b"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_27.png",
+      "sha256": "1d401fecd491c05427ad0fe0fecea541d903f0cc020ee12104d4070cd30d46b0"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_28.png",
+      "sha256": "ac31a0f1c1a32357b97bf1f96da9dbcbd50d46a0cb5e78d04c19f59fe4bbf784"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_29.png",
+      "sha256": "0b7e3a314df08ad1f5529af252563ea000a3ddf92b1dce63dfadbf2bb7771d14"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_30.png",
+      "sha256": "f6dd05d423f2d608f4f2b2b3330379d82dd4c1261beda3e703148dcb4f2eaff5"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_31.png",
+      "sha256": "13ffb8321906f1656272b8e02a8f0383ebc0314b47e0b9977b6743d36b866a7a"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_32.png",
+      "sha256": "ec6571f3c108951afcd864ce04b5e6a24149ad5584ec2eb955da5e71c77af270"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_33.png",
+      "sha256": "e856ec4c3af2a73a87142ac6fef5cd472b87570d80fcf3a0e90a0187debbebdc"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_34.png",
+      "sha256": "a36b4f62945bd23082e12b90ac8438d39368f0a6dd51a2f7ea4cc4ddf673f926"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_35.png",
+      "sha256": "9a27cfe3a62c985e5b963a3bf2e523450b43aaa1454b876c35fc2eddd85d7e8f"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_36.png",
+      "sha256": "d49b09c09e655ce85e15a3cfab1256e6822bb8fdc70f4f297c6fe752093c17ec"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_37.png",
+      "sha256": "9493a5ae9a6b899f6fd141c93df7681fd556fab0e57f8077e1f799518bf951cf"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_38.png",
+      "sha256": "c3eef5cd4ef17e5397c954b0d0827a1bc4df5b9a0c00b2eacd4ecf99d1d668a9"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_39.png",
+      "sha256": "e8a108c84afa8280e9a278b1524e15b2e17706ac0ffc23439c28b2f87a9bd245"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_40.png",
+      "sha256": "b9d982d0eee7ba1094e6e82e68b094a3c3db3a9efd97490e1ea5fd2a06f1dbf0"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\scenes\\shot_41.png",
+      "sha256": "976ff3871fbd63d30584fc2d397819b6ba90abc87c751f4ff6a3094dd9e92641"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\projects\\self-sabotage\\silent_track.m4a",
+      "sha256": "d7576363d39c63d74c0ca4a5a5b4ca6cbce02e78af5ef845b2781ed3a304d36b"
+    },
+    {
+      "path": "F:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\fonts\\NotoSans.ttf",
+      "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d"
+    }
+  ]
+}
