@@ -8,7 +8,7 @@
   "voice_rate": "unchanged; leading/trailing padding only",
   "frames": 600,
   "duration": 20,
-  "cache_hits": 1,
+  "cache_hits": 3,
   "shot_count": 3,
   "full_decode": "pass",
   "caption_count": 11,

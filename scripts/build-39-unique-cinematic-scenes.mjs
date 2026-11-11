@@ -46,11 +46,11 @@ async function toTransparentSquare(buf, targetSize = 900, threshold = 210) {
 }
 
 async function prepareAll39Images() {
-  console.log('--- GENERATING 39 100% UNIQUE STICKMAN ILLUSTRATIONS (UNIFORM PROMINENCE) ---');
+  console.log('--- GENERATING 39 100% UNIQUE, CLEAN STICKMAN ILLUSTRATIONS ---');
 
   const poseSheet = path.join(b1Assets, 'character-pose-sheet-v6.png');
   const actRef = path.join(b1Assets, 'character-acting-reference.png');
-  const b1App = path.join(b1Assets, 'approved-2026-10-23-contact-sheet.png');
+  const motionSheet = path.join(b1Assets, 'approved-2026-10-23-motion-sheet.png');
   const b1Long = path.join(b1Assets, 'approved-2026-10-24-longform-contact-sheet.jpg');
   const noCam = path.join(repoThumbnailDir, 'no-camera.jpg');
 
@@ -86,16 +86,16 @@ async function prepareAll39Images() {
   const s08AI = fs.readFileSync(path.join(brainDir, 'shot_08_coffee_stain_1794373196515.jpg'));
   fs.writeFileSync(path.join(scenesDir, 'shot_08.png'), await toTransparentSquare(s08AI, 900, 235));
 
-  // Shot 09: Stickman crouching in awkward despair (b5 0390.png)
-  const b5_0390 = await sharp(path.join(b5Assets, '0390.png')).extract({ left: 200, top: 400, width: 600, height: 600 }).png().toBuffer();
+  // Shot 09: Stickman crouching in awkward despair (b5 0390.png - cropped below "NOT ONCE")
+  const b5_0390 = await sharp(path.join(b5Assets, '0390.png')).extract({ left: 200, top: 480, width: 600, height: 520 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_09.png'), await toTransparentSquare(b5_0390, 900, 210));
 
   // Shot 10: Social freeze (stiff posture, AI shot 9)
   const s09AI = fs.readFileSync(path.join(brainDir, 'shot_09_social_freezing_1794373212872.jpg'));
   fs.writeFileSync(path.join(scenesDir, 'shot_10.png'), await toTransparentSquare(s09AI, 900, 235));
 
-  // Shot 11: Stickman sitting hunched sadly on stool (b1 approved contact sheet)
-  const stoolBuf = await sharp(b1App).extract({ left: 380, top: 560, width: 140, height: 220 }).png().toBuffer();
+  // Shot 11: Sad stickman on stool with tear (motion sheet row 3 col 1 - ZERO text, 100% pure white)
+  const stoolBuf = await sharp(motionSheet).extract({ left: 30, top: 560, width: 280, height: 250 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_11.png'), await toTransparentSquare(stoolBuf, 900, 230));
 
   // Shot 12: Presentation panic podium (AI shot 10)
@@ -110,8 +110,8 @@ async function prepareAll39Images() {
   const s14Buf = await sharp(noCam).extract({ left: 650, top: 0, width: 630, height: 720 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_14.png'), await toTransparentSquare(s14Buf, 900, 230));
 
-  // Shot 15: Presenting at whiteboard with marker (b1 longform)
-  const boardBuf = await sharp(b1Long).extract({ left: 880, top: 70, width: 240, height: 320 }).png().toBuffer();
+  // Shot 15: Full 16:9 Easel with yellow frame, play button & pointing stickman (b1 longform panel 2 - ZERO text!)
+  const boardBuf = await sharp(b1Long).extract({ left: 725, top: 145, width: 440, height: 210 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_15.png'), await toTransparentSquare(boardBuf, 900, 230));
 
   // Shot 16: Barry Manilow t-shirt experiment (AI shot 12)
@@ -122,9 +122,9 @@ async function prepareAll39Images() {
   const s13AI = fs.readFileSync(path.join(brainDir, 'shot_13_chart_50_23_1794373205993.jpg'));
   fs.writeFileSync(path.join(scenesDir, 'shot_17.png'), await toTransparentSquare(s13AI, 900, 235));
 
-  // Shot 18: Listening with hand behind ear (b1 longform)
-  const listenBuf = await sharp(b1Long).extract({ left: 240, top: 65, width: 220, height: 320 }).png().toBuffer();
-  fs.writeFileSync(path.join(scenesDir, 'shot_18.png'), await toTransparentSquare(listenBuf, 900, 230));
+  // Shot 18: Stickman editing at desk phase 2 (motion sheet row 1 col 2 - ZERO text)
+  const deskPhase2 = await sharp(motionSheet).extract({ left: 350, top: 0, width: 350, height: 270 }).png().toBuffer();
+  fs.writeFileSync(path.join(scenesDir, 'shot_18.png'), await toTransparentSquare(deskPhase2, 900, 230));
 
   // Shot 19: Egocentric bias VR headset rays (AI shot 14)
   const s14AI = fs.readFileSync(path.join(brainDir, 'shot_14_egocentric_bias_1794373221557.jpg'));
@@ -150,8 +150,8 @@ async function prepareAll39Images() {
   const b5_0226 = await sharp(path.join(b5Assets, '0226.png')).extract({ left: 200, top: 550, width: 480, height: 480 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_24.png'), await toTransparentSquare(b5_0226, 900, 210));
 
-  // Shot 25: Stickman neutral straight face (b5 0335.png)
-  const b5_0335 = await sharp(path.join(b5Assets, '0335.png')).extract({ left: 400, top: 150, width: 350, height: 800 }).png().toBuffer();
+  // Shot 25: Stickman neutral straight face (b5 0335.png - cropped below "NDENCE")
+  const b5_0335 = await sharp(path.join(b5Assets, '0335.png')).extract({ left: 450, top: 320, width: 300, height: 600 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_25.png'), await toTransparentSquare(b5_0335, 900, 210));
 
   // Shot 26: Desk work intently at computer (acting ref left)
@@ -174,9 +174,9 @@ async function prepareAll39Images() {
   const s19AI = fs.readFileSync(path.join(brainDir, 'shot_19_binoculars_outward_1794373241451.jpg'));
   fs.writeFileSync(path.join(scenesDir, 'shot_30.png'), await toTransparentSquare(s19AI, 900, 235));
 
-  // Shot 31: Stickman behind table pointing finger with lightbulb (b1 contact sheet)
-  const ideaTableBuf = await sharp(b1App).extract({ left: 700, top: 800, width: 140, height: 210 }).png().toBuffer();
-  fs.writeFileSync(path.join(scenesDir, 'shot_31.png'), await toTransparentSquare(ideaTableBuf, 900, 230));
+  // Shot 31: Stickman bracing collapsing pile of cards phase 2 (motion sheet row 2 col 2 - ZERO text)
+  const cardsPhase2 = await sharp(motionSheet).extract({ left: 350, top: 270, width: 350, height: 270 }).png().toBuffer();
+  fs.writeFileSync(path.join(scenesDir, 'shot_31.png'), await toTransparentSquare(cardsPhase2, 900, 230));
 
   // Shot 32: Passionate speech leaning forward (Pose 0)
   const p0 = await sharp(poseSheet).extract({ left: 0, top: 0, width: 661, height: 793 }).png().toBuffer();
@@ -186,28 +186,28 @@ async function prepareAll39Images() {
   const b5_0510 = await sharp(path.join(b5Assets, '0510.png')).extract({ left: 240, top: 430, width: 350, height: 500 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_33.png'), await toTransparentSquare(b5_0510, 900, 210));
 
-  // Shot 34: Stickman holding clipboard and pencil (b1 longform)
-  const clipBuf = await sharp(b1Long).extract({ left: 720, top: 1250, width: 220, height: 320 }).png().toBuffer();
-  fs.writeFileSync(path.join(scenesDir, 'shot_34.png'), await toTransparentSquare(clipBuf, 900, 230));
+  // Shot 34: Sad stickman on stool looking down phase 2 (motion sheet row 3 col 2 - ZERO text)
+  const stoolPhase2 = await sharp(motionSheet).extract({ left: 350, top: 540, width: 350, height: 270 }).png().toBuffer();
+  fs.writeFileSync(path.join(scenesDir, 'shot_34.png'), await toTransparentSquare(stoolPhase2, 900, 230));
 
   // Shot 35: Stickman looking at mirror with happy confident reflection (b5 0641.png)
   const b5_0641 = await sharp(path.join(b5Assets, '0641.png')).extract({ left: 300, top: 300, width: 500, height: 650 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_35.png'), await toTransparentSquare(b5_0641, 900, 210));
 
-  // Shot 36: Full stickman character leaning over desk writing ideas with pencil, pointing finger up!
-  const deskWriterBuf = await sharp(b1App).extract({ left: 990, top: 865, width: 145, height: 185 }).png().toBuffer();
-  fs.writeFileSync(path.join(scenesDir, 'shot_36.png'), await toTransparentSquare(deskWriterBuf, 900, 230));
+  // Shot 36: Stickman writing ideas on table with pencil & pointing finger up (motion sheet row 4 col 1 - ZERO text)
+  const tablePencil1 = await sharp(motionSheet).extract({ left: 30, top: 820, width: 300, height: 260 }).png().toBuffer();
+  fs.writeFileSync(path.join(scenesDir, 'shot_36.png'), await toTransparentSquare(tablePencil1, 900, 230));
 
-  // Shot 37: Full stickman character standing happily presenting, holding yellow script!
-  const scriptPresenterBuf = await sharp(b1Long).extract({ left: 690, top: 1330, width: 130, height: 210 }).png().toBuffer();
-  fs.writeFileSync(path.join(scenesDir, 'shot_37.png'), await toTransparentSquare(scriptPresenterBuf, 900, 230));
+  // Shot 37: Confident stickman presenting with yellow script (b1 longform panel 3 - ZERO text)
+  const scriptPresenter1 = await sharp(b1Long).extract({ left: 1730, top: 120, width: 170, height: 260 }).png().toBuffer();
+  fs.writeFileSync(path.join(scenesDir, 'shot_37.png'), await toTransparentSquare(scriptPresenter1, 900, 230));
 
-  // Shot 38: Stickman holding video card (b1 longform)
-  const cardBuf = await sharp(b1Long).extract({ left: 2000, top: 1250, width: 220, height: 320 }).png().toBuffer();
-  fs.writeFileSync(path.join(scenesDir, 'shot_38.png'), await toTransparentSquare(cardBuf, 900, 230));
+  // Shot 38: Stickman sitting at desk with coffee editing video (motion sheet row 1 col 1 - ZERO text)
+  const deskPhase1 = await sharp(motionSheet).extract({ left: 30, top: 20, width: 300, height: 250 }).png().toBuffer();
+  fs.writeFileSync(path.join(scenesDir, 'shot_38.png'), await toTransparentSquare(deskPhase1, 900, 230));
 
-  // Shot 39: Triumphant finale stickman (smiling, waving, holding script)
-  const triumphantBuf = await sharp(b1Long).extract({ left: 1730, top: 120, width: 170, height: 260 }).png().toBuffer();
+  // Shot 39: Triumphant finale stickman waving and presenting (b1 longform panel 14 - ZERO text)
+  const triumphantBuf = await sharp(b1Long).extract({ left: 690, top: 1330, width: 140, height: 210 }).png().toBuffer();
   fs.writeFileSync(path.join(scenesDir, 'shot_39.png'), await toTransparentSquare(triumphantBuf, 900, 230));
 
   console.log('Finished writing all 39 images to disk!');
