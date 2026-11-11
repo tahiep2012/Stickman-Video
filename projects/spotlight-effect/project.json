@@ -1293,40 +1293,19 @@
         },
         {
           "type": "image",
-          "path": "@b1/idea-note-crayon.png",
-          "x": 140,
-          "y": 195,
-          "w": 260,
-          "keys": [
-            {
-              "t": 0,
-              "angle": -0.05
-            },
-            {
-              "t": 1,
-              "angle": 0.04
-            },
-            {
-              "t": 2,
-              "angle": 0
-            }
-          ]
-        },
-        {
-          "type": "image",
           "path": "scenes/shot_05.png",
-          "x": 620,
-          "y": 30,
-          "w": 580,
+          "x": 370,
+          "y": 90,
+          "w": 540,
           "keys": [
             {
               "t": 0,
-              "y": 48,
+              "y": 105,
               "alpha": 0.85
             },
             {
-              "t": 0.45,
-              "y": 30,
+              "t": 0.5,
+              "y": 90,
               "alpha": 1
             }
           ]
@@ -1460,7 +1439,7 @@
     },
     {
       "start": 62.59,
-      "end": 89.66,
+      "end": 75.61,
       "layers": [
         {
           "type": "text",
@@ -1532,12 +1511,12 @@
       ]
     },
     {
-      "start": 89.66,
-      "end": 112.52,
+      "start": 75.61,
+      "end": 89.66,
       "layers": [
         {
           "type": "text",
-          "text": "CẢM GIÁC LẠC LÕNG",
+          "text": "CỰC HÌNH TÂM LÝ",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -1548,7 +1527,59 @@
           "type": "underline",
           "x": 80,
           "y": 92,
-          "w": 479,
+          "w": 425,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_08.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 89.66,
+      "end": 103.91,
+      "layers": [
+        {
+          "type": "text",
+          "text": "TÊ LIỆT GIAO TIẾP XÃ HỘI",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
           "color": "#191916",
           "lineWidth": 4,
           "keys": [
@@ -1605,12 +1636,64 @@
       ]
     },
     {
-      "start": 112.52,
-      "end": 137.76,
+      "start": 103.91,
+      "end": 112.52,
       "layers": [
         {
           "type": "text",
-          "text": "CƠN HOẢNG LOẠN THUYẾT TRÌNH",
+          "text": "BỎ LỠ CƠ HỘI TỎA SÁNG",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_02.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 112.52,
+      "end": 124.55,
+      "layers": [
+        {
+          "type": "text",
+          "text": "HOẢNG LOẠN THUYẾT TRÌNH",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -1657,12 +1740,85 @@
       ]
     },
     {
-      "start": 137.76,
-      "end": 162.75,
+      "start": 124.55,
+      "end": 137.76,
       "layers": [
         {
           "type": "text",
-          "text": "THÍ NGHIỆM ĐẠI HỌC CORNELL",
+          "text": "SÂN KHẤU ẢO GIÁC",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 452,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-note-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_05.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 137.76,
+      "end": 151.86,
+      "layers": [
+        {
+          "type": "text",
+          "text": "NGHIÊN CỨU TÂM LÝ HỌC",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -1730,8 +1886,60 @@
       ]
     },
     {
+      "start": 151.86,
+      "end": 162.75,
+      "layers": [
+        {
+          "type": "text",
+          "text": "THÍ NGHIỆM ĐẠI HỌC CORNELL",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_11.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "start": 162.75,
-      "end": 186.83,
+      "end": 174.88,
       "layers": [
         {
           "type": "text",
@@ -1782,12 +1990,12 @@
       ]
     },
     {
-      "start": 186.83,
-      "end": 213.05,
+      "start": 174.88,
+      "end": 186.83,
       "layers": [
         {
           "type": "text",
-          "text": "50% ẢO TƯỞNG VS 23% SỰ THẬT",
+          "text": "KẾT QUẢ BẤT NGỜ: 23%",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -1814,7 +2022,80 @@
         },
         {
           "type": "image",
+          "path": "@b1/idea-bulb-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
           "path": "scenes/shot_13.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 186.83,
+      "end": 199.5,
+      "layers": [
+        {
+          "type": "text",
+          "text": "HIỆU ỨNG ÁNH ĐÈN SÂN KHẤU",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_07.png",
           "x": 370,
           "y": 90,
           "w": 540,
@@ -1834,12 +2115,85 @@
       ]
     },
     {
-      "start": 213.05,
-      "end": 242.44,
+      "start": 199.5,
+      "end": 213.05,
       "layers": [
         {
           "type": "text",
-          "text": "THIÊN KIẾN TỰ COI MÌNH LÀ TRUNG TÂM",
+          "text": "THIÊN KIẾN QUY NGÃ",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 506,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/open-source-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_14.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 213.05,
+      "end": 227,
+      "layers": [
+        {
+          "type": "text",
+          "text": "GÓC NHÌN TỰ COI MÌNH LÀ TRUNG TÂM",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -1886,8 +2240,81 @@
       ]
     },
     {
+      "start": 227,
+      "end": 242.44,
+      "layers": [
+        {
+          "type": "text",
+          "text": "ẢO TƯỞNG SUY ĐOÁN",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 479,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/camera-handdrawn.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_04.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "start": 242.44,
-      "end": 268.48,
+      "end": 255,
       "layers": [
         {
           "type": "text",
@@ -1959,12 +2386,189 @@
       ]
     },
     {
+      "start": 255,
+      "end": 268.48,
+      "layers": [
+        {
+          "type": "text",
+          "text": "NỖI SỢ NGUYÊN THỦY BỊ ĐÀO THẢI",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_06.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "start": 268.48,
-      "end": 301.05,
+      "end": 279.79,
+      "layers": [
+        {
+          "type": "text",
+          "text": "CÁI GIÁ CỦA SỰ SỢ HÃI",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_02.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 279.79,
+      "end": 290,
       "layers": [
         {
           "type": "text",
           "text": "NỖI ÁM ẢNH TUỔI TRẺ",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_16.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 290,
+      "end": 301.05,
+      "layers": [
+        {
+          "type": "text",
+          "text": "THÁO BỎ ÁNH ĐÈN ẢO TƯỞNG",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2012,7 +2616,7 @@
         },
         {
           "type": "image",
-          "path": "scenes/shot_16.png",
+          "path": "scenes/shot_17.png",
           "x": 620,
           "y": 30,
           "w": 580,
@@ -2033,11 +2637,11 @@
     },
     {
       "start": 301.05,
-      "end": 332.48,
+      "end": 312.48,
       "layers": [
         {
           "type": "text",
-          "text": "TIẾN TRÌNH TRƯỞNG THÀNH",
+          "text": "QUY TẮC 18 / 40 / 60",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2084,12 +2688,12 @@
       ]
     },
     {
-      "start": 332.48,
-      "end": 358.14,
+      "start": 312.48,
+      "end": 323.75,
       "layers": [
         {
           "type": "text",
-          "text": "AI CŨNG CÓ ÁNH ĐÈN RIÊNG",
+          "text": "AI CŨNG BẬN VỚI ĐÈN CỦA RIÊNG HỌ",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2136,12 +2740,85 @@
       ]
     },
     {
-      "start": 358.14,
-      "end": 388.14,
+      "start": 323.75,
+      "end": 332.48,
       "layers": [
         {
           "type": "text",
-          "text": "ĐỔI GÓC NHÌN RA THẾ GIỚI",
+          "text": "BẠN CHỈ LÀ VAI PHỤ",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 506,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/open-source-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_18.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 332.48,
+      "end": 344.65,
+      "layers": [
+        {
+          "type": "text",
+          "text": "ĐẶT GÓC NHÌN RA NGOÀI",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2209,12 +2886,64 @@
       ]
     },
     {
-      "start": 388.14,
-      "end": 416.89,
+      "start": 344.65,
+      "end": 358.14,
       "layers": [
         {
           "type": "text",
-          "text": "CHUYỂN HƯỚNG SỰ CHÚ Ý",
+          "text": "QUAN SÁT THẾ GIỚI XUNG QUANH",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_19.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 358.14,
+      "end": 367.06,
+      "layers": [
+        {
+          "type": "text",
+          "text": "THỬ THÁCH LÀM ĐIỀU NGỚ NGẨN NHỎ",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2282,12 +3011,12 @@
       ]
     },
     {
-      "start": 416.89,
-      "end": 428.62,
+      "start": 367.06,
+      "end": 376.89,
       "layers": [
         {
           "type": "text",
-          "text": "TỰ DO TÂM TRÍ",
+          "text": "BẦU TRỜI KHÔNG HỀ SỤP ĐỔ",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2298,7 +3027,7 @@
           "type": "underline",
           "x": 80,
           "y": 92,
-          "w": 371,
+          "w": 520,
           "color": "#191916",
           "lineWidth": 4,
           "keys": [
@@ -2314,7 +3043,59 @@
         },
         {
           "type": "image",
-          "path": "@b1/open-source-crayon.png",
+          "path": "scenes/shot_20.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 376.89,
+      "end": 388.14,
+      "layers": [
+        {
+          "type": "text",
+          "text": "XÓA BỎ PHẢN XẠ SỢ HÃI",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
           "x": 140,
           "y": 195,
           "w": 260,
@@ -2355,12 +3136,12 @@
       ]
     },
     {
-      "start": 428.62,
-      "end": 434.416,
+      "start": 388.14,
+      "end": 398.05,
       "layers": [
         {
           "type": "text",
-          "text": "TỰ TIN TỎA SÁNG",
+          "text": "NGƯỜI YÊU THƯƠNG THỰC SỰ",
           "x": 80,
           "y": 40,
           "size": 40,
@@ -2371,7 +3152,257 @@
           "type": "underline",
           "x": 80,
           "y": 92,
-          "w": 425,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_21.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 398.05,
+      "end": 408.17,
+      "layers": [
+        {
+          "type": "text",
+          "text": "KẺ PHÁN XÉT SẼ QUÊN SẠCH",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/idea-note-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_22.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 408.17,
+      "end": 416.89,
+      "layers": [
+        {
+          "type": "text",
+          "text": "TỰ TIN SỐNG THẬT VỚI CHÍNH MÌNH",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_22.png",
+          "x": 370,
+          "y": 90,
+          "w": 540,
+          "keys": [
+            {
+              "t": 0,
+              "y": 105,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 90,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 416.89,
+      "end": 428.62,
+      "layers": [
+        {
+          "type": "text",
+          "text": "ĐỒNG HÀNH CÙNG CÕI VÔ THỨC",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 520,
+          "color": "#191916",
+          "lineWidth": 4,
+          "keys": [
+            {
+              "t": 0,
+              "progress": 0
+            },
+            {
+              "t": 0.45,
+              "progress": 1
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "@b1/youtube-crayon.png",
+          "x": 140,
+          "y": 195,
+          "w": 260,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_19.png",
+          "x": 620,
+          "y": 30,
+          "w": 580,
+          "keys": [
+            {
+              "t": 0,
+              "y": 48,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.45,
+              "y": 30,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 428.62,
+      "end": 434.416,
+      "layers": [
+        {
+          "type": "text",
+          "text": "HẸN GẶP LẠI BẠN!",
+          "x": 80,
+          "y": 40,
+          "size": 40,
+          "bold": true,
+          "color": "#191916"
+        },
+        {
+          "type": "underline",
+          "x": 80,
+          "y": 92,
+          "w": 452,
           "color": "#191916",
           "lineWidth": 4,
           "keys": [

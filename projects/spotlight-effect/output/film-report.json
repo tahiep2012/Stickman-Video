@@ -1,15 +1,15 @@
 {
-  "fingerprint": "6ebb122bbb8e4874b72f97d61bb17f534eb79a09ce6a0c887231686f8ef447d4",
+  "fingerprint": "71b8e397aa2d58b1a17e2303f616bbe8701945ef0efb6672900d415f16d4146b",
   "preview_seconds": null,
   "output": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\output\\film.mp4",
-  "output_sha256": "53f1af797cbb7f6c06e0566094f32f8ff613b36eb4cc6ae7d52e074265f15cbf",
+  "output_sha256": "fa4f83488a1d4f2b7e0e3a241282d1f571cd88f46640deaf0d1b945402870a07",
   "original_voice_sha256": "59f154e363c370543ffcef5e5b67f4c5ee561312ec52601479964dfcba3b0882",
   "original_voice_duration": 434.416009,
   "voice_rate": "unchanged; leading/trailing padding only",
   "frames": 13033,
   "duration": 434.433333,
-  "cache_hits": 3,
-  "shot_count": 22,
+  "cache_hits": 6,
+  "shot_count": 39,
   "full_decode": "pass",
   "caption_count": 195,
   "human_review": "required; technical checks are not acceptance",
@@ -137,6 +137,10 @@
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\script-page-crayon.png",
       "sha256": "72c11003b310fec896ce5b5f62a150115efcf10bcc6e8c43d63dcdf5709a508e"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\youtube-crayon.png",
+      "sha256": "c839717057aeb3c06269eb0e83e1fdc566eb9b4b02d6485212548a21d4d043e4"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\fonts\\NotoSans.ttf",
