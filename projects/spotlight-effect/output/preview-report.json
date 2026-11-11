@@ -1,8 +1,8 @@
 {
-  "fingerprint": "68d2e86beb2f968ad801fb33d542f534f09b885cf94e1da74eefa706be607793",
+  "fingerprint": "7bf397ae9e709d5c2227960121bc3d345cbfa1fffdf357daae0426269400eef0",
   "preview_seconds": 25,
   "output": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\output\\preview.mp4",
-  "output_sha256": "4b060b8c2ce596886bc53ff280962bbe78d97232dbabbbe51a863687dbb0b8e2",
+  "output_sha256": "8ee14659204ab4b94f9be4d67202d6d43518bbba3f81e04115a74114632aeecb",
   "original_voice_sha256": "59f154e363c370543ffcef5e5b67f4c5ee561312ec52601479964dfcba3b0882",
   "original_voice_duration": 434.416009,
   "voice_rate": "unchanged; leading/trailing padding only",
@@ -41,10 +41,6 @@
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\camera-handdrawn.png",
       "sha256": "56fb555059cab64130b3b26dc5ffa2cd0684136ccf94c6a380ce2b2fa592075b"
-    },
-    {
-      "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\clapper-crayon.png",
-      "sha256": "e9aa6455d6153a140fb3bcdcd8f967c9ddd76c7e0f89c0ef590a69f412d031b8"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\fonts\\NotoSans.ttf",
