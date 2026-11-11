@@ -1,17 +1,17 @@
 {
-  "fingerprint": "7bf397ae9e709d5c2227960121bc3d345cbfa1fffdf357daae0426269400eef0",
-  "preview_seconds": 25,
+  "fingerprint": "4b4d1cb217fa105036a087645dd435120f0db4d2ea6fe0585f9ba2d1d5c485a6",
+  "preview_seconds": 20,
   "output": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\output\\preview.mp4",
-  "output_sha256": "8ee14659204ab4b94f9be4d67202d6d43518bbba3f81e04115a74114632aeecb",
+  "output_sha256": "ba0cd73483b3fe75cbb7fefa677386f13580aecdce4cfb496645ef00dcf0b47c",
   "original_voice_sha256": "59f154e363c370543ffcef5e5b67f4c5ee561312ec52601479964dfcba3b0882",
   "original_voice_duration": 434.416009,
   "voice_rate": "unchanged; leading/trailing padding only",
-  "frames": 750,
-  "duration": 25,
-  "cache_hits": 0,
-  "shot_count": 4,
+  "frames": 600,
+  "duration": 20,
+  "cache_hits": 1,
+  "shot_count": 3,
   "full_decode": "pass",
-  "caption_count": 13,
+  "caption_count": 11,
   "human_review": "required; technical checks are not acceptance",
   "inputs": [
     {
@@ -20,19 +20,15 @@
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_01.png",
-      "sha256": "0b36e94b2b01bf97a5868e77d0a4ce96a057fb60525b81556696afd212615da1"
+      "sha256": "3afeea109cb4c544d6fe4969a7d23143f7f98eb3b5067c686d9325548c521cf6"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_02.png",
-      "sha256": "aac465638d735142697798c60b3026af4e108ed1c49cab8cb662e80737de2fe3"
+      "sha256": "f9ef677f9fc3df90ee02dd35753277373eded369e9311c8e037ddda9b32215d2"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_03.png",
-      "sha256": "4e188574231da654997e5a2ed8a191a76662f1984774bac4b1ea48dac448141f"
-    },
-    {
-      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_04.png",
-      "sha256": "3bff6fe4966f0e1fcc244cf81c9ff7f98ff60de8dcaec01f373dc87e12afb3af"
+      "sha256": "722810b098364fbd9c65c0abb29c59e38f3ab6fb278f598795d71140d238c323"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\silent_track.m4a",

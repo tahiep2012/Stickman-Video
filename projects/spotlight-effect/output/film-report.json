@@ -1,15 +1,15 @@
 {
-  "fingerprint": "f8f12c50fc0fc9c93aae2a41f0996c139af2279a2281e9c733ccf9c10cac3cd0",
+  "fingerprint": "11748ea13b067a2b70f84e984daf183173c405c21394184b4de77182bee4dc09",
   "preview_seconds": null,
   "output": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\output\\film.mp4",
-  "output_sha256": "4205072681946b95f857b831721e22991b9c2612a58a52d34b9ef84f69573791",
+  "output_sha256": "ebc0a0c6a303a0a5af42704f1c585d485adecf195f31755127a35095d1526954",
   "original_voice_sha256": "59f154e363c370543ffcef5e5b67f4c5ee561312ec52601479964dfcba3b0882",
   "original_voice_duration": 434.416009,
   "voice_rate": "unchanged; leading/trailing padding only",
   "frames": 13033,
   "duration": 434.433333,
   "cache_hits": 3,
-  "shot_count": 22,
+  "shot_count": 39,
   "full_decode": "pass",
   "caption_count": 195,
   "human_review": "required; technical checks are not acceptance",
@@ -20,103 +20,183 @@
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_01.png",
-      "sha256": "0b36e94b2b01bf97a5868e77d0a4ce96a057fb60525b81556696afd212615da1"
+      "sha256": "3afeea109cb4c544d6fe4969a7d23143f7f98eb3b5067c686d9325548c521cf6"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_02.png",
-      "sha256": "aac465638d735142697798c60b3026af4e108ed1c49cab8cb662e80737de2fe3"
+      "sha256": "f9ef677f9fc3df90ee02dd35753277373eded369e9311c8e037ddda9b32215d2"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_03.png",
-      "sha256": "4e188574231da654997e5a2ed8a191a76662f1984774bac4b1ea48dac448141f"
+      "sha256": "722810b098364fbd9c65c0abb29c59e38f3ab6fb278f598795d71140d238c323"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_04.png",
-      "sha256": "3bff6fe4966f0e1fcc244cf81c9ff7f98ff60de8dcaec01f373dc87e12afb3af"
+      "sha256": "8a99f1bf5a0a73c59230fa202895a7b79ea645bede5ce50a642836a3cffb5d9f"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_05.png",
-      "sha256": "c6fcc769621590056ee02d367cae88f65c31287d4a592482e98718f577cb9e45"
+      "sha256": "f7acbc74ea28b07b2e7493f81a64fd7820bfab8a68b6eb4a2e877bef95ed8b13"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_06.png",
-      "sha256": "0b5e7cd25dcf714a9b86b607de591554fb4c2d304e8abb193a8ce764fcb1c0fc"
+      "sha256": "2cc7768abefd40985a7a384fc98d110b89bb1474d0238b88286e42b7602268b6"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_07.png",
-      "sha256": "ea16a4bb44998b9087da0397dfa6d49870e9e365dfc46a8e77f8ce86e9cb05b2"
+      "sha256": "7a47659ae48825abf00af0fbf7f0c3b8cf147676fe330d6ca5c3182040e86132"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_08.png",
-      "sha256": "2c20ef9ffb72040a5ebcd3d3ba8389aedc923671c3831bfac2491f797d726b36"
+      "sha256": "a54e67b13220c4d4492d71aebf38cb82fd8ca24d511e47f393f2f284e900222d"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_09.png",
-      "sha256": "034a54f2e2ee3a0a9e56760062c3da83011623988e1b68915a7586a07a04c0a1"
+      "sha256": "fa2f6a3bbae9b57d5e750f6d2b064352d1d5c72811f044062f887a09a993d2b7"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_10.png",
-      "sha256": "bab4787ab0dfc7ec0e4efe29fb6e359965d36b8e4cad4f50a587015c632f5d27"
+      "sha256": "e92d705b001d83f0ea60b81684610087a0d6f05e58d255c30c2908316292c337"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_11.png",
-      "sha256": "258e3e15ccc79328be156769142cab4a9f89f18f326d430a95a227384424d7f7"
+      "sha256": "e9259acd8d998e6899d03cf45c115b8111bf9ab24c807c8239665e7139ced4a7"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_12.png",
-      "sha256": "d2e9833f2967d15f1c4611d86939ce1308188a6ec86c3915549259be94ecc8f8"
+      "sha256": "29cda167f254c2fd9847bb28d13db051a2617d8a94e404c5fff44c8f455bf611"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_13.png",
-      "sha256": "e4ab38fd3c46590994dc571063eef29e25c9d72b9d7ad2f4d5c5c551742a1762"
+      "sha256": "37b369fca4832b1b9aea2110e09b02dc3b53a4ea9a5a678fd16830210096f6c6"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_14.png",
-      "sha256": "b515d4196c70b612a6fd8017bbfa78d73b9c23cf81757f2af34fd2d363fa7e44"
+      "sha256": "1e2f7588b3a1ccae8b867e4cfded2522f7b1ef319ca233f407701c936c63cc7a"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_15.png",
-      "sha256": "18559ed0fc3444ef7e93a31a910e9e031ba9f15f4046a84361a168e9d96aa7fa"
+      "sha256": "a680ffaa3b364031da6d346975234c59b7ea7d61986dd2cd78de9541ea78822a"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_16.png",
-      "sha256": "6286a8c2ac4b7bf4af8f12fabb0f1178a7fa11e1a77a53f62c8118f356a52337"
+      "sha256": "870a83cadd8e67a96f9346f2dcacf1472b538a6f299b07e6aa92d4c8bc2e4fbb"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_17.png",
-      "sha256": "e6c2c5cd3c51b96352344b57f234ccb5dd3cb4d5b116e2b2da646bf2012912c4"
+      "sha256": "1ef666ff630d2519abab19582a0ed7f42570f58626214ebf9d5c1af66de479b1"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_18.png",
-      "sha256": "548651c9f9ecb2c22e35bfed791881c848d912958b53c92cbaf2ef78c1baefe5"
+      "sha256": "dc742b20855a64890506e79dc96cfc6fb275960acbec97d74d4365c03f154ed0"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_19.png",
-      "sha256": "f433d02b63fee076ba8252609cd321442d5fe9eedb17ca1f290103c837ea6e68"
+      "sha256": "57a499fc1af062f09fdfe1312a983b92f9ca2273735c475d74b94aeda13a1f7c"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_20.png",
-      "sha256": "0eae03b87f8e467842f7678c205a9659a6e31510d4c3e799b5d7f54aa71ad7db"
+      "sha256": "cbf6a6a5abff686bdde984250de2b673fe839cc6f6aac49e72bdd0bf814153ec"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_21.png",
-      "sha256": "fe7813dc86ac116aeb57419a929d38242b6bb9bd0986632fdacc1eb86ea496b5"
+      "sha256": "45befcb46f537e5c323c78bf8a9ce7088d126d8e5f386ca7c1c7caa0cdb54c0b"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_22.png",
-      "sha256": "4fc4d1829f3e2500dfd8e5a7973c6e693d696a2deed6530c48f3c2086a312663"
+      "sha256": "805fdedbef27ce51b6418256a603cef24716124b901cbdb1c14ff1f8f429724d"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_23.png",
+      "sha256": "280af71465154638a071aa29691b460bc62e9d6523880ec936d24f24a9e9ea80"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_24.png",
+      "sha256": "524dfd0bbe58a6c4a346c558db6c41b0f69a77423d3f293db49ae60218077e8c"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_25.png",
+      "sha256": "ae38d604646f3c9f72786544b6fbb3289a6137ea3571569a8096ce5a85f4f3a0"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_26.png",
+      "sha256": "5fa84d2c78846ee9459af380756fd6b77cbeccfdb60a122cb5d52ea241fecd13"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_27.png",
+      "sha256": "e53cce2db8b8aab8262a45d86f7cac6bc936d63b16e8869d2b708936bb8de237"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_28.png",
+      "sha256": "844bf9924796bc0a7686a5887536a94c8314129960f8a695a123f166e7060a1f"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_29.png",
+      "sha256": "b3b2928716292b3c71c1b9903927ddd7de90770e4337531e62d04fa97a380ce2"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_30.png",
+      "sha256": "3d40bbd8e57f899291296f1ec6c1b1710103951f59b3dff8ce6db5d25baaf7fb"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_31.png",
+      "sha256": "a322080205fa5bc17d2b697e778e587ad057bb7aa6b70451ccde0f36740162bc"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_32.png",
+      "sha256": "68de57df5f751f2c8f3f886d7b8846cce696b146797f3d1370b879cc915b4980"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_33.png",
+      "sha256": "14824ef7c7e98ac295813992475e327fafda9d57f960d6eb677adc0876cf8a8c"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_34.png",
+      "sha256": "2561449a25be43f7e49707a59b6d40d07d38627bf0a5ebd40709f1a47d3ff98b"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_35.png",
+      "sha256": "8e031e22baa974522177d5ccf451aa1c342e689cd3e7e2d8ec621019deed7281"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_36.png",
+      "sha256": "43304d1287d6543d90f059970d18aacf5c00a422615eb932141125216bd35793"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_37.png",
+      "sha256": "fca5da874153908365c2783a2f904c31f52d18b30a4bfdc73a6687bd42541dac"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_38.png",
+      "sha256": "f2a0501dc602f2c2dc8207ff995532b256ce408da749dcd26c06a9da5070347c"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\scenes\\shot_39.png",
+      "sha256": "ee21f56c73f12ef977a4429f05fac1ac44bab2f11d80c7538df31b4c1a2e7cab"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\projects\\spotlight-effect\\silent_track.m4a",
       "sha256": "59f154e363c370543ffcef5e5b67f4c5ee561312ec52601479964dfcba3b0882"
     },
     {
+      "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\calendar-crayon.png",
+      "sha256": "97b7fbff3f16ce18457db89db125e8eaebd97ef95537ecfabdf3a089bd4f4a2a"
+    },
+    {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\camera-handdrawn.png",
       "sha256": "56fb555059cab64130b3b26dc5ffa2cd0684136ccf94c6a380ce2b2fa592075b"
     },
     {
+      "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\clapper-crayon.png",
+      "sha256": "e9aa6455d6153a140fb3bcdcd8f967c9ddd76c7e0f89c0ef590a69f412d031b8"
+    },
+    {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\idea-bulb-crayon.png",
       "sha256": "439ac0f851ce3dc3ecace97e522c0c18bf1ffada833bff93905f9dd91b9f5db7"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\idea-note-crayon.png",
+      "sha256": "078a53c4b1efa343bdc033371129e62dcab80e752884725202c3d7d79e3b9739"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\open-source-crayon.png",
@@ -125,6 +205,10 @@
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\script-page-crayon.png",
       "sha256": "72c11003b310fec896ce5b5f62a150115efcf10bcc6e8c43d63dcdf5709a508e"
+    },
+    {
+      "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\b1\\youtube-crayon.png",
+      "sha256": "c839717057aeb3c06269eb0e83e1fdc566eb9b4b02d6485212548a21d4d043e4"
     },
     {
       "path": "D:\\Antigravity\\Tickman\\skills\\directing-stickman-videos\\assets\\fonts\\NotoSans.ttf",

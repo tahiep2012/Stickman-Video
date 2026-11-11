@@ -1208,7 +1208,7 @@
     },
     {
       "start": 62.59,
-      "end": 89.66,
+      "end": 75.61,
       "layers": [
         {
           "type": "image",
@@ -1253,8 +1253,8 @@
       ]
     },
     {
-      "start": 89.66,
-      "end": 112.52,
+      "start": 75.61,
+      "end": 89.66,
       "layers": [
         {
           "type": "image",
@@ -1278,12 +1278,108 @@
       ]
     },
     {
+      "start": 89.66,
+      "end": 103.91,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_10.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 103.91,
+      "end": 112.52,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_11.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "start": 112.52,
+      "end": 124.55,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_12.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 124.55,
       "end": 137.76,
       "layers": [
         {
           "type": "image",
-          "path": "scenes/shot_10.png",
+          "path": "scenes/shot_13.png",
           "x": 320,
           "y": 35,
           "w": 640,
@@ -1304,7 +1400,7 @@
     },
     {
       "start": 137.76,
-      "end": 162.75,
+      "end": 151.86,
       "layers": [
         {
           "type": "image",
@@ -1329,7 +1425,7 @@
         },
         {
           "type": "image",
-          "path": "scenes/shot_11.png",
+          "path": "scenes/shot_14.png",
           "x": 580,
           "y": 35,
           "w": 620,
@@ -1349,83 +1445,8 @@
       ]
     },
     {
-      "start": 162.75,
-      "end": 186.83,
-      "layers": [
-        {
-          "type": "image",
-          "path": "scenes/shot_12.png",
-          "x": 320,
-          "y": 35,
-          "w": 640,
-          "keys": [
-            {
-              "t": 0,
-              "y": 50,
-              "alpha": 0.85
-            },
-            {
-              "t": 0.5,
-              "y": 35,
-              "alpha": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "start": 186.83,
-      "end": 213.05,
-      "layers": [
-        {
-          "type": "image",
-          "path": "scenes/shot_13.png",
-          "x": 320,
-          "y": 35,
-          "w": 640,
-          "keys": [
-            {
-              "t": 0,
-              "y": 50,
-              "alpha": 0.85
-            },
-            {
-              "t": 0.5,
-              "y": 35,
-              "alpha": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "start": 213.05,
-      "end": 242.44,
-      "layers": [
-        {
-          "type": "image",
-          "path": "scenes/shot_14.png",
-          "x": 320,
-          "y": 35,
-          "w": 640,
-          "keys": [
-            {
-              "t": 0,
-              "y": 50,
-              "alpha": 0.85
-            },
-            {
-              "t": 0.5,
-              "y": 35,
-              "alpha": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "start": 242.44,
-      "end": 268.48,
+      "start": 151.86,
+      "end": 162.75,
       "layers": [
         {
           "type": "image",
@@ -1449,8 +1470,8 @@
       ]
     },
     {
-      "start": 268.48,
-      "end": 301.05,
+      "start": 162.75,
+      "end": 174.88,
       "layers": [
         {
           "type": "image",
@@ -1474,15 +1495,36 @@
       ]
     },
     {
-      "start": 301.05,
-      "end": 332.48,
+      "start": 174.88,
+      "end": 186.83,
       "layers": [
         {
           "type": "image",
+          "path": "@b1/idea-bulb-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
           "path": "scenes/shot_17.png",
-          "x": 320,
+          "x": 580,
           "y": 35,
-          "w": 640,
+          "w": 620,
           "keys": [
             {
               "t": 0,
@@ -1499,8 +1541,8 @@
       ]
     },
     {
-      "start": 332.48,
-      "end": 358.14,
+      "start": 186.83,
+      "end": 199.5,
       "layers": [
         {
           "type": "image",
@@ -1524,8 +1566,8 @@
       ]
     },
     {
-      "start": 358.14,
-      "end": 388.14,
+      "start": 199.5,
+      "end": 213.05,
       "layers": [
         {
           "type": "image",
@@ -1570,12 +1612,584 @@
       ]
     },
     {
-      "start": 388.14,
-      "end": 416.89,
+      "start": 213.05,
+      "end": 227,
       "layers": [
         {
           "type": "image",
           "path": "scenes/shot_20.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 227,
+      "end": 242.44,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_21.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 242.44,
+      "end": 255,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_22.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 255,
+      "end": 268.48,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_23.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 268.48,
+      "end": 279.79,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_24.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 279.79,
+      "end": 290,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_25.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 290,
+      "end": 301.05,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/calendar-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_26.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 301.05,
+      "end": 312.48,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_27.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 312.48,
+      "end": 323.75,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_28.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 323.75,
+      "end": 332.48,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/open-source-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_29.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 332.48,
+      "end": 344.65,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/open-source-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_30.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 344.65,
+      "end": 358.14,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_31.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 358.14,
+      "end": 367.06,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/idea-bulb-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_32.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 367.06,
+      "end": 376.89,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_33.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 376.89,
+      "end": 388.14,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/clapper-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_34.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 388.14,
+      "end": 398.05,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_35.png",
+          "x": 320,
+          "y": 35,
+          "w": 640,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 398.05,
+      "end": 408.17,
+      "layers": [
+        {
+          "type": "image",
+          "path": "@b1/idea-note-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_36.png",
+          "x": 580,
+          "y": 35,
+          "w": 620,
+          "keys": [
+            {
+              "t": 0,
+              "y": 50,
+              "alpha": 0.85
+            },
+            {
+              "t": 0.5,
+              "y": 35,
+              "alpha": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": 408.17,
+      "end": 416.89,
+      "layers": [
+        {
+          "type": "image",
+          "path": "scenes/shot_37.png",
           "x": 320,
           "y": 35,
           "w": 640,
@@ -1600,10 +2214,31 @@
       "layers": [
         {
           "type": "image",
-          "path": "scenes/shot_21.png",
-          "x": 320,
+          "path": "@b1/youtube-crayon.png",
+          "x": 120,
+          "y": 190,
+          "w": 280,
+          "keys": [
+            {
+              "t": 0,
+              "angle": -0.05
+            },
+            {
+              "t": 1,
+              "angle": 0.04
+            },
+            {
+              "t": 2,
+              "angle": 0
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "path": "scenes/shot_38.png",
+          "x": 580,
           "y": 35,
-          "w": 640,
+          "w": 620,
           "keys": [
             {
               "t": 0,
@@ -1625,7 +2260,7 @@
       "layers": [
         {
           "type": "image",
-          "path": "scenes/shot_22.png",
+          "path": "scenes/shot_39.png",
           "x": 320,
           "y": 35,
           "w": 640,
