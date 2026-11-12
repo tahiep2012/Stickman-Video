@@ -85,24 +85,24 @@ test('blocked media work does not silently change providers or fake completion',
   assert.match(route, /fabricate media, or call an unfinished film complete/);
 });
 
-test('Gemini-only adapter requirements are not generalized to every provider', () => {
-  assert.match(runtime, /bundled Gemini adapter requires `GEMINI_API_KEY`/);
+test('Agnes-only adapter requirements are not generalized to every provider', () => {
+  assert.match(runtime, /bundled Agnes AI adapter requires `AGNES_API_KEY`/);
   assert.match(runtime, /not a requirement for all providers/);
-  assert.match(runtime, /Do not repurpose `gemini-media\.mjs` with another provider's key\/base URL/);
+  assert.match(runtime, /Do not repurpose `agnes-media\.mjs` with an incompatible provider's key\/base URL/);
 });
 
-test('actual offline doctor reports Gemini key presence without gating local readiness on it', () => {
+test('actual offline doctor reports Agnes key presence without gating local readiness on it', () => {
   const results = [];
   for (const present of [false, true]) {
     const env = {...process.env};
-    delete env.GEMINI_API_KEY;
-    if (present) env.GEMINI_API_KEY = 'offline-fixture-not-a-real-key';
+    delete env.AGNES_API_KEY;
+    if (present) env.AGNES_API_KEY = 'offline-fixture-not-a-real-key';
     const result = spawnSync(process.execPath, ['scripts/autopilot.mjs', 'doctor'], {
       cwd: root, env, encoding: 'utf8', timeout: 30000,
     });
     assert.ifError(result.error);
     const report = JSON.parse(result.stdout);
-    assert.equal(report.gemini_key_present, present);
+    assert.equal(report.agnes_key_present, present);
     assert.equal(report.network_checked, false);
     assert.ok(!Object.keys(report.checks).some(key => /key|provider|quota/i.test(key)));
     assert.equal(result.status, Object.values(report.checks).every(Boolean) ? 0 : 1);

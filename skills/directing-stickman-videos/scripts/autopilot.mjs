@@ -14,7 +14,7 @@ async function main() {
     try { await import('@napi-rs/canvas'); checks.canvas = true; } catch { checks.canvas = false; }
     try { await import('sharp'); checks.sharp = true; } catch { checks.sharp = false; }
     checks.fonts = ['Caveat.ttf', 'NotoSans.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
-    console.log(JSON.stringify({checks, gemini_key_present: Boolean(process.env.GEMINI_API_KEY), network_checked: false, note: 'Key presence is not quota/billing verification'}, null, 2));
+    console.log(JSON.stringify({checks, agnes_key_present: Boolean(process.env.AGNES_API_KEY), network_checked: false, note: 'Key presence is not quota/billing verification'}, null, 2));
     if (Object.values(checks).some(v => !v)) process.exitCode = 1;
   } else if (command === 'probe') console.log(JSON.stringify(probe(path.resolve(args[0])), null, 2));
   else if (command === 'init') {

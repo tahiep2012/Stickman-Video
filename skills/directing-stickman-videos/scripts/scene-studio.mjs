@@ -26,6 +26,8 @@ import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const sharp = require('sharp');
 
+import { generateAgnesImage } from './agnes-media.mjs';
+
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 export const B1_STYLE_ANCHOR = `Minimalist 2D hand-drawn stick figure, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, isolated on solid pure white background (#FFFFFF), strictly 2D flat, no 3D shading, no gradients, no shadows, consistent line weight, cozy hand-drawn illustration style, completely standalone figure not touching image boundaries.`;
@@ -172,6 +174,19 @@ async function main() {
     const out = args[1] || target.replace(/\.[^.]+$/, '.png');
     await toTransparentSquare(target, out);
     console.log(JSON.stringify({ input: target, output: out, status: 'normalized_transparent' }));
+  } else if (cmd === 'generate-shot') {
+    const [out, ...descParts] = args;
+    const desc = descParts.join(' ');
+    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--allow-network]');
+    const fullPrompt = `${B1_STYLE_ANCHOR} Scene description: ${desc}`;
+    console.log(`Generating stickman artwork via Agnes AI: "${desc}"...`);
+    const res = await generateAgnesImage({
+      prompt: fullPrompt,
+      output: out,
+      model: 'agnes-image-2.5-flash',
+      normalize: true
+    });
+    console.log(JSON.stringify(res, null, 2));
   } else if (cmd === 'validate-unique') {
     const [scenesDir, count] = args;
     if (!scenesDir || !count) throw new Error('Usage: scene-studio.mjs validate-unique <scenes_dir> <total_count>');
@@ -183,6 +198,7 @@ async function main() {
     muxAudio(video, audio, out);
   } else {
     console.log(`Usage:`);
+    console.log(`  node scene-studio.mjs generate-shot <output_png> <description>`);
     console.log(`  node scene-studio.mjs transparent <file> [output_file]`);
     console.log(`  node scene-studio.mjs validate-unique <scenes_dir> <count>`);
     console.log(`  node scene-studio.mjs mux-audio <film.mp4> <voice.m4a|mp3> [output.mp4]`);

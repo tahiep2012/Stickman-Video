@@ -202,33 +202,33 @@ test('nested cache symlink cannot redirect renderer-owned writes', async t => {
   assert.deepEqual(fs.readdirSync(external), ['sentinel']);
 });
 test('media adapter cannot generate without network opt-in', () => {
-  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/gemini-media.mjs'), 'speech'], {encoding: 'utf8'}); assert.notEqual(r.status, 0); assert.match(r.stderr, /Network disabled/);
+  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/agnes-media.mjs'), 'image'], {encoding: 'utf8'}); assert.notEqual(r.status, 0); assert.match(r.stderr, /Network disabled/);
 });
-test('media adapter rejects extra speech direction before credentials or network', () => {
-  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/gemini-media.mjs'), 'speech', '--direction', 'old-voice-direction.txt', '--allow-network'], {encoding: 'utf8', env: {...process.env, GEMINI_API_KEY: ''}});
-  assert.notEqual(r.status, 0); assert.match(r.stderr, /selected named voice.*remove --direction/);
+test('media adapter requires prompt and output', () => {
+  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/agnes-media.mjs'), 'image', '--allow-network'], {encoding: 'utf8', env: {...process.env, AGNES_API_KEY: 'test-key'}});
+  assert.notEqual(r.status, 0); assert.match(r.stderr, /Required --output|Prompt required/);
 });
-test('media adapter sends only exact narration and the selected named voice', t => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'stickman-speech-request-test-'));
+test('media adapter sends prompt to Agnes AI image generations endpoint', t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'stickman-agnes-request-test-'));
   t.after(() => fs.rmSync(dir, {recursive: true, force: true}));
-  const text = 'Write. Edit. Publish. Refresh.', file = path.join(dir, 'narration.txt');
-  fs.writeFileSync(file, text);
-  const adapter = path.join(ROOT, 'scripts/gemini-media.mjs');
-  const argv = [process.execPath, adapter, 'speech', '--text', file, '--output', path.join(dir, 'narration.wav'), '--model', 'offline-tts', '--voice', 'Bodi', '--allow-network'];
+  const prompt = 'Minimalist stickman illustration', file = path.join(dir, 'prompt.txt');
+  fs.writeFileSync(file, prompt);
+  const adapter = path.join(ROOT, 'scripts/agnes-media.mjs');
+  const argv = [process.execPath, adapter, 'image', '--prompt-file', file, '--output', path.join(dir, 'shot.png'), '--model', 'agnes-image-2.5-flash', '--allow-network'];
   const runner = `
     import assert from 'node:assert/strict';
     process.argv = ${JSON.stringify(argv)};
     globalThis.fetch = async (url, options) => {
-      assert.equal(url, 'https://generativelanguage.googleapis.com/v1beta/models/offline-tts:generateContent');
-      assert.deepEqual(JSON.parse(options.body), {
-        contents: [{role: 'user', parts: [{text: ${JSON.stringify(text)}}]}],
-        generationConfig: {responseModalities: ['AUDIO'], speechConfig: {voiceConfig: {prebuiltVoiceConfig: {voiceName: 'Bodi'}}}}
-      });
-      return {ok: false, status: 418};
+      assert.equal(url, 'https://apihub.agnes-ai.com/v1/images/generations');
+      const body = JSON.parse(options.body);
+      assert.equal(body.model, 'agnes-image-2.5-flash');
+      assert.equal(body.prompt, ${JSON.stringify(prompt)});
+      assert.equal(body.response_format, 'b64_json');
+      return {ok: false, status: 418, text: async () => 'Simulated test error'};
     };
     await import(${JSON.stringify(pathToFileURL(adapter).href)});
   `;
-  const r = spawnSync(process.execPath, ['--input-type=module', '--eval', runner], {encoding: 'utf8', env: {...process.env, GEMINI_API_KEY: 'offline-test-only-not-a-real-key'}, timeout: 10000});
-  assert.equal(r.status, 1); assert.match(r.stderr, /Provider HTTP 418/);
-  assert.ok(!fs.existsSync(path.join(dir, 'narration.wav')));
+  const r = spawnSync(process.execPath, ['--input-type=module', '--eval', runner], {encoding: 'utf8', env: {...process.env, AGNES_API_KEY: 'offline-test-only-not-a-real-key'}, timeout: 10000});
+  assert.equal(r.status, 1); assert.match(r.stderr, /Agnes AI HTTP 418/);
+  assert.ok(!fs.existsSync(path.join(dir, 'shot.png')));
 });

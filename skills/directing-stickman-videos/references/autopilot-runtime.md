@@ -93,20 +93,18 @@ Exports include an encoded opening-audio diagnostic. Approval is blocked on a fl
 
 `scripts/align_captions.py AUDIO --output WORDS.json` uses optional `openai-whisper` and an already cached `base` model. Set `--model NAME`, `--language en`, `--device cpu` as appropriate. `--allow-model-download` explicitly permits model download; otherwise it stops if absent. Do not install or download multi-GB models automatically. Already supplied aligned captions need no Whisper dependency.
 
-## Optional Gemini API adapters
+## Agnes AI Image Generation Adapter
 
-The renderer consumes compatible local audio and image files; it is not tied to the service that generated them. Follow [selected-provider execution](autopilot.md#selected-provider-execution) for another service. `doctor`'s `gemini_key_present` is informational for the Gemini route, not a requirement for all providers or proof of generation readiness. Do not repurpose `gemini-media.mjs` with another provider's key/base URL; use a suitable tool or project-local adapter instead.
+The renderer consumes compatible local audio and image files; it is not tied to the service that generated them. Follow [selected-provider execution](autopilot.md#selected-provider-execution) for another service. `doctor`'s `agnes_key_present` is informational for the Agnes AI route, not a requirement for all providers or proof of generation readiness. Do not repurpose `agnes-media.mjs` with an incompatible provider's key/base URL; use a suitable tool or project-local adapter instead.
 
-Browser/native generation tools can be used instead. The bundled Gemini adapter requires `GEMINI_API_KEY` in the environment, the chosen model ID and explicit network authorization. Its commands make **one request, no automatic retries**, do not print keys/provider response bodies, and use only Google's fixed HTTPS endpoint. Failures/timeouts are recorded; inspect service history before trying again. Model access/quota is not validated by key presence. Private reference upload is opt-in through explicit `--reference` paths.
+The bundled Agnes AI adapter requires `AGNES_API_KEY` in the environment (or in `.env`), the chosen model ID (`agnes-image-2.5-flash` by default) and explicit network authorization. Its commands make **one request, no automatic retries**, do not print keys/provider response bodies, and use Agnes AI's official HTTPS endpoint (`https://apihub.agnes-ai.com/v1`). Failures/timeouts are recorded; inspect service history before trying again.
 
 ```bash
-node scripts/gemini-media.mjs speech --text narration.txt --output narration.wav \
-  --model YOUR_AVAILABLE_TTS_MODEL --voice Bodi --allow-network
-node scripts/gemini-media.mjs image --prompt scene-prompt.txt --output scene.png \
-  --model YOUR_AVAILABLE_IMAGE_MODEL --reference character.png --allow-network
+node scripts/agnes-media.mjs image --prompt scene-prompt.txt --output scene.png \
+  --model agnes-image-2.5-flash --allow-network --normalize
 ```
 
-The speech text file contains only the exact approved spoken words. Use the selected named voice without extra voice/style instructions; `--direction` is not supported. Verify that the selected TTS model offers the chosen voice before generation. Resolve settings as explicit user choice → selected B-style default → B common fallback; the Bodi command above illustrates the new B1 default, not a voice required for every B style. Image output is saved from the provider's native image payload, not recreated from base64 text. No default image model is assumed. API calls may be billed; the flags are not a substitute for user authorization. No API-backed request is needed for the included offline example or packaging tests.
+Image output is saved from the provider's native image payload (Base64 or URL). When `--normalize` is specified, the background is automatically trimmed and scaled to the 85% safe canvas with pure transparency. API calls may be billed; the flags are not a substitute for user authorization. No API-backed request is needed for the included offline example or packaging tests.
 
 ## Recovery and verification
 
