@@ -22,7 +22,7 @@ All media paths are relative to `project.json` (or absolute local paths); `@b1/â
 {
   "version": 1,
   "style": "B1",
-  "width": 1280, "height": 720, "fps": 30,
+  "width": 1920, "height": 1080, "fps": 30,
   "voice": {"path": "narration.wav", "lead": 0.15, "tail": 0.35},
   "captions": [{"start": 0.3, "end": 2.5, "text": "Your spoken phrase."}],
   "shots": [{

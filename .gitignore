@@ -9,4 +9,6 @@ __pycache__/
 autopilot-work/
 output/cache/
 **/output/cache/
+projects/
+
 
