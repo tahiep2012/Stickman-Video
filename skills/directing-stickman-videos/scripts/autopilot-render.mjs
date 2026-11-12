@@ -84,9 +84,13 @@ export async function painter(p) {
         gradient.addColorStop(1, 'rgba(10,12,14,0)');
         ctx.fillStyle = gradient; ctx.fillRect(0, 0, w, l.h);
       } else if (l.type === 'text') {
-        const size = l.size || 52; ctx.font = `${l.bold ? 700 : 400} ${size}px ${['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand'}`; ctx.fillStyle = l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
-        const lines = wrap(ctx, l.text, l.w || 1080 - x);
-        lines.forEach((s, i) => ctx.fillText(s, 0, i * size * 1.15));
+        if (p.hideTextLayers || p.disableTextLayers || p.noTextLayers || process.env.HIDE_TEXT_LAYERS === '1') {
+          // In-scene text layers completely suppressed
+        } else {
+          const size = l.size || 52; ctx.font = `${l.bold ? 700 : 400} ${size}px ${['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand'}`; ctx.fillStyle = l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
+          const lines = wrap(ctx, l.text, l.w || 1080 - x);
+          lines.forEach((s, i) => ctx.fillText(s, 0, i * size * 1.15));
+        }
       } else {
         let points = l.points;
         if (l.type === 'underline') points = [[0, 1], [w * 0.25, -1], [w * 0.55, 2], [w, -2]];

@@ -3,7 +3,8 @@
  * Antigravity Scene Studio for directing-stickman-videos
  * 
  * Features:
- * 1. Style Anchor & Prompt Generation for Antigravity's image-generator subagent.
+ * 1. AI-Only Image Generation: EXCLUSIVELY uses AI Image APIs (Gemini Imagen, Agnes AI, or image-generator subagent).
+ *    Internal procedural SVG vector generation is STRICTLY FORBIDDEN.
  * 2. Background Transparency & Zero-Edge-Cut Normalization:
  *    - Automatically removes white/off-white background.
  *    - Trims transparent borders and resizes to 85% safe canvas.
