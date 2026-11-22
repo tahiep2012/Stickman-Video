@@ -11,7 +11,7 @@ When this Skill is launched without all production parameters already fixed, **A
 
 1. **Table 1 · Niche**: Present 3 options — **Tâm Lý Học**, **Triết Lý**, **Kỹ Năng Sống**.
 2. **Table 2 · Live Topic Radar**: Run `search_web` on the chosen niche and propose curated high-interest topics for selection.
-3. **Table 3 · Character Style**: Present the 11 visual styles (highlighting `B1`, `B2`, `B5` for explainer channels) for selection.
+3. **Table 3 · Character Style**: Present the 12 visual styles — highlighting **`B6 · Ink Traveler (Người Lữ Hành Khăn Choàng)`** as the #1 recommended signature brand style (alongside `B1`, `B2`, `B5`, and `A1–A6`, `B3–B4`). When `B6` is selected, load [B6 Ink Traveler DNA](references/b6-ink-traveler.md) and repeat the locked Character DNA + Brand Color Lock verbatim in every scene prompt.
 4. **Table 4 · Execution Mode**: Choose **Auto** (fully automated end-to-end) or **Semi-Auto** (pause after scene image generation so the user can review/regenerate individual scene images via contact sheet before auto-finishing the video).
 5. **Table 5 · Video Aspect Ratio & Scene Pacing**:
    - **`9:16`** (Full Frame `1080x1920`) → auto-segment scenes at **3–5 seconds per scene**.
@@ -29,6 +29,7 @@ Keep the existing installation/name. Honor known choices; ask one short question
 - **B4 · Survival Thriller:** read [B4](references/b4-survival-storytelling.md), [audio direction](references/b4-audio-direction.md), [opening direction](references/b4-opening-direction.md) and [production check](references/b4-repeatability-check.md). Preserve the white-glove reference lock; limb animation is not a completion requirement. Apply the first-three-second visual escalation gate and, for horror, the story-led horror visibility gate. Use fixed Brian, first-frame sound/early narration, a subtle continuous bed and causal SFX. Select B4 in the shared installed runtime. No silent title pad, automatic narrator substitution or alias to another style.
 
 - **B5 · Character Explainer:** read [B5](references/b5-character-explainer.md) and [left-stage choreography](references/b5-left-stage-motion.md) before authoring. No B1–B4 alias.
+- **B6 · Ink Traveler (Brand Signature):** read [B6 Ink Traveler DNA](references/b6-ink-traveler.md) and load `assets/b6/character-dna.json` before authoring. Enforce the immutable Character DNA Lock (smooth round white head, thin round wire glasses, minimalist white knee-length coat, muted terracotta-amber knitted scarf) and Brand Color Lock (monochrome secondary cast) verbatim in every scene prompt across `16:9` and `9:16` full-frame scenes.
 
 A and B share installation, not production contracts. The rules from **A · Director** to the end apply only to A1–A5, not to A6 or any B style. Each B owns its visuals, captions, voice, pacing and SFX; never default to B1 or import A's setup, ten-second clips, approval or visible-text rules. Preserve unrelated styles when revising one route.
 

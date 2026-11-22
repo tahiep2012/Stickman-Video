@@ -26,22 +26,23 @@ Ngay sau khi người dùng chọn 1 mục ở Bảng 1:
 
 ## Bảng 3 · Chọn Phong Cách Nhân Vật (Visual Style)
 
-Sau khi người dùng chọn chủ đề, hiển thị danh sách phong cách nhân vật trong bộ skill (đưa nhóm phù hợp nhất cho kênh lên đầu):
+Sau khi người dùng chọn chủ đề, hiển thị danh sách phong cách nhân vật trong bộ skill (đưa nhân vật thương hiệu độc quyền `B6` lên vị trí số 1):
 
 ### Nhóm gợi ý hàng đầu cho kênh Giải thích / Triết lý / Tâm lý (Mode B · Autopilot)
-1. **B1 · Minimal Line Art** *(Khuyên dùng)* — Nét mực vẽ tay tối giản, sạch sẽ, dễ theo dõi lập luận.
-2. **B2 · Colorful Hand-Drawn** — Vẽ tay màu sắc dịu nhẹ trên nền giấy kem, sâu lắng & chữa lành.
-3. **B5 · Character Explainer** — Có 1 nhân vật dẫn chuyện đặc trưng đứng thuyết trình kết hợp người que minh họa.
+1. **B6 · Ink Traveler (Người Lữ Hành Khăn Choàng)** *(Khuyên dùng số 1 — Thương hiệu độc quyền của kênh)* — Nét vẽ tay tối giản Minimal Line Art với bộ **Character DNA khóa cứng** (đầu tròn trắng, kính tròn mảnh, áo choàng trắng tối giản, **khăn choàng cam đất độc bản**; toàn bộ nhân vật phụ chỉ vẽ đen trắng thuần để khóa nhận diện 0.5 giây). Khi chọn `B6`, **BẮT BUỘC** đọc và áp dụng nguyên văn chuẩn DNA từ [`references/b6-ink-traveler.md`](b6-ink-traveler.md).
+2. **B1 · Minimal Line Art** — Nét mực vẽ tay người que tối giản truyền thống, sạch sẽ, dễ theo dõi lập luận.
+3. **B2 · Colorful Hand-Drawn** — Vẽ tay màu sắc dịu nhẹ trên nền giấy kem, sâu lắng & chữa lành.
+4. **B5 · Character Explainer** — Có 1 nhân vật dẫn chuyện đặc trưng đứng thuyết trình kết hợp người que minh họa.
 
 ### Các phong cách khác trong bộ skill
-4. **B3 · Retro TV** — Phong cách TV cổ điển nền tối, bí ẩn.
-5. **B4 · Survival Thriller** — Phong cách kịch tính nền tối, găng tay trắng.
-6. **A1 · Classic Black & White** — Đen trắng cổ điển (`Light` hoặc `Dark`) kèm điểm nhấn màu nổi.
-7. **A2 · Modern Pop (Beanie Zeke)** — Nhân vật mũ len đỏ, áo vàng (`2A` Tech Studio hoặc `2B` Cinematic Story).
-8. **A3 · Prehistoric Cave** — Hang động tiền sử hài hước châm biếm.
-9. **A4 · Cozy Storytelling** — Hoạt hình 2D ấm áp đời thường nhiều bối cảnh.
-10. **A5 · Historical Cartoon** — Hoạt hình lịch sử đổ bóng cel-shaded.
-11. **A6 · Amber Noir** — Phong cách Noir ánh đèn hổ phách tương phản bóng tối sâu.
+5. **B3 · Retro TV** — Phong cách TV cổ điển nền tối, bí ẩn.
+6. **B4 · Survival Thriller** — Phong cách kịch tính nền tối, găng tay trắng.
+7. **A1 · Classic Black & White** — Đen trắng cổ điển (`Light` hoặc `Dark`) kèm điểm nhấn màu nổi.
+8. **A2 · Modern Pop (Beanie Zeke)** — Nhân vật mũ len đỏ, áo vàng (`2A` Tech Studio hoặc `2B` Cinematic Story).
+9. **A3 · Prehistoric Cave** — Hang động tiền sử hài hước châm biếm.
+10. **A4 · Cozy Storytelling** — Hoạt hình 2D ấm áp đời thường nhiều bối cảnh.
+11. **A5 · Historical Cartoon** — Hoạt hình lịch sử đổ bóng cel-shaded.
+12. **A6 · Amber Noir** — Phong cách Noir ánh đèn hổ phách tương phản bóng tối sâu.
 
 ---
 

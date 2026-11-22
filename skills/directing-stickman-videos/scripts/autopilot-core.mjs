@@ -7,7 +7,7 @@ import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
 import {prepareB4} from './b4-runtime.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const STYLES = ['B1', 'B2', 'B3', 'B4'];
+export const STYLES = ['B1', 'B2', 'B3', 'B4', 'B6'];
 export const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 export const FFPROBE = process.env.FFPROBE || 'ffprobe';
 export const sha = value => crypto.createHash('sha256').update(value).digest('hex');
@@ -52,7 +52,7 @@ export function designPlane(project) {
 export function loadProject(file, {seconds} = {}) {
   file = fs.realpathSync(path.resolve(file));
   const p = json(file), base = path.dirname(file);
-  if (p.version !== 1 || !STYLES.includes(p.style)) throw new Error('Expected version 1 and style B1, B2, B3 or B4');
+  if (p.version !== 1 || !STYLES.includes(p.style)) throw new Error('Expected version 1 and style B1, B2, B3, B4 or B6');
   if (p.style !== 'B3' && p.television !== undefined) throw new Error('Television finish belongs to B3 only');
   if (p.style !== 'B4' && ['ambience', 'dialogue', 'audio_cuts', 'opening_audio_override'].some(k => p[k] !== undefined)) throw new Error('B4 audio tracks belong to B4 only');
   number(p.width, 'width', 256, 3840); number(p.height, 'height', 256, 3840); number(p.fps, 'fps', 12, 60);

@@ -35,7 +35,35 @@ export const B1_STYLE_ANCHOR = `Minimalist 2D hand-drawn stick figure animation 
 
 export const B1_STYLE_ANCHOR_9x16 = `Minimalist 2D hand-drawn stick figure animation style, 9:16 vertical cinematic full-frame composition, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, full-frame illustrated background filling the entire vertical 9:16 canvas with foreground and background depth, strictly 2D flat, no 3D shading, consistent line weight, cozy hand-drawn illustration style, no text, no typography.`;
 
-export function getStyleAnchor(aspect = '16:9') {
+const B6_DNA_FALLBACK = {
+  style_id: 'B6',
+  name: 'Ink Traveler (Người Lữ Hành Khăn Choàng)',
+  base_style: 'Minimalist 2D hand-drawn editorial line art illustration, clean uniform black ink linework on warm off-white sketchbook paper background, strictly flat 2D minimal shading, no gradients, no 3D rendering, no text, no letters, no words, no numbers.',
+  protagonist_dna: 'Protagonist Character DNA (LOCKED): minimalist slender hand-drawn figure with a clean smooth round white bald head (no hair, no nose, no ears), simple expressive small black-ink dot eyes and subtle curved eyebrows, wearing thin round black wire glasses, a crisp white minimalist knee-length tailored overcoat drawn in clean black ink outlines with simple slim white trousers and dark ink shoes, and ONE signature flowing muted terracotta-amber knitted scarf wrapped neatly around the neck with two short tails hanging down the front.',
+  color_lock: 'Color Lock: ONLY the protagonist wears the warm muted terracotta-amber scarf and thin round wire glasses; whenever secondary people appear in the scene, draw them strictly as faint monochrome black-and-white ink outlines without color, scarves, or glasses (do not add extra people unless described in the scene).',
+  aspect_anchors: {
+    '16:9': '16:9 widescreen cinematic full-frame composition, wide illustrated editorial background spreading edge-to-edge across the entire frame.',
+    '9:16': '9:16 vertical cinematic full-frame composition, rich vertical editorial background with foreground and background depth filling the entire frame.'
+  }
+};
+
+function loadB6Dna() {
+  const p = path.join(ROOT, 'assets', 'b6', 'character-dna.json');
+  try {
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch {
+    return B6_DNA_FALLBACK;
+  }
+}
+
+export const B6_TRAVELER_DNA = loadB6Dna();
+
+export function getStyleAnchor(aspect = '16:9', style = 'B6') {
+  const normalizedStyle = String(style || 'B6').toUpperCase();
+  if (normalizedStyle === 'B6' || normalizedStyle === 'TRAVELER') {
+    const aspectAnchor = B6_TRAVELER_DNA.aspect_anchors?.[aspect] || B6_TRAVELER_DNA.aspect_anchors['16:9'];
+    return `${B6_TRAVELER_DNA.base_style} ${aspectAnchor} ${B6_TRAVELER_DNA.protagonist_dna} ${B6_TRAVELER_DNA.color_lock}`;
+  }
   return aspect === '9:16' ? B1_STYLE_ANCHOR_9x16 : B1_STYLE_ANCHOR;
 }
 
@@ -333,12 +361,18 @@ async function main() {
     console.log(JSON.stringify(res, null, 2));
   } else if (cmd === 'generate-shot') {
     const normalizeFlag = args.includes('--normalize');
-    const cleanArgs = args.filter((a, i) => a !== '--allow-network' && a !== '--normalize' && a !== '--aspect' && args[i - 1] !== '--aspect');
+    const style = (flagValue('--style') || 'B6').toUpperCase();
+    const cleanArgs = args.filter((a, i) =>
+      a !== '--allow-network' &&
+      a !== '--normalize' &&
+      a !== '--aspect' && args[i - 1] !== '--aspect' &&
+      a !== '--style' && args[i - 1] !== '--style'
+    );
     const [out, ...descParts] = cleanArgs;
     const desc = descParts.join(' ');
-    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--aspect 16:9|9:16] [--normalize]');
-    const fullPrompt = `${getStyleAnchor(aspect)} Scene description: ${desc}`;
-    console.log(`Generating ${aspect} full-frame stickman artwork via Agnes AI: "${desc}"...`);
+    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--style B6|B1] [--aspect 16:9|9:16] [--normalize]');
+    const fullPrompt = `${getStyleAnchor(aspect, style)} Scene: ${desc}`;
+    console.log(`Generating ${style} (${aspect}) full-frame artwork via Agnes AI: "${desc}"...`);
     const res = await generateAgnesImage({
       prompt: fullPrompt,
       output: out,
@@ -358,7 +392,7 @@ async function main() {
     muxAudio(video, audio, out);
   } else {
     console.log(`Usage:`);
-    console.log(`  node scene-studio.mjs generate-shot <output_png> <description> [--aspect 16:9|9:16] [--normalize]`);
+    console.log(`  node scene-studio.mjs generate-shot <output_png> <description> [--style B6|B1] [--aspect 16:9|9:16] [--normalize]`);
     console.log(`  node scene-studio.mjs fullframe <file> [output_file] [--aspect 16:9|9:16]`);
     console.log(`  node scene-studio.mjs transparent <file> [output_file] [--aspect 16:9|9:16]`);
     console.log(`  node scene-studio.mjs contact-sheet <scenes_dir> [output_png] [cols]`);
