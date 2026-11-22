@@ -298,7 +298,7 @@ export async function generateVoiceCit(options = {}) {
     scriptFile,
     outputAudio = 'narration.mp3',
     outputSrt = 'input.srt',
-    voice = process.env.CIT_VOICE || 'I Thought',
+    voice = process.env.CIT_VOICE || 'Văn Hải',
     speed = parseFloat(process.env.CIT_SPEED || '1.0'),
     baseUrl = process.env.CIT_BASE_URL || 'http://127.0.0.1:8001'
   } = options;
@@ -494,7 +494,7 @@ async function main() {
     const [scriptOrText, projectDir] = cleanArgs;
     if (!scriptOrText) throw new Error('Usage: scene-studio.mjs voice-cit <script_file|text> [project_dir] [--voice <voice>] [--speed <speed>]');
     const pDir = projectDir ? path.resolve(projectDir) : process.cwd();
-    const voice = flagValue('--voice') || process.env.CIT_VOICE || 'I Thought';
+    const voice = flagValue('--voice') || process.env.CIT_VOICE || 'Văn Hải';
     const speed = parseFloat(flagValue('--speed') || process.env.CIT_SPEED || '1.0');
     const isFile = fs.existsSync(scriptOrText);
     const res = await generateVoiceCit({

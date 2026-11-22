@@ -44,7 +44,7 @@ def load_env(env_path=None):
 load_env()
 
 DEFAULT_BASE_URL = os.environ.get("CIT_BASE_URL", "http://127.0.0.1:8001").rstrip("/")
-DEFAULT_VOICE = os.environ.get("CIT_VOICE", "I Thought")
+DEFAULT_VOICE = os.environ.get("CIT_VOICE", "Văn Hải")
 DEFAULT_SPEED = float(os.environ.get("CIT_SPEED", "1.0"))
 
 

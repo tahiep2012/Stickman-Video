@@ -105,7 +105,7 @@ Sau khi chọn chế độ vận hành, hiển thị 2 lựa chọn:
 ### Bước 5 · Tạo Giọng Đọc (CIT Voice Studio), Phụ Đề & Render Video Hoàn Chỉnh
 - **Tự động kết nối CIT Voice Studio (`http://127.0.0.1:8001`)**:
   - Gửi yêu cầu `GET /health` để kiểm tra máy chủ CIT Voice Studio trên máy.
-  - Khi CIT đang mở, tự động gọi `python scripts/generate_voice_cit.py` hoặc `node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit` để tạo trọn gói âm thanh phòng thu **48.000 Hz (`narration.mp3`)** và file phụ đề đồng bộ chuẩn từng mili-giây **(`input.srt`)** với giọng đọc **`I Thought`** (hoặc giọng đã cấu hình trong `.env`). Xem chi tiết tại [`references/cit-voice-studio.md`](cit-voice-studio.md).
+  - Khi CIT đang mở, tự động gọi `python scripts/generate_voice_cit.py` hoặc `node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit` để tạo trọn gói âm thanh phòng thu **48.000 Hz (`narration.mp3`)** và file phụ đề đồng bộ chuẩn từng mili-giây **(`input.srt`)** với giọng đọc mặc định **`Văn Hải`** (hoặc giọng đã cấu hình trong `.env`). Xem chi tiết tại [`references/cit-voice-studio.md`](cit-voice-studio.md).
   - *(Phương án dự phòng: Nếu CIT Voice Studio chưa mở, thông báo người dùng bật phần mềm hoặc sử dụng Edge-TTS).*
 - Xây dựng `projects/<slug>/project.json` theo đúng khung hình đã chọn (`1920x1080` cho `16:9` hoặc `1080x1920` cho `9:16`), sử dụng `buildPureCinematicLayout` để mọi hình ảnh hiển thị **Full Frame (`fit: 'cover'`)** không có viền thừa.
 - Render video hoàn chỉnh bằng `autopilot.mjs` (Mode B) hoặc `director-video-pipeline.mjs` (Mode A), ghép âm thanh phòng thu (`mux-audio`) và bàn giao file MP4 cuối cùng cho người dùng.

@@ -38,12 +38,12 @@ Cấu hình máy chủ và giọng đọc mặc định trong file `.env` ở th
 ```ini
 # CIT Voice Studio Configuration (Offline VieNeu-TTS v3 Turbo 48kHz)
 CIT_BASE_URL=http://127.0.0.1:8001
-CIT_VOICE=I Thought
+CIT_VOICE=Văn Hải
 CIT_SPEED=1.0
 ```
 
 - **`CIT_BASE_URL`**: Địa chỉ máy chủ cục bộ (mặc định: `http://127.0.0.1:8001`).
-- **`CIT_VOICE`**: Tên giọng đọc mong muốn (mặc định: `I Thought`).
+- **`CIT_VOICE`**: Tên giọng đọc mong muốn (mặc định: `Văn Hải`).
 - **`CIT_SPEED`**: Tốc độ đọc (mặc định: `1.0`).
 
 ---
@@ -56,7 +56,7 @@ CIT_SPEED=1.0
 ```json
 {
   "text": "Đã bao giờ bạn cố ngồi xem hết một bộ phim cực kỳ nhàm chán...",
-  "voice_id": "I Thought",
+  "voice_id": "Văn Hải",
   "speed": 1.0,
   "format": "wav"
 }
@@ -85,7 +85,7 @@ python scripts/generate_voice_cit.py --list-voices
 python scripts/generate_voice_cit.py \
     --script-file projects/<tên-dự-án>/script.md \
     --project-dir projects/<tên-dự-án> \
-    --voice "I Thought"
+    --voice "Văn Hải"
 ```
 
 ### Cách 2 · Dùng qua `scene-studio.mjs` (Node.js)
@@ -94,7 +94,7 @@ python scripts/generate_voice_cit.py \
 node skills/directing-stickman-videos/scripts/scene-studio.mjs cit-health
 
 # Tạo giọng đọc và phụ đề từ kịch bản
-node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit projects/<tên-dự-án>/script.md projects/<tên-dự-án> --voice "I Thought"
+node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit projects/<tên-dự-án>/script.md projects/<tên-dự-án> --voice "Văn Hải"
 ```
 
 ---
