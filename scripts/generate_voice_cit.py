@@ -109,27 +109,93 @@ def clean_script_text(text: str) -> str:
     return text
 
 
-def generate_voice_cit(
+def parse_srt_timestamp(ts: str) -> float:
+    """Parse SRT timestamp '00:01:23,456' to float seconds."""
+    m = re.match(r"(\d+):(\d+):(\d+)[,\.](\d+)", ts.strip())
+    if not m:
+        return 0.0
+    h, mi, s, ms = map(int, m.groups())
+    return h * 3600.0 + mi * 60.0 + s + ms / 1000.0
+
+
+def format_srt_timestamp(seconds: float) -> str:
+    """Format float seconds to SRT timestamp '00:01:23,456'."""
+    seconds = max(0.0, float(seconds))
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = int(seconds % 60)
+    ms = int(round((seconds - int(seconds)) * 1000))
+    if ms >= 1000:
+        s += 1
+        ms -= 1000
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+
+
+def shift_srt_chunk(srt_text: str, time_offset: float, starting_index: int = 1) -> tuple[str, int]:
+    """Shift all timestamps in an SRT string by time_offset seconds and renumber entries."""
+    pattern = re.compile(
+        r"(\d+)\s*\n(\d+:\d+:\d+[,\.]\d+)\s*-->\s*(\d+:\d+:\d+[,\.]\d+)\s*\n([\s\S]*?)(?=\n\s*\d+\s*\n|\Z)"
+    )
+    shifted_blocks = []
+    curr_idx = starting_index
+    for m in pattern.finditer(srt_text.strip()):
+        start_ts = parse_srt_timestamp(m.group(2)) + time_offset
+        end_ts = parse_srt_timestamp(m.group(3)) + time_offset
+        body = m.group(4).strip()
+        if body:
+            block = f"{curr_idx}\n{format_srt_timestamp(start_ts)} --> {format_srt_timestamp(end_ts)}\n{body}\n"
+            shifted_blocks.append(block)
+            curr_idx += 1
+    return "\n".join(shifted_blocks), curr_idx
+
+
+def split_into_chunks(raw_or_cleaned_text: str, max_words: int = 300) -> list[str]:
+    """Split long text into logical, manageable sections for reliable TTS generation."""
+    # Check if text has markdown section headers like ### Phần X: or ## Chương X:
+    if re.search(r"^###?\s+(?:Phần|Chương|Section)\s+\d+:", raw_or_cleaned_text, flags=re.MULTILINE):
+        raw_parts = re.split(r"(?=^###?\s+(?:Phần|Chương|Section)\s+\d+:)", raw_or_cleaned_text, flags=re.MULTILINE)
+        chunks = []
+        for part in raw_parts:
+            cleaned = clean_script_text(part)
+            if cleaned and len(cleaned.split()) >= 10:
+                chunks.append(cleaned)
+        if chunks:
+            return chunks
+
+    # Fallback: split by double newline paragraphs
+    paragraphs = [p.strip() for p in raw_or_cleaned_text.split("\n\n") if p.strip()]
+    chunks = []
+    current_chunk = []
+    current_words = 0
+
+    for para in paragraphs:
+        cleaned_para = clean_script_text(para) if not para.startswith("###") else ""
+        if not cleaned_para:
+            continue
+        p_words = len(cleaned_para.split())
+        if current_words + p_words > max_words and current_chunk:
+            chunks.append("\n\n".join(current_chunk))
+            current_chunk = [cleaned_para]
+            current_words = p_words
+        else:
+            current_chunk.append(cleaned_para)
+            current_words += p_words
+
+    if current_chunk:
+        chunks.append("\n\n".join(current_chunk))
+
+    return chunks if chunks else [clean_script_text(raw_or_cleaned_text)]
+
+
+def _call_cit_api_single(
     text: str,
-    output_audio: str = "narration.mp3",
-    output_srt: str = "input.srt",
-    voice_id: str = DEFAULT_VOICE,
-    speed: float = DEFAULT_SPEED,
-    base_url: str = DEFAULT_BASE_URL,
+    voice_id: str,
+    speed: float,
+    base_url: str,
     audio_format: str = "wav",
     timeout: float = 300.0,
-):
-    """
-    Calls CIT Voice Studio API to generate audio + srt.
-    Endpoint: POST /api/tts/generate-with-subtitles
-    """
-    health = check_health(base_url)
-    if not health.get("online"):
-        raise ConnectionError(
-            f"CIT Voice Studio is NOT running at {base_url}. "
-            "Please start CIT-Voice-Studio.exe on your machine first."
-        )
-
+) -> tuple[bytes, str, float]:
+    """Single API call to CIT Voice Studio."""
     endpoint = f"{base_url}/api/tts/generate-with-subtitles"
     payload = {
         "text": text,
@@ -137,7 +203,6 @@ def generate_voice_cit(
         "speed": speed,
         "format": audio_format,
     }
-
     req_data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         endpoint,
@@ -166,56 +231,141 @@ def generate_voice_cit(
     if not audio_b64:
         raise ValueError("CIT Voice Studio returned no audio_base64 payload")
 
-    audio_bytes = base64.b64decode(audio_b64)
+    return base64.b64decode(audio_b64), srt_content, duration_seconds
 
-    # Save audio: if format is wav and requested output is .mp3, convert via ffmpeg
+
+def generate_voice_cit(
+    text: str,
+    output_audio: str = "narration.mp3",
+    output_srt: str = "input.srt",
+    voice_id: str = DEFAULT_VOICE,
+    speed: float = DEFAULT_SPEED,
+    base_url: str = DEFAULT_BASE_URL,
+    audio_format: str = "wav",
+    timeout: float = 300.0,
+    raw_source_text: str = None,
+):
+    """
+    Calls CIT Voice Studio API to generate audio + srt.
+    Supports automatic chunking for long-form scripts (8-12+ mins) to prevent timeouts.
+    """
+    health = check_health(base_url)
+    if not health.get("online"):
+        raise ConnectionError(
+            f"CIT Voice Studio is NOT running at {base_url}. "
+            "Please start CIT-Voice-Studio.exe on your machine first."
+        )
+
     out_audio_path = Path(output_audio).resolve()
     out_audio_path.parent.mkdir(parents=True, exist_ok=True)
-    temp_wav = out_audio_path.with_suffix(".temp.wav")
-    temp_wav.write_bytes(audio_bytes)
-
-    if out_audio_path.suffix.lower() == ".mp3":
-        try:
-            subprocess.run(
-                [
-                    "ffmpeg",
-                    "-y",
-                    "-i",
-                    str(temp_wav),
-                    "-c:a",
-                    "libmp3lame",
-                    "-b:a",
-                    "192k",
-                    "-ar",
-                    "48000",
-                    str(out_audio_path),
-                ],
-                check=True,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            if temp_wav.exists():
-                temp_wav.unlink()
-        except Exception:
-            # Fallback: rename directly if ffmpeg fails
-            if temp_wav.exists():
-                temp_wav.replace(out_audio_path)
-    else:
-        temp_wav.replace(out_audio_path)
-
-    # Save SRT
     out_srt_path = Path(output_srt).resolve()
     out_srt_path.parent.mkdir(parents=True, exist_ok=True)
-    out_srt_path.write_text(srt_content, encoding="utf-8")
+
+    # Determine chunks
+    source_to_split = raw_source_text or text
+    chunks = split_into_chunks(source_to_split, max_words=320)
+
+    if len(chunks) == 1:
+        # Single chunk mode
+        audio_bytes, srt_content, duration_seconds = _call_cit_api_single(
+            chunks[0], voice_id, speed, base_url, audio_format, timeout
+        )
+        temp_wav = out_audio_path.with_suffix(".temp.wav")
+        temp_wav.write_bytes(audio_bytes)
+        if out_audio_path.suffix.lower() == ".mp3":
+            try:
+                subprocess.run(
+                    ["ffmpeg", "-y", "-i", str(temp_wav), "-c:a", "libmp3lame", "-b:a", "192k", "-ar", "48000", str(out_audio_path)],
+                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                )
+                if temp_wav.exists():
+                    temp_wav.unlink()
+            except Exception:
+                if temp_wav.exists():
+                    temp_wav.replace(out_audio_path)
+        else:
+            temp_wav.replace(out_audio_path)
+
+        out_srt_path.write_text(srt_content, encoding="utf-8")
+        return {
+            "status": "success",
+            "audio_path": str(out_audio_path),
+            "srt_path": str(out_srt_path),
+            "duration_seconds": duration_seconds,
+            "voice_id": voice_id,
+            "speed": speed,
+            "sample_rate": 48000,
+            "chunks_count": 1,
+        }
+
+    # Multi-chunk mode (for long-form videos)
+    print(f"[CIT Bridge] Activating Long-form Chunking Mode: {len(chunks)} sections to synthesize...")
+    chunk_wav_files = []
+    all_shifted_srts = []
+    cumulative_duration = 0.0
+    current_srt_index = 1
+    temp_dir = out_audio_path.parent / "_temp_cit_chunks"
+    temp_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        for idx, chunk_text in enumerate(chunks, 1):
+            w_count = len(chunk_text.split())
+            print(f"[CIT Bridge] Synthesizing Section {idx}/{len(chunks)} ({w_count} words) with voice '{voice_id}'...")
+            c_audio_bytes, c_srt, c_duration = _call_cit_api_single(
+                chunk_text, voice_id, speed, base_url, audio_format="wav", timeout=timeout
+            )
+            c_wav_path = temp_dir / f"chunk_{idx:02d}.wav"
+            c_wav_path.write_bytes(c_audio_bytes)
+            chunk_wav_files.append(c_wav_path)
+
+            shifted_srt, next_idx = shift_srt_chunk(c_srt, cumulative_duration, current_srt_index)
+            all_shifted_srts.append(shifted_srt)
+            current_srt_index = next_idx
+            cumulative_duration += c_duration
+            print(f"[CIT Bridge] Section {idx}/{len(chunks)} completed: +{c_duration:.1f}s (Total: {cumulative_duration/60:.2f} mins)")
+
+        # Concatenate audio files using ffmpeg concat demuxer
+        concat_txt = temp_dir / "concat_list.txt"
+        concat_lines = [f"file '{p.resolve().as_posix()}'" for p in chunk_wav_files]
+        concat_txt.write_text("\n".join(concat_lines), encoding="utf-8")
+
+        print(f"[CIT Bridge] Concatenating {len(chunk_wav_files)} sections into final 48kHz audio: {out_audio_path.name}...")
+        ffmpeg_cmd = [
+            "ffmpeg", "-y", "-f", "concat", "-safe", "0",
+            "-i", str(concat_txt),
+            "-c:a", "libmp3lame" if out_audio_path.suffix.lower() == ".mp3" else "copy",
+            "-b:a", "192k",
+            "-ar", "48000",
+            str(out_audio_path)
+        ]
+        subprocess.run(ffmpeg_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+        # Write merged SRT
+        final_srt_content = "\n\n".join(all_shifted_srts).strip() + "\n"
+        out_srt_path.write_text(final_srt_content, encoding="utf-8")
+        print(f"[CIT Bridge] Subtitles merged successfully: {out_srt_path.name} ({current_srt_index - 1} entries)")
+
+    finally:
+        # Cleanup temp directory
+        try:
+            for p in temp_dir.glob("*"):
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+            temp_dir.rmdir()
+        except Exception:
+            pass
 
     return {
         "status": "success",
         "audio_path": str(out_audio_path),
         "srt_path": str(out_srt_path),
-        "duration_seconds": duration_seconds,
+        "duration_seconds": round(cumulative_duration, 3),
         "voice_id": voice_id,
         "speed": speed,
         "sample_rate": 48000,
+        "chunks_count": len(chunks),
     }
 
 
@@ -246,14 +396,16 @@ def main():
 
     # Resolve text input
     text = ""
+    raw_source = None
     if args.script_file:
         p = Path(args.script_file)
         if not p.is_file():
             print(f"Error: Script file not found: {args.script_file}", file=sys.stderr)
             sys.exit(1)
-        raw_text = p.read_text(encoding="utf-8")
-        text = clean_script_text(raw_text)
+        raw_source = p.read_text(encoding="utf-8")
+        text = clean_script_text(raw_source)
     elif args.text:
+        raw_source = args.text
         text = clean_script_text(args.text)
     else:
         print("Error: Specify either --script-file, --text, --check-health, or --list-voices", file=sys.stderr)
@@ -280,6 +432,7 @@ def main():
             voice_id=args.voice,
             speed=args.speed,
             base_url=args.base_url,
+            raw_source_text=raw_source,
         )
         print(json.dumps(result, indent=2, ensure_ascii=False))
     except Exception as e:
