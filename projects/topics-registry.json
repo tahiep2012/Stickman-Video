@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "description": "Sổ đăng ký đề tài kênh (Topic Registry) - Ngăn chặn 100% việc đề xuất lại các chủ đề đã sản xuất.",
+  "produced_topics": [
+    {
+      "slug": "dichotomy-of-control",
+      "title": "Quy Luật Kiểm Soát (Dichotomy of Control - Chủ nghĩa Khắc kỷ Epictetus)",
+      "niche": "Triết Lý",
+      "format": "16:9 Long-form",
+      "duration_seconds": 377.4,
+      "character_style": "B6 · Ink Traveler",
+      "voice": "Văn Hải (CIT Voice Studio)",
+      "date": "2026-11-22",
+      "keywords": [
+        "quy luật kiểm soát",
+        "dichotomy of control",
+        "chủ nghĩa khắc kỷ",
+        "stoicism",
+        "epictetus",
+        "kiểm soát lo âu",
+        "ataraxia",
+        "người cung thủ"
+      ]
+    },
+    {
+      "slug": "sunk-cost-fallacy",
+      "title": "Bẫy Chi Phí Chìm (Sunk Cost Fallacy - Nghịch lý níu kéo)",
+      "niche": "Tâm Lý Học",
+      "format": "16:9 Long-form",
+      "duration_seconds": 160.4,
+      "character_style": "B1 · Minimal Line Art",
+      "voice": "Hoài My (Edge-TTS)",
+      "date": "2026-11-22",
+      "keywords": [
+        "chi phí chìm",
+        "sunk cost fallacy",
+        "tâm lý học hành vi",
+        "kinh tế học hành vi",
+        "concorde"
+      ]
+    },
+    {
+      "slug": "spotlight-effect",
+      "title": "Hiệu Ứng Tâm Điểm (Spotlight Effect - Ảo tưởng được chú ý)",
+      "niche": "Tâm Lý Học",
+      "format": "16:9 Long-form",
+      "character_style": "B1 · Minimal Line Art",
+      "date": "2026-11-22",
+      "keywords": [
+        "hiệu ứng tâm điểm",
+        "spotlight effect",
+        "nỗi sợ phán xét",
+        "tâm lý học xã hội"
+      ]
+    },
+    {
+      "slug": "self-sabotage",
+      "title": "Hội Chứng Tự Hủy Hoại Bản Thân (Self-Sabotage - Tại sao chúng ta tự cản bước mình)",
+      "niche": "Tâm Lý Học",
+      "format": "16:9 Long-form",
+      "character_style": "B1 · Minimal Line Art",
+      "date": "2026-11-22",
+      "keywords": [
+        "tự hủy hoại bản thân",
+        "self-sabotage",
+        "trì hoãn",
+        "nỗi sợ thành công",
+        "vùng an toàn"
+      ]
+    }
+  ]
+}
