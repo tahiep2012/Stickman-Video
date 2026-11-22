@@ -21,6 +21,7 @@ function loadEnv() {
   if (process.env.AGNES_API_KEY) return;
   const envPaths = [
     path.resolve(process.cwd(), '.env'),
+    path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../.env'),
     path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../.env')
   ];
   for (const envPath of envPaths) {

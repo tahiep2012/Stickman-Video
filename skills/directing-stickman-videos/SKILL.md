@@ -5,6 +5,20 @@ description: "Turn topics, requirements, articles or scripts into stickman video
 
 # Directing Stickman Videos
 
+## Default 5-Step Channel Launch Workflow (Psychology · Philosophy · Life Skills)
+
+When this Skill is launched without all production parameters already fixed, **ALWAYS** start by reading and executing [channel-5-step-workflow.md](references/channel-5-step-workflow.md) step-by-step (one selection table at a time):
+
+1. **Table 1 · Niche**: Present 3 options — **Tâm Lý Học**, **Triết Lý**, **Kỹ Năng Sống**.
+2. **Table 2 · Live Topic Radar**: Run `search_web` on the chosen niche and propose curated high-interest topics for selection.
+3. **Table 3 · Character Style**: Present the 11 visual styles (highlighting `B1`, `B2`, `B5` for explainer channels) for selection.
+4. **Table 4 · Execution Mode**: Choose **Auto** (fully automated end-to-end) or **Semi-Auto** (pause after scene image generation so the user can review/regenerate individual scene images via contact sheet before auto-finishing the video).
+5. **Table 5 · Video Aspect Ratio & Scene Pacing**:
+   - **`9:16`** (Full Frame `1080x1920`) → auto-segment scenes at **3–5 seconds per scene**.
+   - **`16:9`** (Full Frame `1920x1080`) → auto-segment scenes at **8–12 seconds per scene**.
+
+After all 5 selections are confirmed, research deeply via `search_web`, write a high-retention script, segment scenes strictly by the chosen pacing rule, generate full-frame Agnes AI visuals (`16:9` or `9:16`), enforce the Semi-Auto image review gate if selected, and render the complete video.
+
 ## Two modes, one Skill
 
 Keep the existing installation/name. Honor known choices; ask one short question if the requested deliverable is ambiguous. Before planning, read [mode execution boundaries](references/mode-execution-boundaries.md), then the selected route:

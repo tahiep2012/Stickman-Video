@@ -31,10 +31,86 @@ import { generateAgnesImage } from './agnes-media.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-export const B1_STYLE_ANCHOR = `Minimalist 2D hand-drawn stick figure, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, isolated on solid pure white background (#FFFFFF), strictly 2D flat, no 3D shading, no gradients, no shadows, consistent line weight, cozy hand-drawn illustration style, completely standalone figure not touching image boundaries.`;
+export const B1_STYLE_ANCHOR = `Minimalist 2D hand-drawn stick figure animation style, 16:9 widescreen cinematic full-frame composition, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, full-frame illustrated background spreading across the entire 16:9 canvas, strictly 2D flat, no 3D shading, consistent line weight, cozy hand-drawn illustration style, no text, no typography.`;
+
+export const B1_STYLE_ANCHOR_9x16 = `Minimalist 2D hand-drawn stick figure animation style, 9:16 vertical cinematic full-frame composition, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, full-frame illustrated background filling the entire vertical 9:16 canvas with foreground and background depth, strictly 2D flat, no 3D shading, consistent line weight, cozy hand-drawn illustration style, no text, no typography.`;
+
+export function getStyleAnchor(aspect = '16:9') {
+  return aspect === '9:16' ? B1_STYLE_ANCHOR_9x16 : B1_STYLE_ANCHOR;
+}
 
 /**
- * Convert a white/off-white background into transparent square PNG with guaranteed safety margin
+ * Convert a white/off-white background into transparent 16:9 PNG canvas
+ * @param {string|Buffer} input
+ * @param {string} [outputPath]
+ * @param {number} [targetWidth=1920]
+ * @param {number} [targetHeight=1080]
+ * @param {number} [threshold=215]
+ */
+export async function toTransparent16x9(input, outputPath = null, targetWidth = 1920, targetHeight = 1080, threshold = 215) {
+  const buf = typeof input === 'string' ? fs.readFileSync(input) : input;
+  const raw = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+
+  for (let i = 0; i < raw.data.length; i += 4) {
+    if (raw.data[i] >= threshold && raw.data[i + 1] >= (threshold - 5) && raw.data[i + 2] >= (threshold - 10)) {
+      raw.data[i + 3] = 0;
+    }
+  }
+
+  const trimmed = await sharp(raw.data, { raw: raw.info }).trim().png().toBuffer();
+
+  const contentW = Math.round(targetWidth * 0.92);
+  const contentH = Math.round(targetHeight * 0.92);
+  const resized = await sharp(trimmed)
+    .resize({ width: contentW, height: contentH, fit: 'inside' })
+    .png()
+    .toBuffer();
+
+  const meta = await sharp(resized).metadata();
+  const left = Math.round((targetWidth - meta.width) / 2);
+  const top = Math.round((targetHeight - meta.height) / 2);
+
+  const finalBuf = await sharp(resized)
+    .extend({
+      top,
+      bottom: targetHeight - meta.height - top,
+      left,
+      right: targetWidth - meta.width - left,
+      background: { r: 0, g: 0, b: 0, alpha: 0 }
+    })
+    .png()
+    .toBuffer();
+
+  if (outputPath) {
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, finalBuf);
+  }
+  return finalBuf;
+}
+
+/**
+ * Normalize an image to exact 16:9 full-frame dimensions (cover crop, zero black/white borders)
+ * @param {string|Buffer} input
+ * @param {string} [outputPath]
+ * @param {number} [targetWidth=1920]
+ * @param {number} [targetHeight=1080]
+ */
+export async function normalizeFullFrame16x9(input, outputPath = null, targetWidth = 1920, targetHeight = 1080) {
+  const buf = typeof input === 'string' ? fs.readFileSync(input) : input;
+  const finalBuf = await sharp(buf)
+    .resize({ width: targetWidth, height: targetHeight, fit: 'cover', position: 'center' })
+    .png()
+    .toBuffer();
+
+  if (outputPath) {
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, finalBuf);
+  }
+  return finalBuf;
+}
+
+/**
+ * Legacy helper: Convert a white/off-white background into transparent square PNG
  * @param {string|Buffer} input 
  * @param {string} [outputPath] 
  * @param {number} [targetSize=900]
@@ -115,14 +191,16 @@ export function validateUniqueness(scenesDir, totalShots) {
 }
 
 /**
- * Build a pure cinematic project.json layout:
- * - Centered, prominent hero illustrations (w: 640).
+ * Build a pure cinematic 16:9 full-frame project.json layout:
+ * - Full-bleed edge-to-edge 16:9 illustration covering the entire video frame (1280x720 design plane, scales cleanly to 1080p/4K).
  * - ZERO Topic Badges, ZERO underlined clutter.
  * - Perfectly aligned with subtitles.
  * @param {string} projectPath 
  */
 export function buildPureCinematicLayout(projectPath) {
   const project = JSON.parse(fs.readFileSync(projectPath, 'utf8'));
+  const planeW = 1280;
+  const planeH = Math.round(1280 * (project.height || 720) / (project.width || 1280));
 
   project.shots = project.shots.map((shot, index) => {
     const pad = String(index + 1).padStart(2, '0');
@@ -135,12 +213,14 @@ export function buildPureCinematicLayout(projectPath) {
         {
           type: 'image',
           path: heroPath,
-          x: 320,
-          y: 35,
-          w: 640,
+          x: 0,
+          y: 0,
+          w: planeW,
+          h: planeH,
+          fit: 'cover',
           keys: [
-            { t: 0, y: 50, alpha: 0.85 },
-            { t: 0.5, y: 35, alpha: 1.0 },
+            { t: 0, alpha: 0.9 },
+            { t: 0.4, alpha: 1.0 },
           ],
         }
       ],
@@ -165,27 +245,106 @@ export function muxAudio(videoPath, audioPath, outputPath) {
   return outputPath;
 }
 
+/**
+ * Build a visual contact sheet grid of all shot_XX.png images for Semi-Auto review
+ * @param {string} scenesDir
+ * @param {string} [outputPath]
+ * @param {number} [cols=4]
+ */
+export async function buildContactSheet(scenesDir, outputPath = null, cols = 4) {
+  const dir = path.resolve(scenesDir);
+  const files = fs.readdirSync(dir)
+    .filter(f => /^shot_\d+\.(png|jpg|jpeg|webp)$/i.test(f))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+
+  if (!files.length) throw new Error(`No shot_XX images found in ${dir}`);
+
+  const firstMeta = await sharp(path.join(dir, files[0])).metadata();
+  const isPortrait = (firstMeta.height || 1080) > (firstMeta.width || 1920);
+  const thumbW = isPortrait ? 270 : 480;
+  const thumbH = isPortrait ? 480 : 270;
+  const gap = 16;
+  const rows = Math.ceil(files.length / cols);
+  const sheetW = cols * thumbW + (cols + 1) * gap;
+  const sheetH = rows * thumbH + (rows + 1) * gap;
+
+  const composites = [];
+  for (let i = 0; i < files.length; i++) {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    const left = gap + col * (thumbW + gap);
+    const top = gap + row * (thumbH + gap);
+    const label = files[i].replace(/\.[^.]+$/, '').toUpperCase();
+    const badgeSvg = Buffer.from(
+      `<svg width="${thumbW}" height="${thumbH}" xmlns="http://www.w3.org/2000/svg">` +
+      `<rect x="8" y="8" width="110" height="32" rx="6" fill="rgba(17,19,22,0.82)"/>` +
+      `<text x="63" y="29" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#ffffff">${label}</text>` +
+      `</svg>`
+    );
+    const resized = await sharp(path.join(dir, files[i]))
+      .resize({ width: thumbW, height: thumbH, fit: 'cover', position: 'center' })
+      .composite([{ input: badgeSvg, top: 0, left: 0 }])
+      .png()
+      .toBuffer();
+    composites.push({ input: resized, left, top });
+  }
+
+  const out = path.resolve(outputPath || path.join(dir, '..', 'output', 'review-contact-sheet.png'));
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  await sharp({
+    create: { width: sheetW, height: sheetH, channels: 4, background: { r: 24, g: 26, b: 30, alpha: 1 } }
+  })
+    .composite(composites)
+    .png()
+    .toFile(out);
+
+  return { output: out, count: files.length, cols, rows, aspect: isPortrait ? '9:16' : '16:9' };
+}
+
 // CLI usage
 async function main() {
   const [cmd, ...args] = process.argv.slice(2);
+  const flagValue = flag => {
+    const idx = args.indexOf(flag);
+    return idx !== -1 && idx + 1 < args.length ? args[idx + 1] : undefined;
+  };
+  const aspect = flagValue('--aspect') || '16:9';
+  const targetW = aspect === '9:16' ? 1080 : 1920;
+  const targetH = aspect === '9:16' ? 1920 : 1080;
 
   if (cmd === 'transparent') {
-    const target = args[0];
+    const cleanArgs = args.filter((a, i) => a !== '--aspect' && args[i - 1] !== '--aspect');
+    const target = cleanArgs[0];
     if (!target) throw new Error('Specify file or directory');
-    const out = args[1] || target.replace(/\.[^.]+$/, '.png');
-    await toTransparentSquare(target, out);
-    console.log(JSON.stringify({ input: target, output: out, status: 'normalized_transparent' }));
+    const out = cleanArgs[1] || target.replace(/\.[^.]+$/, '.png');
+    await toTransparent16x9(target, out, targetW, targetH);
+    console.log(JSON.stringify({ input: target, output: out, aspect, status: `normalized_transparent_${aspect}` }));
+  } else if (cmd === 'fullframe') {
+    const cleanArgs = args.filter((a, i) => a !== '--aspect' && args[i - 1] !== '--aspect');
+    const target = cleanArgs[0];
+    if (!target) throw new Error('Specify file');
+    const out = cleanArgs[1] || target.replace(/\.[^.]+$/, '.png');
+    await normalizeFullFrame16x9(target, out, targetW, targetH);
+    console.log(JSON.stringify({ input: target, output: out, aspect, status: `normalized_fullframe_${aspect}` }));
+  } else if (cmd === 'contact-sheet') {
+    const [scenesDir, out, cols] = args;
+    if (!scenesDir) throw new Error('Usage: scene-studio.mjs contact-sheet <scenes_dir> [output_png] [cols]');
+    const res = await buildContactSheet(scenesDir, out, cols ? parseInt(cols, 10) : 4);
+    console.log(JSON.stringify(res, null, 2));
   } else if (cmd === 'generate-shot') {
-    const [out, ...descParts] = args;
+    const normalizeFlag = args.includes('--normalize');
+    const cleanArgs = args.filter((a, i) => a !== '--allow-network' && a !== '--normalize' && a !== '--aspect' && args[i - 1] !== '--aspect');
+    const [out, ...descParts] = cleanArgs;
     const desc = descParts.join(' ');
-    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--allow-network]');
-    const fullPrompt = `${B1_STYLE_ANCHOR} Scene description: ${desc}`;
-    console.log(`Generating stickman artwork via Agnes AI: "${desc}"...`);
+    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--aspect 16:9|9:16] [--normalize]');
+    const fullPrompt = `${getStyleAnchor(aspect)} Scene description: ${desc}`;
+    console.log(`Generating ${aspect} full-frame stickman artwork via Agnes AI: "${desc}"...`);
     const res = await generateAgnesImage({
       prompt: fullPrompt,
       output: out,
       model: 'agnes-image-2.5-flash',
-      normalize: true
+      aspect,
+      normalize: normalizeFlag
     });
     console.log(JSON.stringify(res, null, 2));
   } else if (cmd === 'validate-unique') {
@@ -199,8 +358,10 @@ async function main() {
     muxAudio(video, audio, out);
   } else {
     console.log(`Usage:`);
-    console.log(`  node scene-studio.mjs generate-shot <output_png> <description>`);
-    console.log(`  node scene-studio.mjs transparent <file> [output_file]`);
+    console.log(`  node scene-studio.mjs generate-shot <output_png> <description> [--aspect 16:9|9:16] [--normalize]`);
+    console.log(`  node scene-studio.mjs fullframe <file> [output_file] [--aspect 16:9|9:16]`);
+    console.log(`  node scene-studio.mjs transparent <file> [output_file] [--aspect 16:9|9:16]`);
+    console.log(`  node scene-studio.mjs contact-sheet <scenes_dir> [output_png] [cols]`);
     console.log(`  node scene-studio.mjs validate-unique <scenes_dir> <count>`);
     console.log(`  node scene-studio.mjs mux-audio <film.mp4> <voice.m4a|mp3> [output.mp4]`);
   }

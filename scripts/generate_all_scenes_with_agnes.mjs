@@ -27,7 +27,8 @@ async function generateShotWithRetry(item, maxRetries = 4) {
         prompt: item.prompt,
         output: outputPath,
         model: 'agnes-image-2.5-flash',
-        normalize: true
+        size: process.env.AGNES_IMAGE_SIZE || '1920x1080',
+        normalize: false
       });
       console.log(`[Agnes AI] Shot ${pad} completed! Hash: ${res.sha256.slice(0, 16)}...`);
       return { shot: item.shot, file: filename, res };

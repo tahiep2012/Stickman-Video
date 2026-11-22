@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { generateAgnesImage } from '../skills/directing-stickman-videos/scripts/agnes-media.mjs';
 
-const B1_STYLE_ANCHOR = "Minimalist 2D hand-drawn stick figure animation style, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, isolated on solid pure white background (#FFFFFF), strictly 2D flat, no 3D shading, no gradients, no shadows, consistent line weight, completely standalone figure not touching image boundaries, no text, no typography.";
+const B1_STYLE_ANCHOR = "Minimalist 2D hand-drawn stick figure animation style, 16:9 widescreen cinematic full-frame composition, slender proportions, simple clean black ink linework, expressive face with simple eyebrow and mouth marks, full-frame illustrated background spreading across the entire 16:9 canvas, strictly 2D flat, no 3D shading, consistent line weight, cozy hand-drawn illustration style, no text, no typography.";
 
 const SAMPLE_SHOTS = [
   {
@@ -40,7 +40,8 @@ async function main() {
       prompt: item.prompt,
       output: outputPath,
       model: 'agnes-image-2.5-flash',
-      normalize: true
+      size: process.env.AGNES_IMAGE_SIZE || '1920x1080',
+      normalize: false
     });
     console.log(`[Agnes AI] Shot ${item.shot} generated successfully! Hash: ${res.sha256.slice(0, 16)}...`);
   }

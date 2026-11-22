@@ -17,6 +17,7 @@ function loadEnv() {
   if (process.env.AGNES_API_KEY) return;
   const envPaths = [
     path.resolve(process.cwd(), '.env'),
+    path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../.env'),
     path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../.env')
   ];
   for (const envPath of envPaths) {
@@ -47,16 +48,25 @@ const required = flag => {
   return value(flag);
 };
 
+export function resolveSizeFromAspect(aspect, explicitSize) {
+  if (explicitSize) return explicitSize;
+  if (aspect === '9:16') return '1080x1920';
+  if (aspect === '16:9') return '1920x1080';
+  return process.env.AGNES_IMAGE_SIZE || '1920x1080';
+}
+
 export async function generateAgnesImage(options) {
   const {
     prompt,
     output,
     model = 'agnes-image-2.5-flash',
-    size = '1024x1024',
+    aspect,
+    size: explicitSize,
     baseUrl = process.env.AGNES_BASE_URL || 'https://apihub.agnes-ai.com/v1',
     apiKey = process.env.AGNES_API_KEY,
     normalize = false
   } = options;
+  const size = resolveSizeFromAspect(aspect, explicitSize);
 
   if (!apiKey) throw new Error('Set AGNES_API_KEY in the environment or .env file');
   if (!prompt) throw new Error('Prompt is required');
@@ -119,7 +129,7 @@ export async function generateAgnesImage(options) {
     throw new Error('Image response missing both b64_json and url');
   }
 
-  // Optional background normalization via Sharp
+  // Optional background normalization via Sharp (preserves target aspect ratio, e.g. 16:9)
   if (normalize) {
     try {
       const { createRequire } = await import('node:module');
@@ -135,13 +145,16 @@ export async function generateAgnesImage(options) {
       const trimmed = await sharp(raw.data, { raw: { width: raw.info.width, height: raw.info.height, channels: 4 } })
         .trim()
         .toBuffer();
-      const safeCanvas = 1024;
-      const safeMax = Math.round(safeCanvas * 0.85);
+      const dimMatch = String(size).match(/^(\d+)x(\d+)$/i);
+      const targetW = dimMatch ? parseInt(dimMatch[1], 10) : raw.info.width;
+      const targetH = dimMatch ? parseInt(dimMatch[2], 10) : raw.info.height;
+      const safeMaxW = Math.round(targetW * 0.92);
+      const safeMaxH = Math.round(targetH * 0.92);
       const scaled = await sharp(trimmed)
-        .resize({ width: safeMax, height: safeMax, fit: 'inside' })
+        .resize({ width: safeMaxW, height: safeMaxH, fit: 'inside' })
         .toBuffer();
       imageBuffer = await sharp({
-        create: { width: safeCanvas, height: safeCanvas, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
+        create: { width: targetW, height: targetH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
       })
         .composite([{ input: scaled, gravity: 'center' }])
         .png()
@@ -188,7 +201,8 @@ async function main() {
   }
 
   const normalize = args.includes('--normalize');
-  const size = args.includes('--size') ? value('--size') : '1024x1024';
+  const aspect = args.includes('--aspect') ? value('--aspect') : undefined;
+  const size = resolveSizeFromAspect(aspect, args.includes('--size') ? value('--size') : undefined);
 
   const res = await generateAgnesImage({ prompt, output, model, size, normalize });
   console.log(JSON.stringify(res, null, 2));

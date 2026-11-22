@@ -72,7 +72,8 @@ export async function painter(p) {
       else if (['path', 'rect', 'ellipse'].includes(l.type)) drawB3Shape(ctx, l);
       else if (l.type === 'image') {
         const img = images.get(mediaPath(p.base, l.path)), h = l.h || w * img.height / img.width;
-        const scale = Math.min(w / img.width, h / img.height);
+        const scale = l.fit === 'cover' ? Math.max(w / img.width, h / img.height) : Math.min(w / img.width, h / img.height);
+        if (l.fit === 'cover') { ctx.beginPath(); ctx.rect(0, 0, w, h); ctx.clip(); }
         ctx.drawImage(img, (w - img.width * scale) / 2, (h - img.height * scale) / 2, img.width * scale, img.height * scale);
       } else if (l.type === 'pose') {
         const img = images.get(mediaPath(p.base, '@b1/character-pose-sheet-v6.png')), sw = img.width / 3;
