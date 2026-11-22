@@ -18,9 +18,16 @@ Hiển thị ngay khi khởi động skill với đúng 3 mục:
 ## Bảng 2 · Quét Dữ Liệu Trực Tuyến & Đề Xuất Chủ Đề
 
 Ngay sau khi người dùng chọn 1 mục ở Bảng 1:
-1. **Bắt buộc gọi `search_web`** để quét xu hướng mới nhất, các chủ đề đang được quan tâm và các đề tài giá trị bền vững (Evergreen) liên quan đến ngách vừa chọn.
-2. Tổng hợp và trình bày **5–6 chủ đề hấp dẫn nhất** để người dùng chọn (mỗi chủ đề gồm: *Tiêu đề gợi mở tò mò + Góc nhìn cốt lõi + Phân loại Trend / Evergreen*).
-3. Cho phép người dùng chọn 1 chủ đề từ danh sách hoặc nhập chủ đề riêng.
+1. **Kiểm tra Sổ Đăng Ký Đề Tài (Topic Registry Gate — Khóa Trùng Lặp 100%)**:
+   - Trước khi đề xuất, AI **BẮT BUỘC** đọc file `projects/topics-registry.json` và quét danh sách các thư mục trong `projects/` để lấy toàn bộ các đề tài/chủ đề đã từng triển khai.
+   - Toàn bộ các chủ đề đã làm (hoặc các từ khóa tương đương) sẽ được đưa vào danh sách loại trừ (**Blacklist**) để **TUYỆT ĐỐI KHÔNG BAO GIỜ đề xuất lại** trong các lần sản xuất tiếp theo.
+2. **Quét dữ liệu trực tuyến qua `search_web`**:
+   - Quét xu hướng mới nhất và các đề tài giá trị bền vững (Evergreen) liên quan đến ngách vừa chọn, chủ động đối chiếu và loại bỏ triệt để các đề tài đã có trong lịch sử kênh.
+3. **Đề xuất 5–6 chủ đề MỚI TINH hấp dẫn nhất**:
+   - Trình bày 5–6 chủ đề hoàn toàn mới lạ (mỗi chủ đề gồm: *Tiêu đề gợi mở tò mò + Góc nhìn cốt lõi + Phân loại Trend / Evergreen*).
+   - Cho phép người dùng chọn 1 chủ đề từ danh sách hoặc nhập chủ đề riêng theo ý muốn.
+4. **Tự động lưu vết vào Sổ Đăng Ký Đề Tài (Auto-Register)**:
+   - Khi một đề tài được người dùng chọn và khởi tạo dự án, AI tự động lưu thông tin (tiêu đề, ngách, từ khóa, định dạng) vào `projects/topics-registry.json` để khóa vĩnh viễn đề tài đó trong tương lai.
 
 ---
 

@@ -10,7 +10,7 @@ description: "Turn topics, requirements, articles or scripts into stickman video
 When this Skill is launched without all production parameters already fixed, **ALWAYS** start by reading and executing [channel-5-step-workflow.md](references/channel-5-step-workflow.md) step-by-step (one selection table at a time):
 
 1. **Table 1 · Niche**: Present 3 options — **Tâm Lý Học**, **Triết Lý**, **Kỹ Năng Sống**.
-2. **Table 2 · Live Topic Radar**: Run `search_web` on the chosen niche and propose curated high-interest topics for selection.
+2. **Table 2 · Live Topic Radar**: Read `projects/topics-registry.json` to blacklist all previously produced topics (Zero-Duplicate Topic Invariant), then run `search_web` on the chosen niche to propose 5–6 brand-new curated topics for selection. Auto-register newly launched projects into the registry.
 3. **Table 3 · Character Style**: Present the 12 visual styles — highlighting **`B6 · Ink Traveler (Người Lữ Hành Khăn Choàng)`** as the #1 recommended signature brand style (alongside `B1`, `B2`, `B5`, and `A1–A6`, `B3–B4`). When `B6` is selected, load [B6 Ink Traveler DNA](references/b6-ink-traveler.md) and repeat the locked Character DNA + Brand Color Lock verbatim in every scene prompt.
 4. **Table 4 · Execution Mode**: Choose **Auto** (fully automated end-to-end) or **Semi-Auto** (Two-Gate Human-in-the-Loop: **Gate 1** pauses for user review/approval of the written script before media generation; **Gate 2** pauses after scene image generation so the user can review/regenerate individual scene images via contact sheet before rendering the final video).
 5. **Table 5 · Video Aspect Ratio, Target Duration & Scene Pacing**:
