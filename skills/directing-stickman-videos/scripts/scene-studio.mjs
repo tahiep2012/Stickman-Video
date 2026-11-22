@@ -230,6 +230,9 @@ export function buildPureCinematicLayout(projectPath) {
   const planeW = 1280;
   const planeH = Math.round(1280 * (project.height || 720) / (project.width || 1280));
 
+  project.hideCaptions = true;
+  project.burnSubtitles = false;
+
   project.shots = project.shots.map((shot, index) => {
     const pad = String(index + 1).padStart(2, '0');
     const heroPath = `scenes/shot_${pad}.png`;

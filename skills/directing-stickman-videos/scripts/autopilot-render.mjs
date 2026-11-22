@@ -106,7 +106,8 @@ export async function painter(p) {
       sceneCopy.getContext('2d').drawImage(canvas, 0, 0);
       televisionFinish(ctx, sceneCopy, p.width, p.height, p.television?.intensity ?? 0.45);
     }
-    const cue = p.captions.find(c => t >= c.start && t < c.end);
+    const shouldDrawCaption = !p.hideCaptions && !p.noCaptions && p.burnSubtitles !== false && process.env.HIDE_CAPTIONS !== '1';
+    const cue = shouldDrawCaption ? p.captions.find(c => t >= c.start && t < c.end) : null;
     if (cue) {
       ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       if (/[\r\n]/.test(cue.text)) throw new Error('B captions allow at most one line; split the timed cue at a semantic boundary');

@@ -120,8 +120,11 @@ Sau khi chọn chế độ vận hành, hiển thị 2 lựa chọn với quy ch
   4. Nếu người dùng yêu cầu vẽ lại cảnh nào → vẽ lại đúng các cảnh đó, cập nhật lại `review-contact-sheet.png` và trình duyệt lại cho đến khi người dùng xác nhận duyệt.
 - **Nếu chế độ là `Auto`**: Tự động chuyển thẳng sang Bước 6.
 
-### Bước 6 · Xây Dựng Cấu Hình Chuyển Động & Render Video Hoàn Chỉnh
+### Bước 6 · Xây Dựng Cấu Hình Chuyển Động & Render Video Hoàn Chỉnh (Không Phụ Đề Cứng)
+- **Quy Chuẩn Bỏ Hoàn Toàn Phụ Đề Cứng (No Burned-in Subtitles Invariance)**:
+  - Thiết lập bắt buộc `hideCaptions: true` và `burnSubtitles: false` trong `project.json`.
+  - Tuyệt đối không vẽ/chèn chữ phụ đề cứng đè lên canvas video để giữ hình ảnh nghệ thuật nguyên bản 100% sạch sẽ, thoáng đãng, chuẩn thẩm mỹ cao.
+  - Phụ đề luôn được xuất riêng thành file mềm đồng bộ mili-giây `input.srt` (do CIT Voice Studio tạo ra) để người dùng tải trực tiếp lên YouTube (tối ưu hóa YouTube SEO, hỗ trợ thuật toán đề xuất, và cho phép người xem chủ động bật/tắt hoặc dịch tự động theo ý muốn).
 - Xây dựng `projects/<slug>/project.json` chuẩn khung hình đã chọn (`1920x1080` cho `16:9` hoặc `1080x1920` cho `9:16`), áp dụng hiệu ứng chuyển động máy quay Subpixel Ken Burns tinh tế (Pan/Zoom mượt mà, không giật lag).
 - Đảm bảo toàn bộ hình ảnh hiển thị **Full Frame (`fit: 'cover'`)** 100% không viền đen.
-- Render video hoàn chỉnh bằng `autopilot.mjs` (Mode B) hoặc `director-video-pipeline.mjs` (Mode A), ghép âm thanh phòng thu 48kHz (`mux-audio`) và phụ đề đồng bộ.
-- Bàn giao sản phẩm cuối cùng `projects/<slug>/output/film.mp4` cho người dùng.
+- Render video hoàn chỉnh bằng `autopilot.mjs` (Mode B) hoặc `director-video-pipeline.mjs` (Mode A), ghép âm thanh phòng thu 48kHz (`mux-audio`) và bàn giao file MP4 sạch kèm file `input.srt`.

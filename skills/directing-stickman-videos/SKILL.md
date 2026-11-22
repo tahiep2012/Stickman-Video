@@ -39,7 +39,7 @@ A and B share installation, not production contracts. The rules from **A · Dire
 
 B supports topics, promotion briefs, posts, articles and scripts. English narration is default; explicit language/voice choices prevail. Follow [selected-provider execution](references/autopilot.md#selected-provider-execution) before declaring a non-default service unsupported: a missing bundled adapter is not a provider prohibition. Use the selected native named TTS voice without added voice/style descriptions by default; B4 permits story-motivated secondary-role acting, not automatic narrator tuning. Read the required [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
 
-Captions: B1–B4 single-line; B5 up to three semantic lines. Apply the [common gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). A unchanged.
+Captions & Subtitles Policy: **Zero Burned-in Subtitles Invariance (Bỏ Hoàn Toàn Phụ Đề Cứng Vào Video)**. All rendered MP4 videos MUST strictly have NO burned-in or hardcoded subtitle overlays on the canvas (`hideCaptions: true`, `burnSubtitles: false`). Canvas remains 100% clean, unobstructed editorial artwork. Synchronized millisecond-accurate subtitles are ALWAYS generated and exported as external `.srt` files (`input.srt`) via CIT Voice Studio for direct YouTube upload (optimal for YouTube SEO, algorithm metadata indexing, and viewer custom toggling/translation). A unchanged.
 
 All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/autopilot-production-qa.md#native-landscape-and-portrait).
 
