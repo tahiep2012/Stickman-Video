@@ -77,16 +77,30 @@ def get_voices(base_url=DEFAULT_BASE_URL, timeout=5.0):
 
 def clean_script_text(text: str) -> str:
     """Clean markdown formatting and extract spoken prose for TTS."""
+    # If the markdown has a section like '## Lời Bình' or '## Kịch bản', extract only from there
+    m_section = re.search(
+        r"^##\s+(?:Lời Bình|Lời dẫn|Kịch bản|Nội dung|Phần đọc|Voiceover|Narration)[^\n]*\n",
+        text,
+        flags=re.MULTILINE | re.IGNORECASE,
+    )
+    if m_section:
+        # Take everything from after that header line
+        text = text[m_section.end():]
+    else:
+        # If no explicit header, strip top frontmatter / metadata lines
+        text = re.sub(r"^[-*]?\s*\*\*[^*]+?\*\*:\s*.*$", "", text, flags=re.MULTILINE)
+
     # Remove markdown code blocks
     text = re.sub(r"```[\s\S]*?```", "", text)
     # Remove markdown headers (# Title)
     text = re.sub(r"^#{1,6}\s+.*$", "", text, flags=re.MULTILINE)
-    # Remove metadata lines (- Key: Value or > Quote marks)
-    text = re.sub(r"^[-*]\s+\*\*.*?\*\*:.*$", "", text, flags=re.MULTILINE)
+    # Remove horizontal rules
+    text = re.sub(r"^[-*_]{3,}\s*$", "", text, flags=re.MULTILINE)
     text = re.sub(r"^>\s*", "", text, flags=re.MULTILINE)
     # Remove bold/italic markdown
     text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
     text = re.sub(r"\*([^*]+)\*", r"\1", text)
+    text = re.sub(r"`([^`]+)`", r"\1", text)
     # Remove inline links
     text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
     # Normalize punctuation and whitespace

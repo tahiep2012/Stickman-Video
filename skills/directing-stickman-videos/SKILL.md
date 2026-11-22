@@ -12,12 +12,16 @@ When this Skill is launched without all production parameters already fixed, **A
 1. **Table 1 · Niche**: Present 3 options — **Tâm Lý Học**, **Triết Lý**, **Kỹ Năng Sống**.
 2. **Table 2 · Live Topic Radar**: Run `search_web` on the chosen niche and propose curated high-interest topics for selection.
 3. **Table 3 · Character Style**: Present the 12 visual styles — highlighting **`B6 · Ink Traveler (Người Lữ Hành Khăn Choàng)`** as the #1 recommended signature brand style (alongside `B1`, `B2`, `B5`, and `A1–A6`, `B3–B4`). When `B6` is selected, load [B6 Ink Traveler DNA](references/b6-ink-traveler.md) and repeat the locked Character DNA + Brand Color Lock verbatim in every scene prompt.
-4. **Table 4 · Execution Mode**: Choose **Auto** (fully automated end-to-end) or **Semi-Auto** (pause after scene image generation so the user can review/regenerate individual scene images via contact sheet before auto-finishing the video).
-5. **Table 5 · Video Aspect Ratio & Scene Pacing**:
-   - **`9:16`** (Full Frame `1080x1920`) → auto-segment scenes at **3–5 seconds per scene**.
-   - **`16:9`** (Full Frame `1920x1080`) → auto-segment scenes at **8–12 seconds per scene**.
+4. **Table 4 · Execution Mode**: Choose **Auto** (fully automated end-to-end) or **Semi-Auto** (Two-Gate Human-in-the-Loop: **Gate 1** pauses for user review/approval of the written script before media generation; **Gate 2** pauses after scene image generation so the user can review/regenerate individual scene images via contact sheet before rendering the final video).
+5. **Table 5 · Video Aspect Ratio, Target Duration & Scene Pacing**:
+   - **`16:9` (Long-form YouTube / Full Frame `1920x1080`)**:
+     - **Target Duration**: **8 – 12 minutes** (~1,200 – 1,800 words, deep research, chapter-based structure).
+     - **Scene Pacing**: auto-segment scenes at **8–12 seconds per scene** (~40–60 scenes).
+   - **`9:16` (Short-form Shorts/Reels/TikTok / Full Frame `1080x1920`)**:
+     - **Target Duration**: **1 – 2 minutes** (~150 – 300 words, concise, high tempo).
+     - **Scene Pacing**: auto-segment scenes at **3–5 seconds per scene** (~15–30 scenes).
 
-After all 5 selections are confirmed, research deeply via `search_web`, write a high-retention script, segment scenes strictly by the chosen pacing rule, generate full-frame Agnes AI visuals (`16:9` or `9:16`), enforce the Semi-Auto image review gate if selected, auto-synthesize studio-grade 48kHz voice and synced subtitles via [CIT Voice Studio](references/cit-voice-studio.md) (`http://127.0.0.1:8001`), and render the complete video.
+After all 5 selections are confirmed, research deeply via `search_web`, write a comprehensive high-retention script matching the target duration, enforce **Gate 1 (Script Review)** if in Semi-Auto mode, auto-synthesize studio-grade 48kHz voice and synced subtitles via [CIT Voice Studio](references/cit-voice-studio.md) (`http://127.0.0.1:8001`) with default voice `Văn Hải`, segment scenes strictly by the chosen pacing rule, generate full-frame Agnes AI visuals (`16:9` or `9:16`), enforce **Gate 2 (Contact Sheet Review)** if in Semi-Auto mode, and render the complete video.
 
 ## Two modes, one Skill
 
