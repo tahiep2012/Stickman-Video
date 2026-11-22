@@ -17,7 +17,7 @@ When this Skill is launched without all production parameters already fixed, **A
    - **`9:16`** (Full Frame `1080x1920`) → auto-segment scenes at **3–5 seconds per scene**.
    - **`16:9`** (Full Frame `1920x1080`) → auto-segment scenes at **8–12 seconds per scene**.
 
-After all 5 selections are confirmed, research deeply via `search_web`, write a high-retention script, segment scenes strictly by the chosen pacing rule, generate full-frame Agnes AI visuals (`16:9` or `9:16`), enforce the Semi-Auto image review gate if selected, and render the complete video.
+After all 5 selections are confirmed, research deeply via `search_web`, write a high-retention script, segment scenes strictly by the chosen pacing rule, generate full-frame Agnes AI visuals (`16:9` or `9:16`), enforce the Semi-Auto image review gate if selected, auto-synthesize studio-grade 48kHz voice and synced subtitles via [CIT Voice Studio](references/cit-voice-studio.md) (`http://127.0.0.1:8001`), and render the complete video.
 
 ## Two modes, one Skill
 

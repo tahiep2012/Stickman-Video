@@ -274,6 +274,107 @@ export function muxAudio(videoPath, audioPath, outputPath) {
 }
 
 /**
+ * Check if local CIT Voice Studio (127.0.0.1:8001) is online and ready
+ */
+export async function checkCitHealth(baseUrl = process.env.CIT_BASE_URL || 'http://127.0.0.1:8001') {
+  try {
+    const res = await fetch(`${baseUrl.replace(/\/+$/, '')}/health`, { signal: AbortSignal.timeout(3000) });
+    if (res.ok) {
+      const data = await res.json();
+      return { online: true, data };
+    }
+  } catch (e) {
+    return { online: false, error: e.message };
+  }
+  return { online: false, error: 'Unhealthy response' };
+}
+
+/**
+ * Generate studio-grade Vietnamese voiceover & synced SRT via CIT Voice Studio (VieNeu-TTS-v3 Turbo 48kHz)
+ */
+export async function generateVoiceCit(options = {}) {
+  const {
+    text,
+    scriptFile,
+    outputAudio = 'narration.mp3',
+    outputSrt = 'input.srt',
+    voice = process.env.CIT_VOICE || 'I Thought',
+    speed = parseFloat(process.env.CIT_SPEED || '1.0'),
+    baseUrl = process.env.CIT_BASE_URL || 'http://127.0.0.1:8001'
+  } = options;
+
+  let content = text || '';
+  if (scriptFile && !content) {
+    content = fs.readFileSync(path.resolve(scriptFile), 'utf8');
+  }
+  content = content
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/^#{1,6}\s+.*$/gm, '')
+    .replace(/^[-*]\s+\*\*.*?\*\*:.*$/gm, '')
+    .replace(/^>\s*/gm, '')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[—–]/g, ', ')
+    .replace(/\n\s*\n+/g, '\n\n')
+    .trim();
+
+  if (!content) throw new Error('Empty script text for CIT Voice Studio');
+
+  const health = await checkCitHealth(baseUrl);
+  if (!health.online) {
+    throw new Error(`CIT Voice Studio is NOT running at ${baseUrl}. Please launch CIT-Voice-Studio.exe on your machine.`);
+  }
+
+  const endpoint = `${baseUrl.replace(/\/+$/, '')}/api/tts/generate-with-subtitles`;
+  const res = await fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      text: content,
+      voice_id: voice,
+      speed,
+      format: 'wav'
+    }),
+    signal: AbortSignal.timeout(300000)
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(`CIT Voice Studio HTTP ${res.status}: ${errText.slice(0, 300)}`);
+  }
+
+  const data = await res.json();
+  const audioBytes = Buffer.from(data.audio_base64, 'base64');
+  const resolvedAudio = path.resolve(outputAudio);
+  const resolvedSrt = path.resolve(outputSrt);
+  fs.mkdirSync(path.dirname(resolvedAudio), { recursive: true });
+  fs.mkdirSync(path.dirname(resolvedSrt), { recursive: true });
+
+  const tempWav = resolvedAudio.replace(/\.[^.]+$/, '.temp.wav');
+  fs.writeFileSync(tempWav, audioBytes);
+
+  if (resolvedAudio.toLowerCase().endsWith('.mp3')) {
+    execSync(`ffmpeg -y -i "${tempWav}" -c:a libmp3lame -b:a 192k -ar 48000 "${resolvedAudio}"`, { stdio: 'ignore' });
+    if (fs.existsSync(tempWav)) fs.unlinkSync(tempWav);
+  } else {
+    fs.renameSync(tempWav, resolvedAudio);
+  }
+
+  fs.writeFileSync(resolvedSrt, data.srt || '', 'utf8');
+
+  return {
+    status: 'success',
+    audio_path: resolvedAudio,
+    srt_path: resolvedSrt,
+    duration_seconds: data.duration_seconds,
+    voice_id: voice,
+    speed,
+    sample_rate: 48000
+  };
+}
+
+/**
  * Build a visual contact sheet grid of all shot_XX.png images for Semi-Auto review
  * @param {string} scenesDir
  * @param {string} [outputPath]
@@ -381,6 +482,30 @@ async function main() {
       normalize: normalizeFlag
     });
     console.log(JSON.stringify(res, null, 2));
+  } else if (cmd === 'cit-health') {
+    const health = await checkCitHealth();
+    console.log(JSON.stringify(health, null, 2));
+  } else if (cmd === 'voice-cit') {
+    const cleanArgs = args.filter((a, i) =>
+      a !== '--voice' && args[i - 1] !== '--voice' &&
+      a !== '--speed' && args[i - 1] !== '--speed' &&
+      a !== '--base-url' && args[i - 1] !== '--base-url'
+    );
+    const [scriptOrText, projectDir] = cleanArgs;
+    if (!scriptOrText) throw new Error('Usage: scene-studio.mjs voice-cit <script_file|text> [project_dir] [--voice <voice>] [--speed <speed>]');
+    const pDir = projectDir ? path.resolve(projectDir) : process.cwd();
+    const voice = flagValue('--voice') || process.env.CIT_VOICE || 'I Thought';
+    const speed = parseFloat(flagValue('--speed') || process.env.CIT_SPEED || '1.0');
+    const isFile = fs.existsSync(scriptOrText);
+    const res = await generateVoiceCit({
+      scriptFile: isFile ? scriptOrText : undefined,
+      text: !isFile ? scriptOrText : undefined,
+      outputAudio: path.join(pDir, 'narration.mp3'),
+      outputSrt: path.join(pDir, 'input.srt'),
+      voice,
+      speed
+    });
+    console.log(JSON.stringify(res, null, 2));
   } else if (cmd === 'validate-unique') {
     const [scenesDir, count] = args;
     if (!scenesDir || !count) throw new Error('Usage: scene-studio.mjs validate-unique <scenes_dir> <total_count>');
@@ -392,6 +517,8 @@ async function main() {
     muxAudio(video, audio, out);
   } else {
     console.log(`Usage:`);
+    console.log(`  node scene-studio.mjs cit-health`);
+    console.log(`  node scene-studio.mjs voice-cit <script_file|text> [project_dir] [--voice <voice>] [--speed <speed>]`);
     console.log(`  node scene-studio.mjs generate-shot <output_png> <description> [--style B6|B1] [--aspect 16:9|9:16] [--normalize]`);
     console.log(`  node scene-studio.mjs fullframe <file> [output_file] [--aspect 16:9|9:16]`);
     console.log(`  node scene-studio.mjs transparent <file> [output_file] [--aspect 16:9|9:16]`);
