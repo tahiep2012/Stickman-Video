@@ -135,3 +135,15 @@ Sau khi chọn chế độ vận hành, hiển thị 2 lựa chọn với quy ch
 - Xây dựng `projects/<slug>/project.json` chuẩn khung hình đã chọn (`1920x1080` cho `16:9` hoặc `1080x1920` cho `9:16`), áp dụng hiệu ứng chuyển động máy quay Subpixel Ken Burns tinh tế (Pan/Zoom mượt mà, không giật lag).
 - Đảm bảo toàn bộ hình ảnh hiển thị **Full Frame (`fit: 'cover'`)** 100% không viền đen.
 - Render video hoàn chỉnh bằng `autopilot.mjs` (Mode B) hoặc `director-video-pipeline.mjs` (Mode A), ghép âm thanh phòng thu 48kHz (`mux-audio`) và bàn giao file MP4 sạch kèm file `input.srt`.
+
+### Bước 7 · Tự Động Xuất Trọn Gói Siêu Dữ Liệu Đăng Bài (METADATA.md Invariant)
+- **Quy Chuẩn Bắt Buộc Sau Khi Render (Mandatory Post-Render Deliverable)**:
+  - Ngay khi render xong video `film.mp4` và có file phụ đề mềm `input.srt`, AI **BẮT BUỘC TỰ ĐỘNG TẠO FILE** `projects/<slug>/METADATA.md` (đồng thời lưu thêm tại `projects/<slug>/output/METADATA.md`).
+  - File `METADATA.md` chứa đầy đủ trọn gói thông tin để người dùng copy-paste đăng bài ngay lập tức lên Facebook Reels, YouTube, TikTok mà không phải tự nghĩ mô tả hay tìm kiếm hashtag:
+    1. **Bộ Tiêu Đề Đa Nền Tảng (CTR & Curiosity Hook)**: 3–5 phương án tiêu đề A/B kích thích tò mò cao, tối ưu độ dài cho Shorts/Reels (<60 ký tự) và YouTube Long-form (50–70 ký tự).
+    2. **Mẫu Mô Tả Đăng Facebook Reels & TikTok**: Mở đầu bằng Hook giữ chân trong 120 ký tự đầu tiên, tóm tắt các luận điểm cốt lõi bằng gạch đầu dòng ngắt dòng thoáng, lời kêu gọi hành động (CTA) thu hút người theo dõi.
+    3. **Mẫu Mô Tả Đăng YouTube (Chuẩn SEO)**: Đoạn giới thiệu cuốn hút, bài học đúc kết, danh sách Timestamps/Chapters theo từng phân cảnh (đối với video dài 16:9), lời kêu gọi đăng ký kênh.
+    4. **Bộ Thẻ Hashtag Chuẩn Thuật Toán**:
+       - 8–12 Hashtags tối ưu cho Reels/Shorts/TikTok (#kyluattuthan #phattrienbanthan #kynangsong #reelsvn #tamlyhoc...).
+       - 20 Thẻ từ khóa SEO YouTube (Tags) phân cách bằng dấu phẩy để dán trực tiếp vào YouTube Studio.
+    5. **Bình Luận Ghim (Pinned Comment)**: Câu hỏi tương tác / thảo luận để ghim lên đầu phần bình luận, kích hoạt tương tác cộng đồng.

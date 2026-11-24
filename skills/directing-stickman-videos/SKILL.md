@@ -41,6 +41,8 @@ B supports topics, promotion briefs, posts, articles and scripts. English narrat
 
 Captions & Subtitles Policy: **Zero Burned-in Subtitles Invariance (Bỏ Hoàn Toàn Phụ Đề Cứng Vào Video)**. All rendered MP4 videos MUST strictly have NO burned-in or hardcoded subtitle overlays on the canvas (`hideCaptions: true`, `burnSubtitles: false`). Canvas remains 100% clean, unobstructed editorial artwork. Synchronized millisecond-accurate subtitles are ALWAYS generated and exported as external `.srt` files (`input.srt`) via CIT Voice Studio for direct YouTube upload (optimal for YouTube SEO, algorithm metadata indexing, and viewer custom toggling/translation). A unchanged.
 
+Publishing Metadata Policy: **Mandatory Post-Render METADATA.md Invariant (Tự Động Tạo Trọn Bộ Mô Tả & Hashtag Đăng Bài)**. As soon as any video project finishes rendering, the system MUST automatically generate `projects/<slug>/METADATA.md` containing: A/B high-CTR curiosity titles, multi-platform captions (Facebook Reels, TikTok, YouTube SEO description with chapters/timestamps), algorithmic hashtag sets (8-12 niche tags), 20 comma-separated YouTube SEO tags, and an engaging pinned comment to foster viewer comments and community interaction.
+
 All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/autopilot-production-qa.md#native-landscape-and-portrait).
 
 ## First use and next steps
