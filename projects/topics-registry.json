@@ -214,6 +214,33 @@
         "tâm lý học hành vi",
         "b6 ink traveler"
       ]
+    },
+    {
+      "slug": "energy-management",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/energy-management",
+      "title": "Quản Lý Năng Lượng Thay Vì Thời Gian (The Power of Full Engagement - Jim Loehr & Tony Schwartz)",
+      "niche": "Kỹ Năng Sống",
+      "format": "16:9 Long-form",
+      "duration_seconds": 393.17,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Văn Hải (CIT Voice Studio - VieNeu-TTS)",
+      "date": "2026-11-24",
+      "keywords": [
+        "quản lý năng lượng",
+        "the power of full engagement",
+        "jim loehr",
+        "tony schwartz",
+        "quản lý thời gian",
+        "4 bình năng lượng",
+        "năng lượng thể chất",
+        "năng lượng cảm xúc",
+        "năng lượng trí óc",
+        "năng lượng tinh thần",
+        "b6 ink traveler",
+        "kỹ năng sống"
+      ]
     }
   ]
 }
