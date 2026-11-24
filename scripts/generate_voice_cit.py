@@ -322,8 +322,8 @@ def generate_voice_cit(
     out_srt_path = Path(output_srt).resolve()
     out_srt_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Determine chunks
-    source_to_split = raw_source_text or text
+    # Determine chunks - always use the cleaned text for synthesis
+    source_to_split = text
     chunks = split_into_chunks(source_to_split, max_words=320)
 
     if len(chunks) == 1:

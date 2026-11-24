@@ -142,6 +142,31 @@
         "people pleasing",
         "giao tiếp tinh tế"
       ]
+    },
+    {
+      "slug": "memento-mori-shorts",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/memento-mori-shorts",
+      "title": "Memento Mori & Nghịch Lý Thời Gian (Seneca - Chúng ta không có ít thời gian, mà lãng phí quá nhiều)",
+      "niche": "Triết Lý",
+      "format": "9:16 Shorts",
+      "duration_seconds": 49.97,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Văn Hải (CIT Voice Studio - VieNeu-TTS)",
+      "date": "2026-11-24",
+      "keywords": [
+        "memento mori",
+        "nghịch lý thời gian",
+        "seneca",
+        "chủ nghĩa khắc kỷ",
+        "stoicism",
+        "về sự ngắn ngủi của kiếp người",
+        "on the shortness of life",
+        "quản lý thời gian",
+        "thức tỉnh tâm trí",
+        "b6 ink traveler"
+      ]
     }
   ]
 }
