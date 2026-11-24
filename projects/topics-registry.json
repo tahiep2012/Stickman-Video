@@ -1,15 +1,34 @@
 {
-  "version": "1.0",
-  "description": "Sổ đăng ký đề tài kênh (Topic Registry) - Ngăn chặn 100% việc đề xuất lại các chủ đề đã sản xuất.",
+  "version": "2.0",
+  "description": "Sổ đăng ký đề tài đa kênh (Dual-Channel Topic Registry: vi & en) - Chống trùng lặp 100% trong nội bộ từng kênh riêng biệt. Đề tài đã làm ở kênh 'vi' vẫn được phép làm mới hoặc chuyển thể sang kênh 'en' (với kịch bản bản địa hóa, giọng đọc Kokoro và nhân vật khăn xanh lam B6-EN).",
+  "channels": {
+    "vi": {
+      "name": "Kênh Tiếng Việt — Người Lữ Hành Khăn Choàng",
+      "root_dir": "projects/vi",
+      "default_style": "B6",
+      "default_voice_engine": "CIT Voice Studio (VieNeu-TTS)",
+      "default_voice": "Văn Hải"
+    },
+    "en": {
+      "name": "English Channel — The Slate Ink Traveler",
+      "root_dir": "projects/en",
+      "default_style": "B6-EN",
+      "default_voice_engine": "CIT Voice Studio (Kokoro)",
+      "default_voice": "auto-kokoro"
+    }
+  },
   "produced_topics": [
     {
       "slug": "dichotomy-of-control",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/dichotomy-of-control",
       "title": "Quy Luật Kiểm Soát (Dichotomy of Control - Chủ nghĩa Khắc kỷ Epictetus)",
       "niche": "Triết Lý",
       "format": "16:9 Long-form",
       "duration_seconds": 377.4,
-      "character_style": "B6 · Ink Traveler",
-      "voice": "Văn Hải (CIT Voice Studio)",
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Văn Hải (CIT Voice Studio - VieNeu-TTS)",
       "date": "2026-11-22",
       "keywords": [
         "quy luật kiểm soát",
@@ -24,6 +43,9 @@
     },
     {
       "slug": "sunk-cost-fallacy",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/sunk-cost-fallacy",
       "title": "Bẫy Chi Phí Chìm (Sunk Cost Fallacy - Nghịch lý níu kéo)",
       "niche": "Tâm Lý Học",
       "format": "16:9 Long-form",
@@ -41,6 +63,9 @@
     },
     {
       "slug": "spotlight-effect",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/spotlight-effect",
       "title": "Hiệu Ứng Tâm Điểm (Spotlight Effect - Ảo tưởng được chú ý)",
       "niche": "Tâm Lý Học",
       "format": "16:9 Long-form",
@@ -55,6 +80,9 @@
     },
     {
       "slug": "self-sabotage",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/self-sabotage",
       "title": "Hội Chứng Tự Hủy Hoại Bản Thân (Self-Sabotage - Tại sao chúng ta tự cản bước mình)",
       "niche": "Tâm Lý Học",
       "format": "16:9 Long-form",
@@ -70,12 +98,15 @@
     },
     {
       "slug": "atomic-discipline-shorts",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/atomic-discipline-shorts",
       "title": "Kỷ Luật Tự Thân vs. Động Lực (Atomic Habits & Dopamine)",
       "niche": "Kỹ Năng Sống",
       "format": "9:16 Shorts",
       "duration_seconds": 72.03,
-      "character_style": "B6 · Ink Traveler",
-      "voice": "Văn Hải (CIT Voice Studio)",
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Văn Hải (CIT Voice Studio - VieNeu-TTS)",
       "date": "2026-11-22",
       "keywords": [
         "kỷ luật tự thân",

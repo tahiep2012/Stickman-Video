@@ -8,7 +8,6 @@ async function createMockup(coverPath, circleAvatarPath, outputPath) {
   const coverMeta = await sharp(coverPath).metadata();
   const avatarSize = 340;
   
-  // Load already circular cropped avatar and add elegant subtle shadow / white border
   const avatarResized = await sharp(circleAvatarPath)
     .resize(avatarSize, avatarSize)
     .toBuffer();
@@ -44,15 +43,15 @@ async function run() {
   const circle2 = 'C:/Users/votah/.gemini/antigravity/brain/85bd34cd-735f-4e9d-ba66-a5120e131a04/b6-facebook-avatar-opt2-circle-preview.png';
   
   await createMockup(
-    'assets/b6/facebook-cover.png',
+    'assets/b6/facebook-cover-landscape.png',
     circle1,
-    'C:/Users/votah/.gemini/antigravity/brain/85bd34cd-735f-4e9d-ba66-a5120e131a04/facebook-page-mockup-1.png'
+    'C:/Users/votah/.gemini/antigravity/brain/85bd34cd-735f-4e9d-ba66-a5120e131a04/facebook-page-mockup-landscape-1.png'
   );
   
   await createMockup(
-    'assets/b6/facebook-cover-opt2.png',
+    'assets/b6/facebook-cover-landscape.png',
     circle2,
-    'C:/Users/votah/.gemini/antigravity/brain/85bd34cd-735f-4e9d-ba66-a5120e131a04/facebook-page-mockup-2.png'
+    'C:/Users/votah/.gemini/antigravity/brain/85bd34cd-735f-4e9d-ba66-a5120e131a04/facebook-page-mockup-landscape-2.png'
   );
 }
 

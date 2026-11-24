@@ -37,13 +37,23 @@ export const B1_STYLE_ANCHOR_9x16 = `Minimalist 2D hand-drawn stick figure anima
 
 const B6_DNA_FALLBACK = {
   style_id: 'B6',
-  name: 'Ink Traveler (Người Lữ Hành Khăn Choàng)',
+  name: 'Ink Traveler (Người Lữ Hành Khăn Choàng — Vietnamese Channel)',
   base_style: 'Minimalist 2D hand-drawn editorial line art illustration, clean uniform black ink linework on warm off-white sketchbook paper background, strictly flat 2D minimal shading, no gradients, no 3D rendering, no text, no letters, no words, no numbers.',
   protagonist_dna: 'Protagonist Character DNA (LOCKED): minimalist slender hand-drawn figure with a clean smooth round white bald head (no hair, no nose, no ears), simple expressive small black-ink dot eyes and subtle curved eyebrows, wearing thin round black wire glasses, a crisp white minimalist knee-length tailored overcoat drawn in clean black ink outlines with simple slim white trousers and dark ink shoes, and ONE signature flowing muted terracotta-amber knitted scarf wrapped neatly around the neck with two short tails hanging down the front.',
   color_lock: 'Color Lock: ONLY the protagonist wears the warm muted terracotta-amber scarf and thin round wire glasses; whenever secondary people appear in the scene, draw them strictly as faint monochrome black-and-white ink outlines without color, scarves, or glasses (do not add extra people unless described in the scene).',
   aspect_anchors: {
     '16:9': '16:9 widescreen cinematic full-frame composition, wide illustrated editorial background spreading edge-to-edge across the entire frame.',
     '9:16': '9:16 vertical cinematic full-frame composition, rich vertical editorial background with foreground and background depth filling the entire frame.'
+  },
+  variants: {
+    'B6-EN': {
+      style_id: 'B6-EN',
+      channel: 'en',
+      name: 'Slate Ink Traveler (English Channel Brand Signature)',
+      scarf_color: 'muted slate-blue',
+      protagonist_dna: 'Protagonist Character DNA (LOCKED): minimalist slender hand-drawn figure with a clean smooth round white bald head (no hair, no nose, no ears), simple expressive small black-ink dot eyes and subtle curved eyebrows, wearing thin round black wire glasses, a crisp white minimalist knee-length tailored overcoat drawn in clean black ink outlines with simple slim white trousers and dark ink shoes, and ONE signature flowing muted slate-blue knitted scarf wrapped neatly around the neck with two short tails hanging down the front.',
+      color_lock: 'Color Lock: ONLY the protagonist wears the calm muted slate-blue scarf and thin round wire glasses; whenever secondary people appear in the scene, draw them strictly as faint monochrome black-and-white ink outlines without color, scarves, or glasses (do not add extra people unless described in the scene).'
+    }
   }
 };
 
@@ -60,7 +70,12 @@ export const B6_TRAVELER_DNA = loadB6Dna();
 
 export function getStyleAnchor(aspect = '16:9', style = 'B6') {
   const normalizedStyle = String(style || 'B6').toUpperCase();
-  if (normalizedStyle === 'B6' || normalizedStyle === 'TRAVELER') {
+  if (normalizedStyle === 'B6-EN' || normalizedStyle === 'B6_EN' || normalizedStyle === 'TRAVELER-EN' || normalizedStyle === 'SLATE') {
+    const aspectAnchor = B6_TRAVELER_DNA.aspect_anchors?.[aspect] || B6_TRAVELER_DNA.aspect_anchors['16:9'];
+    const enVariant = B6_TRAVELER_DNA.variants?.['B6-EN'] || B6_DNA_FALLBACK.variants['B6-EN'];
+    return `${B6_TRAVELER_DNA.base_style} ${aspectAnchor} ${enVariant.protagonist_dna} ${enVariant.color_lock}`;
+  }
+  if (normalizedStyle === 'B6' || normalizedStyle === 'B6-VI' || normalizedStyle === 'TRAVELER') {
     const aspectAnchor = B6_TRAVELER_DNA.aspect_anchors?.[aspect] || B6_TRAVELER_DNA.aspect_anchors['16:9'];
     return `${B6_TRAVELER_DNA.base_style} ${aspectAnchor} ${B6_TRAVELER_DNA.protagonist_dna} ${B6_TRAVELER_DNA.color_lock}`;
   }
@@ -293,7 +308,7 @@ export async function checkCitHealth(baseUrl = process.env.CIT_BASE_URL || 'http
 }
 
 /**
- * Generate studio-grade Vietnamese voiceover & synced SRT via CIT Voice Studio (VieNeu-TTS-v3 Turbo 48kHz)
+ * Generate studio-grade Vietnamese (VieNeu-TTS) or English (Kokoro) voiceover & synced SRT via CIT Voice Studio
  */
 export async function generateVoiceCit(options = {}) {
   const {
@@ -301,16 +316,29 @@ export async function generateVoiceCit(options = {}) {
     scriptFile,
     outputAudio = 'narration.mp3',
     outputSrt = 'input.srt',
-    voice = process.env.CIT_VOICE || 'Văn Hải',
+    lang = 'vi',
+    voice: explicitVoice,
     speed = parseFloat(process.env.CIT_SPEED || '1.0'),
     baseUrl = process.env.CIT_BASE_URL || 'http://127.0.0.1:8001'
   } = options;
+
+  const normalizedLang = String(lang || 'vi').toLowerCase();
+  let voice = explicitVoice || (normalizedLang === 'en' ? (process.env.CIT_EN_VOICE || 'auto') : (process.env.CIT_VOICE || 'Văn Hải'));
 
   let content = text || '';
   if (scriptFile && !content) {
     content = fs.readFileSync(path.resolve(scriptFile), 'utf8');
   }
+  const sectionMatch = content.match(/^##\s+(?:Lời Bình|Lời dẫn|Kịch bản|Nội dung|Phần đọc|Voiceover|Narration|Script|Full Script)[^\n]*\n/im);
+  if (sectionMatch) {
+    content = content.slice(sectionMatch.index + sectionMatch[0].length);
+  }
+  const endMatch = content.match(/^##\s+(?:Bảng Phân Cảnh|Phân cảnh|Storyboard|Prompt|Cảnh|Visual|Scenes|Scene Breakdown|Shot List)[^\n]*\n/im);
+  if (endMatch) {
+    content = content.slice(0, endMatch.index);
+  }
   content = content
+    .replace(/^\s*\|.*\|\s*$/gm, '')
     .replace(/```[\s\S]*?```/g, '')
     .replace(/^#{1,6}\s+.*$/gm, '')
     .replace(/^[-*]\s+\*\*.*?\*\*:.*$/gm, '')
@@ -327,6 +355,28 @@ export async function generateVoiceCit(options = {}) {
   const health = await checkCitHealth(baseUrl);
   if (!health.online) {
     throw new Error(`CIT Voice Studio is NOT running at ${baseUrl}. Please launch CIT-Voice-Studio.exe on your machine.`);
+  }
+
+  // Model-Language Guardrail: ensure Kokoro for EN and VieNeu-TTS for VI
+  const engineName = String(health.data?.engine || '').toLowerCase();
+  if (normalizedLang === 'en' && engineName && !engineName.includes('kokoro')) {
+    throw new Error(`Model mismatch: CIT Voice Studio đang chạy "${health.data?.engine}". Vui lòng chuyển Model trên CIT Voice Studio sang Kokoro để thu âm tiếng Anh (--lang en).`);
+  }
+  if (normalizedLang === 'vi' && engineName.includes('kokoro')) {
+    throw new Error(`Model mismatch: CIT Voice Studio đang chạy "${health.data?.engine}". Vui lòng chuyển Model trên CIT Voice Studio sang VieNeu-TTS để thu âm tiếng Việt (--lang vi).`);
+  }
+
+  // Auto-resolve Kokoro English voice if voice === 'auto'
+  if (normalizedLang === 'en' && (!voice || voice === 'auto')) {
+    const voicesRes = await fetch(`${baseUrl.replace(/\/+$/, '')}/voices`, { signal: AbortSignal.timeout(5000) });
+    if (voicesRes.ok) {
+      const voicesList = await voicesRes.json();
+      const ids = (Array.isArray(voicesList) ? voicesList : (voicesList.voices || [])).map(v => typeof v === 'string' ? v : (v.id || v.voice_id || v.name)).filter(Boolean);
+      const preferred = ['am_michael', 'am_adam', 'am_fenrir', 'bm_george', 'bm_lewis', 'am_echo', 'af_heart'];
+      voice = preferred.find(p => ids.includes(p)) || ids[0] || 'am_michael';
+    } else {
+      voice = 'am_michael';
+    }
   }
 
   const endpoint = `${baseUrl.replace(/\/+$/, '')}/api/tts/generate-with-subtitles`;
@@ -474,7 +524,7 @@ async function main() {
     );
     const [out, ...descParts] = cleanArgs;
     const desc = descParts.join(' ');
-    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--style B6|B1] [--aspect 16:9|9:16] [--normalize]');
+    if (!out || !desc) throw new Error('Usage: scene-studio.mjs generate-shot <output_png> <description> [--style B6|B6-EN|B1] [--aspect 16:9|9:16] [--normalize]');
     const fullPrompt = `${getStyleAnchor(aspect, style)} Scene: ${desc}`;
     console.log(`Generating ${style} (${aspect}) full-frame artwork via Agnes AI: "${desc}"...`);
     const res = await generateAgnesImage({
@@ -492,12 +542,14 @@ async function main() {
     const cleanArgs = args.filter((a, i) =>
       a !== '--voice' && args[i - 1] !== '--voice' &&
       a !== '--speed' && args[i - 1] !== '--speed' &&
+      a !== '--lang' && args[i - 1] !== '--lang' &&
       a !== '--base-url' && args[i - 1] !== '--base-url'
     );
     const [scriptOrText, projectDir] = cleanArgs;
-    if (!scriptOrText) throw new Error('Usage: scene-studio.mjs voice-cit <script_file|text> [project_dir] [--voice <voice>] [--speed <speed>]');
+    if (!scriptOrText) throw new Error('Usage: scene-studio.mjs voice-cit <script_file|text> [project_dir] [--lang vi|en] [--voice <voice>] [--speed <speed>]');
     const pDir = projectDir ? path.resolve(projectDir) : process.cwd();
-    const voice = flagValue('--voice') || process.env.CIT_VOICE || 'Văn Hải';
+    const lang = (flagValue('--lang') || 'vi').toLowerCase();
+    const voice = flagValue('--voice') || (lang === 'en' ? (process.env.CIT_EN_VOICE || 'auto') : (process.env.CIT_VOICE || 'Văn Hải'));
     const speed = parseFloat(flagValue('--speed') || process.env.CIT_SPEED || '1.0');
     const isFile = fs.existsSync(scriptOrText);
     const res = await generateVoiceCit({
@@ -505,6 +557,7 @@ async function main() {
       text: !isFile ? scriptOrText : undefined,
       outputAudio: path.join(pDir, 'narration.mp3'),
       outputSrt: path.join(pDir, 'input.srt'),
+      lang,
       voice,
       speed
     });
@@ -521,8 +574,8 @@ async function main() {
   } else {
     console.log(`Usage:`);
     console.log(`  node scene-studio.mjs cit-health`);
-    console.log(`  node scene-studio.mjs voice-cit <script_file|text> [project_dir] [--voice <voice>] [--speed <speed>]`);
-    console.log(`  node scene-studio.mjs generate-shot <output_png> <description> [--style B6|B1] [--aspect 16:9|9:16] [--normalize]`);
+    console.log(`  node scene-studio.mjs voice-cit <script_file|text> [project_dir] [--lang vi|en] [--voice <voice>] [--speed <speed>]`);
+    console.log(`  node scene-studio.mjs generate-shot <output_png> <description> [--style B6|B6-EN|B1] [--aspect 16:9|9:16] [--normalize]`);
     console.log(`  node scene-studio.mjs fullframe <file> [output_file] [--aspect 16:9|9:16]`);
     console.log(`  node scene-studio.mjs transparent <file> [output_file] [--aspect 16:9|9:16]`);
     console.log(`  node scene-studio.mjs contact-sheet <scenes_dir> [output_png] [cols]`);

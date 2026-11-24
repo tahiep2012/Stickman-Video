@@ -45,6 +45,7 @@ load_env()
 
 DEFAULT_BASE_URL = os.environ.get("CIT_BASE_URL", "http://127.0.0.1:8001").rstrip("/")
 DEFAULT_VOICE = os.environ.get("CIT_VOICE", "Văn Hải")
+DEFAULT_EN_VOICE = os.environ.get("CIT_EN_VOICE", "auto")
 DEFAULT_SPEED = float(os.environ.get("CIT_SPEED", "1.0"))
 
 
@@ -77,9 +78,9 @@ def get_voices(base_url=DEFAULT_BASE_URL, timeout=5.0):
 
 def clean_script_text(text: str) -> str:
     """Clean markdown formatting and extract spoken prose for TTS."""
-    # If the markdown has a section like '## Lời Bình' or '## Kịch bản', extract only from there
+    # If the markdown has a section like '## Lời Bình' or '## Narration', extract only from there
     m_section = re.search(
-        r"^##\s+(?:Lời Bình|Lời dẫn|Kịch bản|Nội dung|Phần đọc|Voiceover|Narration)[^\n]*\n",
+        r"^##\s+(?:Lời Bình|Lời dẫn|Kịch bản|Nội dung|Phần đọc|Voiceover|Narration|Script|Full Script)[^\n]*\n",
         text,
         flags=re.MULTILINE | re.IGNORECASE,
     )
@@ -90,6 +91,17 @@ def clean_script_text(text: str) -> str:
         # If no explicit header, strip top frontmatter / metadata lines
         text = re.sub(r"^[-*]?\s*\*\*[^*]+?\*\*:\s*.*$", "", text, flags=re.MULTILINE)
 
+    # Truncate before subsequent production sections like Bảng Phân Cảnh or Storyboard
+    m_end = re.search(
+        r"^##\s+(?:Bảng Phân Cảnh|Phân cảnh|Storyboard|Prompt|Cảnh|Visual|Scenes|Scene Breakdown|Shot List)[^\n]*\n",
+        text,
+        flags=re.MULTILINE | re.IGNORECASE,
+    )
+    if m_end:
+        text = text[:m_end.start()]
+
+    # Remove markdown tables (| col | col |)
+    text = re.sub(r"^\s*\|.*\|\s*$", "", text, flags=re.MULTILINE)
     # Remove markdown code blocks
     text = re.sub(r"```[\s\S]*?```", "", text)
     # Remove markdown headers (# Title)
@@ -234,27 +246,76 @@ def _call_cit_api_single(
     return base64.b64decode(audio_b64), srt_content, duration_seconds
 
 
+def resolve_kokoro_voice(base_url: str = DEFAULT_BASE_URL) -> str:
+    """Auto-select a natural English narrator voice from CIT Voice Studio Kokoro voices."""
+    preferred = ["am_michael", "am_adam", "am_fenrir", "bm_george", "bm_lewis", "am_echo", "af_heart"]
+    try:
+        voices_data = get_voices(base_url)
+        items = voices_data if isinstance(voices_data, list) else voices_data.get("voices", [])
+        ids = []
+        for item in items:
+            if isinstance(item, str):
+                ids.append(item)
+            elif isinstance(item, dict):
+                vid = item.get("id") or item.get("voice_id") or item.get("name")
+                if vid:
+                    ids.append(vid)
+        for p in preferred:
+            if p in ids:
+                return p
+        if ids:
+            return ids[0]
+    except Exception:
+        pass
+    return "am_michael"
+
+
 def generate_voice_cit(
     text: str,
     output_audio: str = "narration.mp3",
     output_srt: str = "input.srt",
-    voice_id: str = DEFAULT_VOICE,
+    voice_id: str = None,
     speed: float = DEFAULT_SPEED,
     base_url: str = DEFAULT_BASE_URL,
     audio_format: str = "wav",
     timeout: float = 300.0,
     raw_source_text: str = None,
+    lang: str = "vi",
 ):
     """
     Calls CIT Voice Studio API to generate audio + srt.
-    Supports automatic chunking for long-form scripts (8-12+ mins) to prevent timeouts.
+    Supports both Vietnamese (VieNeu-TTS) and English (Kokoro) models via --lang vi|en,
+    with automatic Model-Language Guardrail and chunking for long-form scripts (8-12+ mins).
     """
+    lang_norm = (lang or "vi").strip().lower()
     health = check_health(base_url)
     if not health.get("online"):
         raise ConnectionError(
             f"CIT Voice Studio is NOT running at {base_url}. "
             "Please start CIT-Voice-Studio.exe on your machine first."
         )
+
+    # Model-Language Guardrail
+    engine_name = str(health.get("data", {}).get("engine", "")).lower()
+    if lang_norm == "en" and engine_name and "kokoro" not in engine_name:
+        raise RuntimeError(
+            f"Model mismatch: CIT Voice Studio đang chạy '{health.get('data', {}).get('engine')}'. "
+            "Vui lòng chuyển Model trên CIT Voice Studio sang Kokoro để thu âm tiếng Anh (--lang en)."
+        )
+    if lang_norm == "vi" and "kokoro" in engine_name:
+        raise RuntimeError(
+            f"Model mismatch: CIT Voice Studio đang chạy '{health.get('data', {}).get('engine')}'. "
+            "Vui lòng chuyển Model trên CIT Voice Studio sang VieNeu-TTS để thu âm tiếng Việt (--lang vi)."
+        )
+
+    # Resolve voice ID by language
+    if not voice_id or voice_id.lower() == "auto":
+        if lang_norm == "en":
+            env_en = DEFAULT_EN_VOICE
+            voice_id = resolve_kokoro_voice(base_url) if (not env_en or env_en.lower() == "auto") else env_en
+            print(f"[CIT Bridge] English (Kokoro) selected voice: '{voice_id}'")
+        else:
+            voice_id = DEFAULT_VOICE
 
     out_audio_path = Path(output_audio).resolve()
     out_audio_path.parent.mkdir(parents=True, exist_ok=True)
@@ -378,7 +439,8 @@ def main():
     parser.add_argument("--project-dir", type=str, help="Directory to save narration.mp3 and input.srt")
     parser.add_argument("--output-audio", type=str, default=None, help="Output audio file path")
     parser.add_argument("--output-srt", type=str, default=None, help="Output srt file path")
-    parser.add_argument("--voice", type=str, default=DEFAULT_VOICE, help=f"Voice ID (default: {DEFAULT_VOICE})")
+    parser.add_argument("--lang", type=str, default="vi", choices=["vi", "en"], help="Channel language: vi (VieNeu-TTS) or en (Kokoro)")
+    parser.add_argument("--voice", type=str, default=None, help=f"Voice ID (default: {DEFAULT_VOICE} for vi, auto/Kokoro for en)")
     parser.add_argument("--speed", type=float, default=DEFAULT_SPEED, help=f"Playback speed (default: {DEFAULT_SPEED})")
     parser.add_argument("--base-url", type=str, default=DEFAULT_BASE_URL, help=f"Base URL (default: {DEFAULT_BASE_URL})")
 
@@ -433,6 +495,7 @@ def main():
             speed=args.speed,
             base_url=args.base_url,
             raw_source_text=raw_source,
+            lang=args.lang,
         )
         print(json.dumps(result, indent=2, ensure_ascii=False))
     except Exception as e:

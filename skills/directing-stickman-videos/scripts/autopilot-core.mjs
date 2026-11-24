@@ -7,7 +7,7 @@ import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
 import {prepareB4} from './b4-runtime.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const STYLES = ['B1', 'B2', 'B3', 'B4', 'B6'];
+export const STYLES = ['B1', 'B2', 'B3', 'B4', 'B6', 'B6-EN'];
 export const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 export const FFPROBE = process.env.FFPROBE || 'ffprobe';
 export const sha = value => crypto.createHash('sha256').update(value).digest('hex');

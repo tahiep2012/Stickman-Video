@@ -1,10 +1,15 @@
-# Cầu Nối CIT Voice Studio (Offline VieNeu-TTS v3 Turbo 48kHz)
+# Cầu Nối CIT Voice Studio Đa Ngôn Ngữ (VieNeu-TTS Tiếng Việt & Kokoro Tiếng Anh)
 
-Hệ thống kết nối trực tiếp với phần mềm **CIT Voice Studio** đang chạy trên máy tính (`http://127.0.0.1:8001`), tự động hóa 100% quy trình thu âm giọng đọc phòng thu 48.000 Hz và xuất file phụ đề SRT đồng bộ tuyệt đối từng mili-giây.
+Hệ thống kết nối trực tiếp với phần mềm **CIT Voice Studio** đang chạy trên máy tính (`http://127.0.0.1:8001`), tự động hóa 100% quy trình thu âm giọng đọc phòng thu 48.000 Hz và xuất file phụ đề SRT đồng bộ tuyệt đối từng mili-giây cho **cả 2 kênh Tiếng Việt và Tiếng Anh**:
+
+| Kênh | Cờ CLI | Model Trên CIT Voice Studio | Giọng Mặc Định | Chốt Kiểm Tra An Toàn (Guardrail) |
+| :--- | :---: | :--- | :--- | :--- |
+| 🇻🇳 **Tiếng Việt** | `--lang vi` | **VieNeu-TTS-v3-Turbo** | `Văn Hải` (`CIT_VOICE`) | Chặn lỗi nếu phần mềm đang bật `Kokoro` |
+| 🇺🇸 **Tiếng Anh** | `--lang en` | **Kokoro** | `auto` / `CIT_EN_VOICE` (vd: `am_michael`, `bm_george`) | Chặn lỗi & nhắc chuyển Model sang `Kokoro` nếu đang ở `VieNeu-TTS` |
 
 ---
 
-## 1. Sơ Đồ Kiến Trúc Kết Nối (Local HTTP Bridge)
+## 1. Sơ Đồ Kiến Trúc Kết Nối (Local HTTP Bridge + Model Guardrail)
 
 ```mermaid
 sequenceDiagram
@@ -36,14 +41,16 @@ sequenceDiagram
 Cấu hình máy chủ và giọng đọc mặc định trong file `.env` ở thư mục gốc hoặc thư mục skill:
 
 ```ini
-# CIT Voice Studio Configuration (Offline VieNeu-TTS v3 Turbo 48kHz)
+# CIT Voice Studio Configuration (Dual-Model: VieNeu-TTS for VI & Kokoro for EN)
 CIT_BASE_URL=http://127.0.0.1:8001
 CIT_VOICE=Văn Hải
+CIT_EN_VOICE=auto
 CIT_SPEED=1.0
 ```
 
 - **`CIT_BASE_URL`**: Địa chỉ máy chủ cục bộ (mặc định: `http://127.0.0.1:8001`).
-- **`CIT_VOICE`**: Tên giọng đọc mong muốn (mặc định: `Văn Hải`).
+- **`CIT_VOICE`**: Tên giọng Tiếng Việt cho Model `VieNeu-TTS` (mặc định: `Văn Hải`).
+- **`CIT_EN_VOICE`**: Tên giọng Tiếng Anh cho Model `Kokoro` (mặc định: `auto` — tự chọn giọng nam trầm từ `/voices` như `am_michael`, `am_adam`, `bm_george`, hoặc chỉ định trực tiếp tên giọng anh thích).
 - **`CIT_SPEED`**: Tốc độ đọc (mặc định: `1.0`).
 
 ---
@@ -75,17 +82,25 @@ CIT_SPEED=1.0
 Script sử dụng thư viện chuẩn `urllib.request` của Python, không cần cài thêm package nào:
 
 ```bash
-# 1. Kiểm tra trạng thái CIT Voice Studio
+# 1. Kiểm tra trạng thái & Model hiện tại của CIT Voice Studio
 python scripts/generate_voice_cit.py --check-health
 
-# 2. Xem danh sách giọng đọc có sẵn
+# 2. Xem danh sách giọng đọc của Model đang bật (VieNeu-TTS hoặc Kokoro)
 python scripts/generate_voice_cit.py --list-voices
 
-# 3. Tạo trọn gói narration.mp3 và input.srt từ kịch bản
+# 3A. Thu âm Kênh Tiếng Việt (Model VieNeu-TTS)
 python scripts/generate_voice_cit.py \
-    --script-file projects/<tên-dự-án>/script.md \
-    --project-dir projects/<tên-dự-án> \
+    --lang vi \
+    --script-file projects/vi/<tên-dự-án>/script.md \
+    --project-dir projects/vi/<tên-dự-án> \
     --voice "Văn Hải"
+
+# 3B. Thu âm Kênh Tiếng Anh (Chuyển Model CIT Voice Studio sang Kokoro trước)
+python scripts/generate_voice_cit.py \
+    --lang en \
+    --script-file projects/en/<project-slug>/script.md \
+    --project-dir projects/en/<project-slug> \
+    --voice auto
 ```
 
 ### Cách 2 · Dùng qua `scene-studio.mjs` (Node.js)
@@ -93,8 +108,11 @@ python scripts/generate_voice_cit.py \
 # Kiểm tra kết nối CIT Voice Studio
 node skills/directing-stickman-videos/scripts/scene-studio.mjs cit-health
 
-# Tạo giọng đọc và phụ đề từ kịch bản
-node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit projects/<tên-dự-án>/script.md projects/<tên-dự-án> --voice "Văn Hải"
+# Tạo giọng đọc và phụ đề (Tiếng Việt)
+node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit projects/vi/<slug>/script.md projects/vi/<slug> --lang vi --voice "Văn Hải"
+
+# Tạo giọng đọc và phụ đề (Tiếng Anh - Model Kokoro)
+node skills/directing-stickman-videos/scripts/scene-studio.mjs voice-cit projects/en/<slug>/script.md projects/en/<slug> --lang en --voice auto
 ```
 
 ---

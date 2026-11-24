@@ -1,11 +1,21 @@
 {
   "style_id": "B6",
-  "name": "Ink Traveler (Người Lữ Hành Khăn Choàng)",
+  "name": "Ink Traveler (Người Lữ Hành Khăn Choàng — Vietnamese Channel)",
   "base_style": "Minimalist 2D hand-drawn editorial line art illustration, clean uniform black ink linework on warm off-white sketchbook paper background, strictly flat 2D minimal shading, no gradients, no 3D rendering, no text, no letters, no words, no numbers.",
   "protagonist_dna": "Protagonist Character DNA (LOCKED): minimalist slender hand-drawn figure with a clean smooth round white bald head (no hair, no nose, no ears), simple expressive small black-ink dot eyes and subtle curved eyebrows, wearing thin round black wire glasses, a crisp white minimalist knee-length tailored overcoat drawn in clean black ink outlines with simple slim white trousers and dark ink shoes, and ONE signature flowing muted terracotta-amber knitted scarf wrapped neatly around the neck with two short tails hanging down the front.",
   "color_lock": "Color Lock: ONLY the protagonist wears the warm muted terracotta-amber scarf and thin round wire glasses; whenever secondary people appear in the scene, draw them strictly as faint monochrome black-and-white ink outlines without color, scarves, or glasses (do not add extra people unless described in the scene).",
   "aspect_anchors": {
     "16:9": "16:9 widescreen cinematic full-frame composition, wide illustrated editorial background spreading edge-to-edge across the entire frame.",
     "9:16": "9:16 vertical cinematic full-frame composition, rich vertical editorial background with foreground and background depth filling the entire frame."
+  },
+  "variants": {
+    "B6-EN": {
+      "style_id": "B6-EN",
+      "channel": "en",
+      "name": "Slate Ink Traveler (English Channel Brand Signature)",
+      "scarf_color": "muted slate-blue",
+      "protagonist_dna": "Protagonist Character DNA (LOCKED): minimalist slender hand-drawn figure with a clean smooth round white bald head (no hair, no nose, no ears), simple expressive small black-ink dot eyes and subtle curved eyebrows, wearing thin round black wire glasses, a crisp white minimalist knee-length tailored overcoat drawn in clean black ink outlines with simple slim white trousers and dark ink shoes, and ONE signature flowing muted slate-blue knitted scarf wrapped neatly around the neck with two short tails hanging down the front.",
+      "color_lock": "Color Lock: ONLY the protagonist wears the calm muted slate-blue scarf and thin round wire glasses; whenever secondary people appear in the scene, draw them strictly as faint monochrome black-and-white ink outlines without color, scarves, or glasses (do not add extra people unless described in the scene)."
+    }
   }
 }
