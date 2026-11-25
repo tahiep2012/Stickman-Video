@@ -22,7 +22,7 @@ export function syncTopicsRegistry(customMessage = null) {
     const commitMsg = customMessage || `chore(registry): sync topics-registry.json [${new Date().toISOString().split('T')[0]}]`;
     
     console.log('🚀 Staging projects/topics-registry.json...');
-    execSync('git add projects/topics-registry.json', { cwd: ROOT, stdio: 'inherit' });
+    execSync('git add -f projects/topics-registry.json', { cwd: ROOT, stdio: 'inherit' });
 
     console.log(`📝 Committing: "${commitMsg}"...`);
     execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT, stdio: 'inherit' });

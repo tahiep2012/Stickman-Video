@@ -10,5 +10,6 @@ autopilot-work/
 output/cache/
 **/output/cache/
 projects/
+!projects/topics-registry.json
 
 
