@@ -288,6 +288,30 @@
         "tâm lý học hành vi",
         "b6 ink traveler"
       ]
+    },
+    {
+      "slug": "amor-fati-philosophy",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/amor-fati-philosophy",
+      "title": "Amor Fati — Nghệ Thuật 'Yêu Lấy Số Phận' Của Friedrich Nietzsche & Marcus Aurelius",
+      "niche": "Triết Lý",
+      "format": "16:9 Long-form",
+      "duration_seconds": 317.22,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "date": "2026-11-25",
+      "keywords": [
+        "amor fati",
+        "yêu lấy số phận",
+        "triết lý khắc kỷ",
+        "stoicism",
+        "marcus aurelius",
+        "nietzsche",
+        "suy tưởng",
+        "vượt qua nghịch cảnh",
+        "b6 ink traveler"
+      ]
     }
   ]
 }
