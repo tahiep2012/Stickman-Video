@@ -241,6 +241,30 @@
         "b6 ink traveler",
         "kỹ năng sống"
       ]
+    },
+    {
+      "slug": "toxic-productivity-shorts",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/toxic-productivity-shorts",
+      "title": "Ảo Tưởng 'Bận Rộn Có Ý Thức' & Cái Bẫy Năng Suất Độc Hại (Toxic Productivity)",
+      "niche": "Kỹ Năng Sống",
+      "format": "9:16 Shorts",
+      "duration_seconds": 49.41,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "date": "2026-11-25",
+      "keywords": [
+        "năng suất độc hại",
+        "toxic productivity",
+        "ảo tưởng bận rộn",
+        "bận rộn có ý thức",
+        "kỹ năng sống",
+        "quản lý thời gian",
+        "quản lý năng lượng",
+        "to-do list",
+        "b6 ink traveler"
+      ]
     }
   ]
 }
