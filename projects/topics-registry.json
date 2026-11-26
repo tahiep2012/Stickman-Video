@@ -400,6 +400,84 @@
         "tài xế taxi luân đôn",
         "b6 ink traveler"
       ]
+    },
+    {
+      "slug": "ao-giac-tien-bo-tam-ly-hoc",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/ao-giac-tien-bo-tam-ly-hoc",
+      "title": "Ảo Giác Tiến Bộ & Năng Suất Ảo: Tại Sao Càng Xem Video Năng Suất Bạn Càng Đứng Yên?",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 207.0,
+      "character_style": "B6",
+      "voice": "Hải Đăng",
+      "hook_code": "#02",
+      "setting_motif": "Chiếc bàn làm việc phủ đầy giấy nhớ ghi chú, kệ sách xếp hàng trăm cuốn sách chưa mở và chiếc máy chạy bộ bánh răng vô tận",
+      "has_clock_motif": false,
+      "date": "2026-11-26",
+      "keywords": [
+        "ảo giác tiến bộ",
+        "illusion of competence",
+        "năng suất ảo",
+        "tâm lý học",
+        "trì hoãn",
+        "purdue",
+        "jeffrey karpicke",
+        "active recall"
+      ]
+    },
+    {
+      "slug": "tri-hoan-tra-thu-gio-di-ngu-tam-ly-hoc",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/tri-hoan-tra-thu-gio-di-ngu-tam-ly-hoc",
+      "title": "Trì Hoãn Trả Thù Giờ Đi Ngủ: Thức Đến 2 Giờ Sáng Tại Sao Bạn Cố Tình Trả Thù Bản Thân?",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 189.0,
+      "character_style": "B6",
+      "voice": "Hải Đăng",
+      "hook_code": "#07",
+      "setting_motif": "Chiếc đồng hồ cát khổng lồ đảo ngược, hành lang văn phòng với những chiếc bóng vô diện ban ngày và căn phòng nhỏ dưới ánh trăng tĩnh lặng với chiếc chìa khóa tự do",
+      "has_clock_motif": false,
+      "date": "2026-11-26",
+      "keywords": [
+        "trì hoãn giờ ngủ",
+        "revenge bedtime procrastination",
+        "thức khuya",
+        "tâm lý học",
+        "kiệt sức công sở",
+        "ego depletion",
+        "utrecht",
+        "floor kroese"
+      ]
+    },
+    {
+      "slug": "cai-bay-co-len-roi-se-on-tam-ly-hoc",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/cai-bay-co-len-roi-se-on-tam-ly-hoc",
+      "title": "Cái Bẫy 'Cố Lên Rồi Sẽ Ổn': Tại Sao Càng Ép Mình Tích Cực, Bạn Càng Kiệt Sức?",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 283.57,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "hook_code": "#01",
+      "setting_motif": "Căn phòng kính cách âm của tòa cao ốc, chiếc bình áp suất hơi nước thủy tinh và ngọn hải đăng trên vách đá biển đêm",
+      "has_clock_motif": false,
+      "date": "2026-11-26",
+      "keywords": [
+        "toxic positivity",
+        "su tich cuc doc hai",
+        "co len roi se on",
+        "kiem soat cam xuc",
+        "chua lanh"
+      ]
     }
   ],
   "backlog_topics": [
@@ -499,6 +577,46 @@
         "trend_source": "TikTok/Threads/YouTube 2026 - Càng xem video phát triển bản thân càng kiệt sức",
         "draft_title": "Tại Sao Càng Xem Video Phát Triển Bản Thân, Bạn Càng Đứng Yên?",
         "visual_hook": "B6 chạy hộc tốc trên máy chạy bộ chất đầy sách tóm tắt nhưng khung cảnh bên ngoài đứng yên 0 mét"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Trì Hoãn Trả Thù Giờ Đi Ngủ (Revenge Bedtime Procrastination)",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 9.2,
+        "pain": 9.3,
+        "packaging": 8.8,
+        "freshness": 8.5
+      },
+      "packaging_preview": {
+        "trend_source": "",
+        "draft_title": "Thức Đến 2 Giờ Sáng Không Làm Gì: Tại Sao Não Bộ Cố Tình Trả Thù Bạn?",
+        "visual_hook": "B6 ngồi trước đồng hồ cát chảy ngược, sàn nhà từ từ sụt lún vào bóng tối kiệt sức"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Bẫy Overthinking & Cạn Kiệt Năng Lượng Tinh Thần",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "angle": "Giải mã cơ chế mạng DMN khiến não tiêu tốn 80% năng lượng vào suy nghĩ luẩn quẩn, kỹ thuật Siêu nhận thức Metacognition",
+      "scores": {
+        "demand": 9.3,
+        "pain": 9.5,
+        "packaging": 9.2,
+        "freshness": 8.9
+      },
+      "packaging_preview": {
+        "trend_source": "Threads & Cafef 2026",
+        "draft_title": "Nghĩ Quá Nhiều Khiến Bạn Kiệt Sức: Tại Sao Càng Cố Suy Nghĩ Bạn Càng Bế Tắc?",
+        "visual_hook": "B6 ngồi ôm đầu giữa căn phòng phủ kín hàng ngàn màn hình phát sáng các kịch bản tương lai bi quan"
       },
       "status": "pending",
       "created_at": "2026-11-26"
