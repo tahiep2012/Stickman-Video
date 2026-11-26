@@ -342,7 +342,117 @@
         "tâm lý học hành vi",
         "b6 ink traveler"
       ]
+    },
+    {
+      "slug": "emotional-contagion-psychology",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/emotional-contagion-psychology",
+      "title": "Lây Lan Cảm Xúc Tiêu Cực (Emotional Contagion) — Vì Sao Bạn Chưa Gặp Chuyện Gì Vẫn Tự Nhiên Thấy Bất An?",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 399.55,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "hook_code": "#04",
+      "setting_motif": "Quán cà phê trưa ngập nắng, phòng thí nghiệm Parma nước Ý & tấm kính trong suốt giữa cơn mưa cảm xúc",
+      "has_clock_motif": false,
+      "date": "2026-11-26",
+      "keywords": [
+        "lây lan cảm xúc",
+        "emotional contagion",
+        "tế bào thần kinh gương",
+        "mirror neurons",
+        "kiệt sức cảm xúc",
+        "ranh giới cảm xúc",
+        "thấu cảm lành mạnh",
+        "hòa tan cảm xúc",
+        "thí nghiệm facebook 2014",
+        "b6 ink traveler"
+      ]
     }
   ],
-  "backlog_topics": []
+  "backlog_topics": [
+    {
+      "topic": "Sự Tích Cực Độc Hại (Toxic Positivity)",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 8.8,
+        "pain": 9.2,
+        "packaging": 8.7,
+        "freshness": 8.5
+      },
+      "packaging_preview": {
+        "trend_source": "Làn sóng quay lưng với chữa lành ảo 2026",
+        "draft_title": "Cái Bẫy 'Cố Lên Rồi Sẽ Ổn': Mặt Trái Của Sự Tích Cực Độc Hại",
+        "visual_hook": "Đám đông dán miếng mặt cười lên vết nứt trên ngực B6 thay vì lắng nghe"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Nghịch Lý Lựa Chọn & Tê Liệt Quyết Định (Paradox of Choice)",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 8.6,
+        "pain": 9.1,
+        "packaging": 8.5,
+        "freshness": 8.6
+      },
+      "packaging_preview": {
+        "trend_source": "VnExpress 2026 - Bất định nghề nghiệp",
+        "draft_title": "Càng Nhiều Lựa Chọn Tốt, Bạn Càng Bất Hạnh?",
+        "visual_hook": "B6 đứng đóng băng giữa ngã tư 50 cánh cửa mở toang giống hệt nhau"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Hội Chứng Kẻ Giả Mạo (Impostor Syndrome)",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 9.0,
+        "pain": 9.2,
+        "packaging": 8.8,
+        "freshness": 8.5
+      },
+      "packaging_preview": {
+        "trend_source": "",
+        "draft_title": "Tại Sao Càng Giỏi Bạn Càng Sợ Bị Người Khác 'Lật Tẩy'?",
+        "visual_hook": "B6 đứng trên bục khen thưởng nhưng bên dưới là mặt sàn kính chằng chịt vết nứt"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Hiệu Ứng Dunning-Kruger (Đỉnh Cao Ngốc Nghếch)",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 9.1,
+        "pain": 8.4,
+        "packaging": 9.2,
+        "freshness": 8.4
+      },
+      "packaging_preview": {
+        "trend_source": "",
+        "draft_title": "Tại Sao Kẻ Càng Kém Lại Càng Tự Tin Nhất?",
+        "visual_hook": "Người đen trắng kiêu ngạo trên đỉnh đồi bé xíu che khuất dãy núi tri thức phía sau"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    }
+  ]
 }
