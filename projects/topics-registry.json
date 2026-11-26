@@ -371,6 +371,35 @@
         "thí nghiệm facebook 2014",
         "b6 ink traveler"
       ]
+    },
+    {
+      "slug": "cognitive-offloading-psychology",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/cognitive-offloading-psychology",
+      "title": "Hội Chứng Giảm Tải Trí Nhớ (Cognitive Offloading & Hiệu Ứng Google) — Vì Sao Bạn Quên Sạch Mọi Thứ Chỉ Vì Điện Thoại Luôn Ở Trong Túi?",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 274.79,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "hook_code": "#05",
+      "setting_motif": "Ngã tư chiều nắng muộn mất tín hiệu bản đồ, đường phố Luân Đôn, thư viện ngăn kéo ký ức nối dây lên đám mây & phòng tập quả tạ tư duy",
+      "has_clock_motif": false,
+      "date": "2026-11-26",
+      "keywords": [
+        "giảm tải trí nhớ",
+        "cognitive offloading",
+        "hiệu ứng google",
+        "google effect",
+        "hồi hải mã",
+        "tư duy phản biện",
+        "quy tắc 30 giây",
+        "sức cản tư duy",
+        "tài xế taxi luân đôn",
+        "b6 ink traveler"
+      ]
     }
   ],
   "backlog_topics": [
@@ -450,6 +479,26 @@
         "trend_source": "",
         "draft_title": "Tại Sao Kẻ Càng Kém Lại Càng Tự Tin Nhất?",
         "visual_hook": "Người đen trắng kiêu ngạo trên đỉnh đồi bé xíu che khuất dãy núi tri thức phía sau"
+      },
+      "status": "pending",
+      "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Ảo Giác Tiến Bộ & Năng Suất Ảo (Illusion of Competence)",
+      "channel": "vi",
+      "niche": "Tâm Lý Học",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 8.9,
+        "pain": 9.4,
+        "packaging": 9.1,
+        "freshness": 9.2
+      },
+      "packaging_preview": {
+        "trend_source": "TikTok/Threads/YouTube 2026 - Càng xem video phát triển bản thân càng kiệt sức",
+        "draft_title": "Tại Sao Càng Xem Video Phát Triển Bản Thân, Bạn Càng Đứng Yên?",
+        "visual_hook": "B6 chạy hộc tốc trên máy chạy bộ chất đầy sách tóm tắt nhưng khung cảnh bên ngoài đứng yên 0 mét"
       },
       "status": "pending",
       "created_at": "2026-11-26"
