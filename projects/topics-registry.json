@@ -1,13 +1,13 @@
 {
-  "version": "2.0",
-  "description": "Sổ đăng ký đề tài đa kênh (Dual-Channel Topic Registry: vi & en) - Chống trùng lặp 100% trong nội bộ từng kênh riêng biệt. Đề tài đã làm ở kênh 'vi' vẫn được phép làm mới hoặc chuyển thể sang kênh 'en' (với kịch bản bản địa hóa, giọng đọc Kokoro và nhân vật khăn xanh lam B6-EN).",
+  "version": "3.0",
+  "description": "Sổ đăng ký đề tài đa kênh, Kho Backlog & Lịch sử chống trùng Hook (Dual-Channel Topic Registry v3.0: vi & en) - Chống trùng lặp 100% trong nội bộ từng kênh riêng biệt và theo dõi mã Hook [#01..#12] cho 4 tập gần nhất.",
   "channels": {
     "vi": {
       "name": "Kênh Tiếng Việt — Người Lữ Hành Khăn Choàng",
       "root_dir": "projects/vi",
       "default_style": "B6",
       "default_voice_engine": "CIT Voice Studio (VieNeu-TTS)",
-      "default_voice": "Văn Hải"
+      "default_voice": "Hải Đăng"
     },
     "en": {
       "name": "English Channel — The Slate Ink Traveler",
@@ -324,6 +324,10 @@
       "duration_seconds": 52.15,
       "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
       "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "category": "Trend",
+      "hook_code": "#12",
+      "setting_motif": "Phòng tối cầm điện thoại thấy seen không rep & máy đánh bạc xèng",
+      "has_clock_motif": false,
       "date": "2026-11-25",
       "keywords": [
         "thả thính ngắt quãng",
@@ -339,5 +343,6 @@
         "b6 ink traveler"
       ]
     }
-  ]
+  ],
+  "backlog_topics": []
 }
