@@ -95,6 +95,11 @@ Học hỏi từ các case study video triệu view tăng trưởng thần tốc
 
 ### 6 Trụ Cột Kể Chuyện Triệu View Bắt Buộc Áp Dụng:
 
+> [!CAUTION]
+> **QUY TẮC BẤT BIẾN — CẤM CHÉP VÍ DỤ MINH HỌA (*Zero-Example-Copying Invariance*)**:
+> Mọi tình huống, đồ vật, con số ngày, câu thoại và ẩn dụ được ghi in nghiêng bên dưới (như *11h48 đêm, đôi giày phủ bụi, kẻ ba hoa quán cà phê, não tự trả lương trước, ngày thứ 18 nhìn trần nhà, bát chè đậu xanh, tấm lịch gạch dấu, quy tắc 5 phút...*) **CHỈ LÀ VÍ DỤ MINH HỌA CẤU TRÚC**.
+> Khi viết bất kỳ kịch bản mới nào, AI **CHỈ ĐƯỢC HỌC CẤU TRÚC TÂM LÝ** của 6 trụ cột và **TUYỆT ĐỐI CẤM** tái sử dụng, sao chép hoặc nhái lại các hình ảnh, nhân vật, bối cảnh hay ẩn dụ mẫu trong tài liệu này. Mọi kịch bản phải tự kiến tạo **100% thế giới câu chuyện, nhân vật, đạo cụ và ẩn dụ stickman độc bản** gắn sát với đề tài và dữ liệu nghiên cứu trực tuyến của tập đó.
+
 1. **Mở Đầu Bằng "Lát Cắt Hiện Thực Siêu Cụ Thể" (*Specific Reality Slice Hook*)**:
    - Thay vì mở đầu bằng lý thuyết trừu tượng, luôn thả người xem vào một **khoảnh khắc vật lý cụ thể đến từng chi tiết** trong đời thực (thời gian, không gian, đồ vật, hành động):
      - *11 giờ 48 phút đêm, căn phòng tối om, ánh sáng duy nhất chiếu lên mặt là màn hình điện thoại, cuốn sách tiếng Anh vẫn mở ở trang hôm qua.*
