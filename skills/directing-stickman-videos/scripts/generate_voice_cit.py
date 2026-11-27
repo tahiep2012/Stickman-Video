@@ -78,7 +78,14 @@ def get_voices(base_url=DEFAULT_BASE_URL, timeout=5.0):
 
 def clean_script_text(text: str) -> str:
     """Clean markdown formatting and extract spoken prose for TTS."""
-    # If the markdown has a section like '## Lời Bình' or '## Narration', extract only from there
+    # Priority 1: Extract dedicated ```text ... ``` voiceover fence (TTS-Optimized Invariance)
+    m_fence = re.search(r"```text\s*\r?\n([\s\S]*?)\r?\n```", text, flags=re.IGNORECASE)
+    if m_fence:
+        spoken = m_fence.group(1).strip()
+        spoken = spoken.replace("—", ", ").replace("–", ", ")
+        return re.sub(r"\n\s*\n+", "\n\n", spoken).strip()
+
+    # Fallback for legacy markdown scripts without a ```text block
     m_section = re.search(
         r"^##\s+(?:Lời Bình|Lời dẫn|Kịch bản|Nội dung|Phần đọc|Voiceover|Narration|Script|Full Script)[^\n]*\n",
         text,

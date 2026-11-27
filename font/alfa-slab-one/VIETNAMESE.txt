@@ -1,0 +1,3 @@
+Font: Alfa Slab One · JM Sole
+
+Font gốc đã có đủ chữ tiếng Việt. Vietnamese Font Editor (https://vietfont.vn) kiểm tra và phân phối lại nguyên bản, không sửa file font. Giấy phép của font đi kèm trong thư mục này.

@@ -1,0 +1,31 @@
+{
+  "channel": "Người Lữ Hành Khăn Choàng (B6 & B6-EN)",
+  "source": "YouTube Audio Library (Royalty-Free, Attribution Not Required)",
+  "default_fallback": "philosophy.mp3",
+  "tracks": {
+    "psychology": {
+      "file": "assets/audio/bgm/psychology.mp3",
+      "title": "Nebular Focus",
+      "artist": "Dan Henig",
+      "niche_vi": "Tâm Lý Học",
+      "duration_seconds": 118.98,
+      "mood": "Clean, analytical, focused documentary ambience"
+    },
+    "philosophy": {
+      "file": "assets/audio/bgm/philosophy.mp3",
+      "title": "Night Snow",
+      "artist": "Asher Fulero",
+      "niche_vi": "Triết Lý",
+      "duration_seconds": 275.63,
+      "mood": "Sparse, warm minimalist piano for deep reflection & Stoicism"
+    },
+    "life-skills": {
+      "file": "assets/audio/bgm/life-skills.mp3",
+      "title": "Soft Feeling",
+      "artist": "Cheel",
+      "niche_vi": "Kỹ Năng Sống",
+      "duration_seconds": 174.97,
+      "mood": "Warm, calm, subtly upbeat minimalist lo-fi/jazz feel"
+    }
+  }
+}
