@@ -478,6 +478,35 @@
         "kiem soat cam xuc",
         "chua lanh"
       ]
+    },
+    {
+      "slug": "ky-luat-im-lang-ky-nang-song",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/ky-luat-im-lang-ky-nang-song",
+      "title": "Kỷ Luật Im Lặng: Đừng Kể Mục Tiêu Cho Ai Biết Trước Khi Làm",
+      "niche": "Kỹ Năng Sống",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 275.73,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "hook_code": "#08",
+      "setting_motif": "Văn phòng làm việc Huy và Nam, đầu máy hơi nước xả van sớm, phòng trọ tối mưa sau tăng ca với cuốn sổ bìa nâu và bản hợp đồng dấu sáp danh dự",
+      "has_clock_motif": false,
+      "date": "2026-11-27",
+      "keywords": [
+        "kỷ luật im lặng",
+        "đừng kể mục tiêu",
+        "premature reward",
+        "quiet ambition",
+        "kỹ năng sống",
+        "phát triển bản thân",
+        "học tiếng anh đi làm",
+        "chốt khóa danh dự",
+        "đầu máy hơi nước",
+        "b6 ink traveler"
+      ]
     }
   ],
   "backlog_topics": [
@@ -620,6 +649,106 @@
       },
       "status": "pending",
       "created_at": "2026-11-26"
+    },
+    {
+      "topic": "Nghệ Thuật Làm Việc Sâu (Deep Work) — Vũ Khí Không Thể Thay Thế",
+      "channel": "vi",
+      "niche": "Kỹ Năng Sống",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 9.3,
+        "pain": 9.1,
+        "packaging": 8.8,
+        "freshness": 8.8
+      },
+      "packaging_preview": {
+        "trend_source": "VnExpress/Vietcetera 2026 - Kỷ nguyên AI & bứt phá năng lực cốt lõi",
+        "draft_title": "Vì Sao Người Làm Việc 3 Tiếng Sâu Lại Vượt Xa Kẻ Cày 10 Tiếng Mệt Mỏi?",
+        "visual_hook": "Người đen trắng đào 10 hố nông giữa mưa thông báo, B6 đào 1 giếng sâu chạm mạch nước sáng"
+      },
+      "status": "pending",
+      "created_at": "2026-11-27"
+    },
+    {
+      "topic": "Cái Bẫy 'Cứ Làm Tốt, Sếp Tự Thấy' (Strategic Visibility)",
+      "channel": "vi",
+      "niche": "Kỹ Năng Sống",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 8.8,
+        "pain": 9.3,
+        "packaging": 8.9,
+        "freshness": 8.3
+      },
+      "packaging_preview": {
+        "trend_source": "Dân Trí/VnExpress 2026 - Thăng tiến công sở",
+        "draft_title": "Vì Sao Người Chăm Chỉ Nhất Phòng Thường Không Phải Người Được Thăng Chức?",
+        "visual_hook": "B6 xây tháp gạch sau kính mờ, người đen trắng cầm bản vẽ bước ra ánh đèn phòng họp"
+      },
+      "status": "pending",
+      "created_at": "2026-11-27"
+    },
+    {
+      "topic": "Định Luật Parkinson & Quy Tắc Nén Thời Gian",
+      "channel": "vi",
+      "niche": "Kỹ Năng Sống",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 8.9,
+        "pain": 8.7,
+        "packaging": 9.0,
+        "freshness": 8.4
+      },
+      "packaging_preview": {
+        "trend_source": "",
+        "draft_title": "Tại Sao Việc Làm 2 Tiếng Lại Kéo Dài Thành Cả Tuần? — Định Luật Parkinson",
+        "visual_hook": "Khối việc bé xíu nở phồng kín phòng rộng, co gọn sắc nét khi B6 đặt vào khung vuông nhỏ"
+      },
+      "status": "pending",
+      "created_at": "2026-11-27"
+    },
+    {
+      "topic": "Nghịch Lý Đa Nhiệm (Multitasking) & Tàn Dư Chú Ý",
+      "channel": "vi",
+      "niche": "Kỹ Năng Sống",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 8.7,
+        "pain": 8.9,
+        "packaging": 8.7,
+        "freshness": 8.4
+      },
+      "packaging_preview": {
+        "trend_source": "",
+        "draft_title": "Cái Bẫy 'Đa Nhiệm': Tại Sao Càng Ôm Nhiều Việc, Bạn Càng Kém Hiệu Quả?",
+        "visual_hook": "B6 tung hứng 5 quả cầu rơi vỡ hết, rồi hạ xuống đẩy từng khối đá lên đỉnh đồi"
+      },
+      "status": "pending",
+      "created_at": "2026-11-27"
+    },
+    {
+      "topic": "Công Thức 'Nếu – Thì' (Implementation Intentions)",
+      "channel": "vi",
+      "niche": "Kỹ Năng Sống",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 8.4,
+        "pain": 8.8,
+        "packaging": 8.5,
+        "freshness": 8.5
+      },
+      "packaging_preview": {
+        "trend_source": "",
+        "draft_title": "Tại Sao 80% Mục Tiêu Đều Chết Yểu Sau 2 Tuần — Và Công Thức 'Nếu – Thì' Sửa Nó",
+        "visual_hook": "Đoàn tàu mục tiêu trật bánh trước ngã ba sương mù, B6 gạt cần khóa đường ray thẳng tới đích"
+      },
+      "status": "pending",
+      "created_at": "2026-11-27"
     }
   ]
 }
