@@ -97,9 +97,14 @@ Hiển thị danh sách phong cách nhân vật (tự động ưu tiên nhân v�
 
 ## Bảng 5 · Chọn Kích Thước Khung Hình & Thời Lượng Video (Aspect Ratio & Target Duration)
 
+> [!IMPORTANT]
+> **Quy Tắc Nhịp Phân Cảnh Bất Biến (Universal 3–5s Scene Pacing Invariance)**:
+> **CHO DÙ LÀ VIDEO NGẮN HAY DÀI (16:9 Long-form, Medium hay 9:16 Shorts), THỜI LƯỢNG MỖI CẢNH LUÔN LUÔN LÀ TỪ 3 ĐẾN 5 GIÂY (3–5s/cảnh)**.
+> Tuyệt đối KHÔNG để cảnh nào vượt quá 5 giây. Nếu câu thoại dài hơn 5 giây, bắt buộc bẻ thành 2–3 phân cảnh nối tiếp với các góc máy và chi tiết ẩn dụ thị giác chuyển biến liên tục để duy trì nhịp hình ảnh dồn dập, chống buồn ngủ và tối đa hóa chỉ số giữ chân người xem (YouTube Retention).
+
 1. **`16:9` (Video dài chuẩn YouTube / Full HD `1920x1080`)**:
    - **Thời lượng chuẩn**: **8 – 12 phút** (`--format longform`, `1.200 – 1.800 từ`, cấu trúc 30 Giây Vàng + 2 Micro-Stories + 2 Re-Hooks + Kết bài 3 chạm) hoặc **5 – 7 phút** (`--format medium`, `750 – 1.150 từ`).
-   - **Quy tắc nhịp phân cảnh**: **8 – 12 giây / cảnh** (~40 – 60 cảnh minh họa).
+   - **Quy tắc nhịp phân cảnh**: **3 – 5 giây / cảnh** (~80 – 140 cảnh cho longform, ~50 – 80 cảnh cho medium).
    - **Hình ảnh tạo ra**: **Full Frame `1920x1080`** tràn khung (`fit: 'cover'`).
 2. **`9:16` (Video ngắn YouTube Shorts / TikTok / Reels / Full HD `1080x1920`)**:
    - **Thời lượng chuẩn**: **45 – 90 giây** (`--format shorts`, `130 – 240 từ`, 6 Giây Chặn Ngón Tay + 1 Ẩn dụ thị giác Stickman đắt giá + Cú lật nhận thức + Câu Mic-Drop).
@@ -180,7 +185,7 @@ Hiển thị danh sách phong cách nhân vật (tự động ưu tiên nhân v�
 - Lấy `duration_seconds` thực tế làm căn cứ chia mốc thời gian từng cảnh.
 
 ### Bước 4 · Phân Cảnh & Tạo Hình Ảnh Full Frame Qua Agnes AI
-- Chia cảnh theo nhịp (`16:9`: 8–12s/cảnh; `9:16`: 3–5s/cảnh).
+- **Chia cảnh theo quy chuẩn bất biến 3–5s/cảnh (Universal 3–5s Scene Pacing)**: Cho dù là video 16:9 hay 9:16, phân đoạn phụ đề SRT thành các cảnh có thời lượng nghiêm ngặt **từ 3 đến 5 giây**. Mọi câu thoại dài trên 5 giây đều phải được tách thành nhiều cảnh với các góc quay, biểu cảm hoặc ẩn dụ thị giác mới.
 - Tạo toàn bộ hình ảnh qua Agnes AI (áp dụng giãn cách **15 giây cooldown** giữa mỗi ảnh để tránh lỗi HTTP 429) theo đúng DNA thương hiệu của kênh (`B6` khăn cam đất cho `vi` / `B6-EN` khăn xanh lam trầm cho `en`).
 - Lưu vào `projects/<vi|en>/<slug>/scenes/shot_01.png`, `shot_02.png`, ...
 
