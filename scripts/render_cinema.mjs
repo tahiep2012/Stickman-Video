@@ -20,7 +20,7 @@
  *   node scripts/render_cinema.mjs \
  *       --project-dir projects/vi/cognitive-offloading-psychology \
  *       [--plan cinema_plan.json] [--aspect 16:9] [--niche psychology] \
- *       [--bgm "assets/audio/Asher Fulero - Night Snow.mp3"] [--no-paper] [--no-bgm]
+ *       [--bgm "assets/audio/Vibe Tracks - Universal.mp3"] [--no-paper] [--no-bgm]
  */
 
 import fs from 'node:fs';
@@ -102,11 +102,16 @@ function resolveBgmFile(explicitBgm, niche) {
   if (explicitBgm) {
     const p = path.isAbsolute(explicitBgm) ? explicitBgm : path.resolve(REPO_ROOT, explicitBgm);
     if (fs.existsSync(p)) return p;
-    console.warn(`⚠️ Explicit BGM not found (${p}), falling back to niche/default BGM...`);
+    console.warn(`⚠️ Explicit BGM not found (${p}), falling back to default Universal BGM...`);
   }
   const audioRoot = path.join(REPO_ROOT, 'assets', 'audio');
   const bgmDir = path.join(audioRoot, 'bgm');
   const candidates = [];
+
+  // Universal Default BGM: Vibe Tracks - Universal.mp3 (Default for all videos in this skill)
+  candidates.push(path.join(audioRoot, 'Vibe Tracks - Universal.mp3'));
+  candidates.push(path.join(bgmDir, 'Vibe Tracks - Universal.mp3'));
+  candidates.push(path.join(bgmDir, 'universal.mp3'));
 
   const slug = normalizeNicheSlug(niche);
   if (slug) {
@@ -115,7 +120,7 @@ function resolveBgmFile(explicitBgm, niche) {
       candidates.push(path.join(audioRoot, `${slug}${ext}`));
     }
   }
-  // Channel signature default fallback: philosophy.mp3 (Asher Fulero - Night Snow)
+  // Secondary signature default fallback: philosophy.mp3 (Asher Fulero - Night Snow)
   candidates.push(path.join(bgmDir, 'philosophy.mp3'));
   candidates.push(path.join(audioRoot, 'Asher Fulero - Night Snow.mp3'));
   candidates.push(path.join(bgmDir, 'Asher Fulero - Night Snow.mp3'));
