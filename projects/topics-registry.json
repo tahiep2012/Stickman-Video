@@ -507,6 +507,35 @@
         "đầu máy hơi nước",
         "b6 ink traveler"
       ]
+    },
+    {
+      "slug": "buong-chap-ket-qua-triet-ly",
+      "channel": "vi",
+      "language": "vi",
+      "project_path": "projects/vi/buong-chap-ket-qua-triet-ly",
+      "title": "Triết Lý Buông Chấp Kết Quả: Tại Sao Càng Cố Nắm Chặt Càng Dễ Mất?",
+      "niche": "Triết Lý",
+      "category": "Trend",
+      "format": "16:9 Long-form",
+      "duration_seconds": 289.83,
+      "character_style": "B6 · Ink Traveler (Terracotta-Amber Scarf)",
+      "voice": "Hải Đăng (CIT Voice Studio - VieNeu-TTS)",
+      "hook_code": "#10",
+      "setting_motif": "Đôi tay vô hình tự siết lấy cổ họng năng lực, sảnh chờ phỏng vấn Minh và Khánh, thảm gạt bóng gôn 2 mét Đại học Harvard, cầu thang kiểm soát quá mức, băng ghế đá công viên chiều muộn và đường kẻ dây cung của người cung thủ Khắc Kỷ",
+      "has_clock_motif": false,
+      "date": "2026-11-28",
+      "keywords": [
+        "triết lý buông chấp",
+        "nghệ thuật buông bỏ",
+        "buông chấp kết quả",
+        "chủ nghĩa khắc kỷ",
+        "người cung thủ khắc kỷ",
+        "daniel wegner harvard",
+        "sian beilock chicago",
+        "antipater",
+        "bình an nội tâm",
+        "b6 ink traveler"
+      ]
     }
   ],
   "backlog_topics": [
@@ -749,6 +778,106 @@
       },
       "status": "pending",
       "created_at": "2026-11-27"
+    },
+    {
+      "topic": "Nghệ Thuật 'Khổ Hai Lần' (Seneca & Nỗi Lo Tưởng Tượng)",
+      "channel": "vi",
+      "niche": "Triết Lý",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 9.2,
+        "pain": 9.4,
+        "packaging": 9.1,
+        "freshness": 8.8
+      },
+      "packaging_preview": {
+        "trend_source": "YouTube Philosophy Essay & giới công sở 2026 về Overthinking",
+        "draft_title": "Tại Sao Bạn Luôn Đau Khổ Trước Cả Khi Biến Cố Xảy Ra?",
+        "visual_hook": "B6 ngồi yên bên tách trà, cái bóng sau lưng bị cơn bão mũi tên nét đứt vây kín"
+      },
+      "status": "pending",
+      "created_at": "2026-11-28"
+    },
+    {
+      "topic": "Vòng Xoáy Thỏa Mãn (Hedonic Treadmill — Triết Lý Đủ Của Epicurus & Seneca)",
+      "channel": "vi",
+      "niche": "Triết Lý",
+      "category": "Trend",
+      "angle": "",
+      "scores": {
+        "demand": 8.9,
+        "pain": 9.0,
+        "packaging": 8.9,
+        "freshness": 8.5
+      },
+      "packaging_preview": {
+        "trend_source": "Lạm phát lối sống & Minimalist Self-Improvement 2026",
+        "draft_title": "Tại Sao Lương Tăng Gấp Đôi Nhưng Bạn Chỉ Vui Đúng Ba Tháng?",
+        "visual_hook": "B6 nhìn người leo bậc thang đồng tiền nhưng mặt đất tự lún xuống đúng bằng độ cao vừa leo"
+      },
+      "status": "pending",
+      "created_at": "2026-11-28"
+    },
+    {
+      "topic": "Triết Lý 'Vô Vi' Thực Chiến (Wu Wei — Lão Tử × Trạng Thái Flow)",
+      "channel": "vi",
+      "niche": "Triết Lý",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 8.7,
+        "pain": 8.6,
+        "packaging": 9.2,
+        "freshness": 9.1
+      },
+      "packaging_preview": {
+        "trend_source": "Triết lý phương Đông ứng dụng & nghiên cứu Flow",
+        "draft_title": "Triết Lý Vô Vi: Tại Sao Càng Gồng Mình Bạn Càng Làm Hỏng Việc?",
+        "visual_hook": "Hai con thuyền trên sông mực — một người chèo ngược sóng đứng yên, B6 chỉnh nhẹ buồm lướt êm"
+      },
+      "status": "pending",
+      "created_at": "2026-11-28"
+    },
+    {
+      "topic": "Góc Nhìn Từ Trên Cao (The View From Above — Marcus Aurelius)",
+      "channel": "vi",
+      "niche": "Triết Lý",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 8.4,
+        "pain": 8.8,
+        "packaging": 8.6,
+        "freshness": 8.9
+      },
+      "packaging_preview": {
+        "trend_source": "Meditations Marcus Aurelius & Self-Distancing",
+        "draft_title": "Kỹ Thuật 60 Giây Của Marcus Aurelius Khi Mọi Thứ Đổ Vỡ",
+        "visual_hook": "Tảng đá chắn kín đường bỗng nhỏ như hạt sỏi khi góc nhìn rút cao lên dãy núi"
+      },
+      "status": "pending",
+      "created_at": "2026-11-28"
+    },
+    {
+      "topic": "Cạm Bẫy So Sánh & Chiếc La Bàn Ghen Tị (Schopenhauer & Bertrand Russell)",
+      "channel": "vi",
+      "niche": "Triết Lý",
+      "category": "Evergreen",
+      "angle": "",
+      "scores": {
+        "demand": 8.5,
+        "pain": 8.9,
+        "packaging": 8.7,
+        "freshness": 8.4
+      },
+      "packaging_preview": {
+        "trend_source": "Schopenhauer & Bertrand Russell về chuyển hóa ghen tị",
+        "draft_title": "Tại Sao Thành Công Của Bạn Bè Lại Làm Bạn Mất Ngủ?",
+        "visual_hook": "Sân khấu chia đôi — ánh đèn rực rỡ bên trái, hậu trường ngổn ngang và B6 cầm la bàn bên phải"
+      },
+      "status": "pending",
+      "created_at": "2026-11-28"
     }
   ]
 }
