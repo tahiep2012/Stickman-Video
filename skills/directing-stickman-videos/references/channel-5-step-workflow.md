@@ -130,7 +130,7 @@ Hiển thị danh sách phong cách nhân vật (tự động ưu tiên nhân v�
 2. Gọi `search_web` thu thập nghiên cứu 4 tầng thực tế (tuyệt đối không bịa số liệu): *Facts & Numbers* → *Real Case Study / Experiment* → *Scientific / Philosophical Proof* → *Contrarian Twist*.
 3. **Áp Dụng Triệt Để 6 Trụ Cột Kể Chuyện Nhân Vật Hóa Triệu View (Storytelling v3.0)**:
    - **Lát cắt hiện thực siêu cụ thể:** Mở bài bằng thời gian, không gian, đồ vật, hành vi vật lý cực đời (11h48 đêm phòng tối, chiếc giày tập phủ bụi, chuông 5h sáng chăn gấp 4 góc vuông) để người xem thấy mình ngay trong 3 giây đầu.
-   - **Cặp nhân vật đối sánh:** Luôn xây dựng nhân vật đại diện trải nghiệm đối xứng với nhân vật phụ tương phản (kẻ ba hoa nói mà không làm vs. người âm thầm làm; người bạn thực tế; tình mẫu tử/gia đình).
+   - **Đa dạng hóa hình thái dẫn dắt (Cấm rập khuôn A vs B):** Tuyệt đối CẤM lặp lại mô-típ sáo rỗng *"Hãy nhìn hai người tên A và B"*. Bắt buộc luân phiên 5 hình thái độc bản: (1) POV nhập vai trải nghiệm trực tiếp *"Chính bạn"*, (2) Case study lịch sử / nhân vật có thật chấn động, (3) Cuộc chiến 2 bản thể nội tâm trong cùng 1 con người, (4) Lát cắt xã hội ẩn danh đời thực, (5) Ẩn dụ cơ học / quy luật tự nhiên.
    - **Bình dân hóa khoa học não bộ:** Biến dopamine, variable reward, premature reward, 66 ngày thói quen thành ẩn dụ stickman đời thường (não tự trả lương trước, máy đánh bạc, xe hết nhớt dán băng dính che đèn đỏ).
    - **Đỉnh điểm giằng xé nội tâm (*The Dark Night of the Soul*):** Bắt buộc có 1 điểm khủng hoảng cực hạn ở mốc ~65% khi nhân vật gần như bỏ cuộc hoặc đứng trước xung đột lớn để đẩy nhịp tim và giữ chân người xem.
    - **Hành vi vi mô làm được ngay:** Tấm lịch gạch dấu, quy tắc 5 phút, thay đổi môi trường, bài tập 3 cột.

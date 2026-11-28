@@ -107,12 +107,43 @@ Học hỏi từ các case study video triệu view tăng trưởng thần tốc
      - *5 giờ sáng, chuông reo, ngồi dậy ngay không nằm nướng, chăn gối gấp 4 góc vuông như thước kẻ.*
    - Khán giả lập tức thấy **chính hình bóng và nỗi đau của mình** ngay trong 3–5 giây đầu (*Instant Identification*).
 
-2. **Kỹ Thuật "Cặp Nhân Vật Đối Sánh" (*Character Mirroring & Contrast*)**:
-   - Xây dựng nhân vật trải nghiệm chính (đại diện cho người xem hoặc chính Người Lữ Hành Khăn Choàng `B6`) và **bắt buộc đặt cạnh 1–2 nhân vật phụ đối xứng tương phản sắc nét**:
-     - **Kẻ ba hoa xả hết động lực qua lời nói:** Nhân vật luôn hào hứng kể dự định lớn ở quán cà phê (6 múi, học ngoại ngữ, khởi nghiệp), nhận dopamine ảo từ lời khen rồi không bao giờ làm.
-     - **Người âm thầm hành động:** Không bao giờ kể trước khi làm, sợ nói ra sẽ thấy đủ, chỉ để kết quả tự lên tiếng.
-     - **Người bạn đồng hành thực tế:** Không vỗ tay nịnh nọt, mà kéo bạn về với đời thực (như người bạn mang 2 tô hủ tiếu tới bệnh viện).
-     - **Tình cảm gia đình & Điểm tựa cảm xúc:** Chi tiết người mẹ với bát chè đậu xanh hay 50 tờ giấy nhớ dán trong ngăn kéo *"Nghỉ chút đi con"*.
+2. **Đa Dạng Hóa Hình Thái Dẫn Dắt & Cấm Rập Khuôn "Người A vs Người B" (*Diverse Narrative Modalities & Anti-Formulaic Invariance*)**:
+
+   > [!CAUTION]
+   > **LỆNH CẤM BẤT BIẾN — CHỐNG RẬP KHUÔN "NGƯỜI A VS NGƯỜI B"**:
+   > **TUYỆT ĐỐI CẤM** công thức hóa kịch bản theo lối mòn: *"Hãy nhìn hai người tên A và B: A thì thế này, còn B thì thế kia..."* xuất hiện liên tục qua các tập phim. Lối viết này khiến video trở nên giả tạo, máy móc và gây nhàm chán trầm trọng cho khán giả.
+   > Mỗi kịch bản mới **BẮT BUỘC PHẢI LUÂN PHIÊN** lựa chọn linh hoạt 1 trong 5 hình thái dẫn dắt độc bản dưới đây (CẤM dùng cùng 1 hình thái trong 2 tập liên tiếp):
+
+   - **Hình thái 1 · Nhập vai trải nghiệm trực tiếp ("Chính Bạn" — 2nd/1st-Person Immersive POV)**:
+     - Không cần bịa ra bất kỳ tên nhân vật nào. Đặt thẳng người xem vào vai nhân vật chính với các cảm giác cơ thể và hoàn cảnh có thật:
+       * *Hai giờ chiều thứ Ba, bạn vừa gửi xong bản kế hoạch quan trọng nhất quý... Mười phút lại ấn F5 làm mới hòm thư một lần, tim đập thình thịch mỗi khi có thông báo mới...*
+       * *Đã bao nhiêu lần bạn tự hứa tối nay sẽ đọc sách, nhưng vừa đặt lưng xuống giường, tay bạn lại tự động quẹt mở ứng dụng quen thuộc?*
+     - Tạo sự đồng cảm tuyệt đối (*Instant Identification*) vì khán giả thấy câu chuyện đang nói về chính mình chứ không phải một người xa lạ tên A hay B.
+
+   - **Hình thái 2 · Hồ sơ nhân vật & Sự kiện lịch sử có thật (*Historical & Real-Life Profiles*)**:
+     - Kể lại một case study có thật chấn động về một nhà bác học, kỳ thủ cờ vua, phi hành gia, triết gia, vận động viên hay một cuộc khủng hoảng lịch sử:
+       * *Năm 1943, nhà toán học Abraham Wald bước vào căn phòng của Không quân Mỹ, nơi các sĩ quan đang bàn cách bọc giáp cho những vị trí dính nhiều vết đạn nhất trên máy bay ném bom...*
+       * *Năm 65 sau Công Nguyên, triết gia Seneca nhận lệnh lưu đày ra đảo hoang, mất sạch tài sản và danh tiếng chỉ sau một đêm...*
+     - Tư liệu người thật việc thật luôn mang lại sức nặng uy tín và tính lôi cuốn vượt trội gấp nhiều lần chuyện hư cấu.
+
+   - **Hình thái 3 · Cuộc chiến giữa 2 bản thể nội tâm (*Internal Dual-Self Conflict*)**:
+     - Không so sánh 2 con người ngoài đời, mà phơi bày **cuộc nội chiến giữa 2 bản thể đối lập bên trong cùng một con người**:
+       * *Bản thể lúc 11 giờ đêm* (tràn đầy quyết tâm, vạch ra kế hoạch hoàn hảo) đối đầu với *Bản thể lúc 6 giờ sáng* (mệt mỏi, bấm hoãn báo thức, tìm mọi lý do để bỏ cuộc).
+       * Cuộc giằng co giữa *Não cảm xúc bốc đồng* (muốn dopamine tức thì) và *Vỏ não lý trí* (muốn mục tiêu dài hạn).
+     - Rất đắt giá cho các chủ đề về Kỷ luật, Trì hoãn, Năng suất và Khắc chế bản thân.
+
+   - **Hình thái 4 · Lát cắt xã hội & Quan sát ẩn danh (*Societal Vignette & Anonymous Reality*)**:
+     - Khắc họa bức tranh đời sống chân thực thông qua một hình mẫu ẩn danh tiêu biểu trong xã hội mà không cần gán tên giả:
+       * *Một người giao hàng đứng đợi đèn đỏ lúc 2 giờ sáng dưới trời mưa phùn, nhìn lên những tầng cao ốc còn sáng đèn...*
+       * *Một nhân viên văn phòng lặng lẽ tắt màn hình sau 14 tiếng cày ải, đứng trước cửa thang máy đông nghẹt mà trong lòng trống rỗng...*
+     - Phản ánh chân thực các hiện tượng xã hội như kiệt sức ngầm (*quiet burnout*), hội chứng làm hài lòng người khác (*people pleaser*).
+
+   - **Hình thái 5 · Ẩn dụ cơ học, sinh học & quy luật tự nhiên (*Natural & Mechanical Parables*)**:
+     - Dẫn dắt bằng quy luật tự nhiên hoặc nguyên lý kỹ thuật kỳ thú:
+       * *Hạt tre ngầm nằm im lìm dưới lòng đất suốt 5 năm, chỉ mọc được vài centimet rễ, trước khi vươn cao 30 mét chỉ trong vòng 6 tuần ngắn ngủi...*
+       * *Chiếc bánh đà khổng lồ bằng gang nặng 2 tấn: cú đẩy đầu tiên mất 1 tiếng chỉ nhích được vài milimet, nhưng khi đã có đà, nó tự quay nghiền nát mọi vật cản...*
+
+   - *(Hình thái bổ trợ hạn chế)* **Cặp nhân vật đối sánh tự nhiên**: Chỉ dùng tối đa 1 trong 4–5 tập khi thực sự cần kịch tính đối đầu trực tiếp, và **TUYỆT ĐỐI CẤM** dùng mẫu câu mở bài ngây ngô: *"Hãy nhìn hai người tên A và B..."*.
 
 3. **Bình Dân Hóa Khoa Học Não Bộ Bằng Ẩn Dụ Đắt Giá (*Pop-Neuroscience Translation*)**:
    - Mọi cơ chế tâm lý/thần kinh học phải được giải thích bằng hình ảnh dân dã, dễ vẽ thành hoạt hình Stickman:

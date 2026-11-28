@@ -44,9 +44,9 @@ if hasattr(sys.stderr, "reconfigure"):
 
 CHANNEL_VOICE_GUIDELINES = {
     ("vi", "psychology"): (
-        "Kênh Tiếng Việt — Người Lữ Hành Khăn Choàng (B6 · Tâm Lý Học Kể Chuyện Nhân Vật Hóa): "
+        "Kênh Tiếng Việt — Người Lữ Hành Khăn Choàng (B6 · Tâm Lý Học Kể Chuyện Đa Dạng & Sáng Tạo): "
         "Mở bài bằng lát cắt hiện thực siêu cụ thể (thời gian, đồ vật, hành vi đời thực chạm đúng trải nghiệm); "
-        "kể chuyện qua hành trình nhân vật trải nghiệm đối sánh với nhân vật phụ tương phản; "
+        "kể chuyện sáng tạo, thoát khỏi lối mòn (luân phiên 5 hình thái: POV nhập vai 'Chính bạn', case study nhân vật lịch sử có thật, cuộc chiến 2 bản thể nội tâm, lát cắt xã hội ẩn danh, ẩn dụ tự nhiên — TUYỆT ĐỐI KHÔNG rập khuôn mẫu 'Hãy nhìn hai người tên A và B'); "
         "bình dân hóa cơ chế não bộ (dopamine, phần thưởng sớm, tiến trình mỉa mai) bằng ẩn dụ stickman đời thường; "
         "bắt buộc có đỉnh điểm giằng xé nội tâm (The Dark Night of the Soul ở mốc ~65%) đẩy cao trào kịch tính; "
         "kết bài bằng hệ thống hành vi vi mô làm được ngay (quy tắc 5 phút, lịch gạch dấu, bài tập 3 cột) và câu chốt Mic-Drop sâu sắc, "
@@ -55,6 +55,7 @@ CHANNEL_VOICE_GUIDELINES = {
     ("vi", "philosophy"): (
         "Kênh Tiếng Việt — Người Lữ Hành Khăn Choàng (B6 · Triết Lý Khắc Kỷ & Bản Lĩnh Tinh Thần): "
         "Giọng văn điềm tĩnh, đĩnh đạc, thấm đẫm tinh thần Khắc Kỷ (Stoicism) và triết học thực hành; "
+        "dẫn chuyện bằng tư liệu lịch sử có thật, triết gia hoặc mâu thuẫn nội tâm sâu sắc, thoát khỏi lối mòn so sánh 2 nhân vật A và B hư cấu; "
         "biến tư tưởng lớn thành lát cắt câu chuyện sống động, mâu thuẫn đời thường và hình ảnh stickman giàu sức nặng; "
         "giúp người xem tôi luyện bản lĩnh tinh thần, tìm thấy bình an nội tâm và đứng vững trước nghịch cảnh cuộc sống, "
         "KHÔNG trích dẫn giáo điều rỗng tuếch, KHÔNG bi lụy."
@@ -62,25 +63,25 @@ CHANNEL_VOICE_GUIDELINES = {
     ("vi", "life-skills"): (
         "Kênh Tiếng Việt — Người Lữ Hành Khăn Choàng (B6 · Kỹ Năng Sống & Kỷ Luật Hành Động): "
         "Giọng văn thực chiến, thẳng thắn, phản trực giác, đánh gãy lời khuyên tự lực mòn sáo; "
-        "mở đầu bằng hiện thực đánh trúng tâm lý, đối chiếu giữa kẻ ba hoa xả hết động lực qua lời nói và người âm thầm làm gặt hái kết quả; "
+        "dẫn chuyện bằng POV người xem trực tiếp trải nghiệm, case study thực tế hoặc xung đột 2 bản thể nội tâm (tránh rập khuôn mô-típ 'Hãy nhìn hai người A và B'); "
         "tập trung vào kỷ luật thép, làm việc sâu (Deep Work), đánh tan trì hoãn, quản lý thời gian và thăng tiến sự nghiệp; "
         "đưa ra các giải pháp hành vi vi mô (quy tắc 5 phút, kiểm soát môi trường) và câu kết Mic-Drop đanh thép."
     ),
     ("en", "psychology"): (
-        "English Channel — The Slate Ink Traveler (B6-EN · Character-Driven Narrative Psychology): "
+        "English Channel — The Slate Ink Traveler (B6-EN · Diverse Narrative Psychology): "
         "Gripping, slice-of-life opening hooks anchored in specific physical details; "
-        "character-driven storytelling with sharp contrasting personas, pop-neuroscience metaphors, "
+        "diverse storytelling avoiding formulaic tropes (alternating 2nd-person POV, historical case studies, internal dual-self conflicts, societal vignettes; never robotic Person A vs Person B cliches), pop-neuroscience metaphors, "
         "a poignant Dark Night of the Soul turning point (~65%), and immediately actionable micro-habits topped with a memorable mic-drop punchline; "
         "zero stiff translated phrasing, zero cynical despair, zero generic self-help fluff."
     ),
     ("en", "philosophy"): (
         "English Channel — The Slate Ink Traveler (B6-EN · Practical Philosophy & Resilience): "
-        "Calm, razor-sharp modern philosophical storytelling anchored in Stoic resilience, concrete human dilemmas, and stark visual metaphors; "
+        "Calm, razor-sharp modern philosophical storytelling anchored in Stoic resilience, real historical profiles, concrete human dilemmas, and stark visual metaphors (free of repetitive Person A vs Person B tropes); "
         "guiding viewers toward inner peace and fortitude under modern pressure without pedantic academic lecturing."
     ),
     ("en", "life-skills"): (
         "English Channel — The Slate Ink Traveler (B6-EN · Life Skills & Radical Action): "
-        "Punchy, counter-intuitive, evidence-backed practical storytelling contrasting talkers vs doers, deep work, radical discipline, and career breakthroughs; "
+        "Punchy, counter-intuitive, evidence-backed practical storytelling using immersive POV, dual-self battles, deep work, radical discipline, and career breakthroughs; "
         "delivering crisp punchlines and immediately actionable real-world micro-experiments."
     ),
 }
@@ -176,7 +177,7 @@ def build_critic_prompt(
         rubric_block = """## THANG ĐIỂM 6 TIÊU CHÍ CHO 16:9 LONG-FORM (TRỌNG SỐ 100% · STORYTELLING v3.0)
 1. `hook_impact` (**25%**): 6 giây đầu (Hard Hook) có mở bằng một **lát cắt hiện thực siêu cụ thể** (thời gian, đồ vật, hành động đời thực như 11h48 đêm phòng tối, chiếc giày tập phủ bụi, chuông 5h sáng chăn gấp 4 góc vuông) để người xem thấy chính mình ngay lập tức không? 30 giây vàng có gọn sắc (Hard Hook → Micro-Mirror → Zeigarnik Open Loop)?
 2. `open_loop_payoff` (**15%**): Giây 18–30 có gài được 1 vòng lặp tò mò thực sự (không chỉ lặp lại tiêu đề) và đến ~65% bài có giải mã trọn vẹn khiến người xem thấy "đã" không?
-3. `micro_stories_vividness` (**20%**): Kịch bản có xây dựng được **hành trình nhân vật trải nghiệm cụ thể kết hợp cặp nhân vật đối sánh** (kẻ ba hoa nói mà không làm vs. người âm thầm làm; người bạn thực tế; tình cảm gia đình) và giải mã khoa học não bộ (dopamine, premature reward, 66 ngày thói quen) bằng **ẩn dụ stickman đời thường giàu chất liệu tạo hình** hay chỉ tóm tắt lý thuyết khô khan?
+3. `micro_stories_vividness` (**20%**): Kịch bản có xây dựng được **câu chuyện/lát cắt giàu cảm xúc, sáng tạo, thoát khỏi bẫy rập khuôn sáo rỗng "người A vs người B"** (thưởng điểm cao khi áp dụng linh hoạt 1 trong 5 hình thái: POV nhập vai "Chính bạn", case study nhân vật lịch sử có thật, cuộc chiến 2 bản thể nội tâm, lát cắt xã hội ẩn danh, hoặc ẩn dụ tự nhiên) và giải mã khoa học não bộ (dopamine, premature reward, 66 ngày thói quen) bằng **ẩn dụ stickman đời thường giàu chất liệu tạo hình**? **BẮT BUỘC TRỪ ĐIỂM NẶNG (chỉ cho <= 7.0/10)** nếu kịch bản mở đầu lười biếng bằng mẫu câu rập khuôn kiểu: *"Hãy nhìn hai người/nhân viên tên A và B..."*!
 4. `mid_video_rehooks` (**15%**): Ở 2 vùng dễ tụt retention (~35% và ~65% bài), có thực sự xuất hiện 2 cú Re-Hook bẻ lái kịch tính, đặc biệt là **Đỉnh điểm giằng xé nội tâm (The Dark Night of the Soul ở mốc ~65%)** khi nhân vật đối mặt với khủng hoảng cực hạn để kéo nhịp tim người xem không?
 5. `channel_voice_and_flow` (**15%**): Chuyển đoạn giữa các ý có liền mạch theo mạch điều tra nhân–quả (không liệt kê kiểu bài blog đọc thành tiếng), đúng chuẩn Định Vị Kênh Phát Triển Bản Thân (hướng thượng, trao quyền, bóc trần cạm bẫy để giúp người xem nâng cấp sự nghiệp hoặc củng cố sức mạnh tinh thần, không bi quan bế tắc), đúng chất `B6 / B6-EN` và mượt khi đọc bằng TTS không?
 6. `ending_shareability` (**10%**): Kết bài có thoát khỏi mô-típ "3 lời khuyên hiền lành" để đạt đủ 3 điểm chạm: Cú xoay chuyển góc nhìn (*Paradigm Shift*) + **Hệ thống hành vi vi mô làm được ngay** (tấm lịch gạch dấu, quy tắc 5 phút, thay đổi môi trường, bài tập 3 cột) + **1 câu kết chốt hạ đắt giá đáng chia sẻ/bình luận (*Mic-Drop*)** không?"""

@@ -163,6 +163,15 @@ LISTICLE_PATTERNS_EN = [
     r"\b(?:step one|step two|step three|reason one|reason two|reason three)\b",
 ]
 
+FORMULAIC_PERSON_AB_PATTERNS_VI = [
+    r"(?:hãy nhìn|có|lấy ví dụ về|hãy xem|hãy quan sát|nhìn vào|thử nhìn|xét)\s+(?:hai|2)\s+(?:con người|người|nhân viên|ứng viên|bạn trẻ|đồng nghiệp|chàng trai|cô gái)",
+    r"(?:hãy tưởng tượng|tưởng tượng)\s+(?:hai|2)\s+(?:con người|người|nhân viên|đồng nghiệp)",
+]
+
+FORMULAIC_PERSON_AB_PATTERNS_EN = [
+    r"(?:look at|take|imagine|consider)\s+(?:two|2)\s+(?:people|men|women|employees|candidates|friends|colleagues)",
+]
+
 EMOJI_RE = re.compile(
     "["
     "\U0001F300-\U0001F9FF"
@@ -706,6 +715,24 @@ def validate_script(
         warnings.append({
             "code": "FEW_INTERACTIVE_QUESTIONS",
             "message": f"Chỉ có {question_count} câu hỏi trực diện `?` (khuyến nghị >= {target['min_questions']} câu cho `{script_format}`).",
+        })
+
+    # Kiểm tra mẫu câu rập khuôn "Người A vs Người B" sáo rỗng
+    ab_patterns = FORMULAIC_PERSON_AB_PATTERNS_EN if lang == "en" else FORMULAIC_PERSON_AB_PATTERNS_VI
+    ab_hits = []
+    for pat in ab_patterns:
+        for m in re.finditer(pat, voiceover, re.IGNORECASE):
+            ab_hits.append(m.group(0).strip())
+
+    if ab_hits:
+        warnings.append({
+            "code": "FORMULAIC_PERSON_AB_TROPE",
+            "message": (
+                f"Phát hiện mẫu câu so sánh 2 người sáo rỗng ('{ab_hits[0]}'). "
+                f"CẤM lạm dụng rập khuôn Người A vs Người B! Bắt buộc đổi sang các hình thái kể chuyện đa dạng: "
+                f"POV nhập vai 'Chính bạn', case study nhân vật lịch sử/khoa học có thật, "
+                f"xung đột 2 bản thể nội tâm, hoặc lát cắt hiện thực đời sống."
+            ),
         })
 
     # 6. Kiểm tra chuẩn phát âm TTS (Zero-Clutter)
