@@ -505,13 +505,26 @@ def render_thumbnail(
 
     composite = Image.alpha_composite(base_img, wash)
 
-    # 2. Vẽ Typography chuẩn CTR + Thanh nhấn thương hiệu bên trái
+    # 2. Vẽ Typography chuẩn CTR + Thanh nhấn thương hiệu căn chuẩn đỉnh/đáy thân chữ (Optical Cap-Height Alignment)
     text_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     t_draw = ImageDraw.Draw(text_layer)
 
-    bar_x = max(36, pos_x - 28)
+    cap_bb = dummy_draw.textbbox((0, 0), "H", font=font)
+    title_start_y = pos_y + (sub_h if (subtitle and sub_font) else 0)
+    first_draw_y = title_start_y - metrics[0][2]
+    last_cur_y = title_start_y + sum(metrics[i][1] + line_spacing for i in range(len(lines) - 1))
+    last_draw_y = last_cur_y - metrics[-1][2]
+
+    if subtitle and sub_font:
+        sub_cap_bb = dummy_draw.textbbox((0, 0), "H", font=sub_font)
+        bar_top = pos_y + sub_cap_bb[1]
+    else:
+        bar_top = first_draw_y + cap_bb[1]
+    bar_bot = last_draw_y + cap_bb[3]
+
+    bar_x = max(36, pos_x - 36)
     t_draw.rounded_rectangle(
-        [(bar_x, pos_y + 4), (bar_x + 10, pos_y + total_h - 4)],
+        [(bar_x, bar_top), (bar_x + 10, bar_bot)],
         radius=5,
         fill=pal["bar"],
     )
