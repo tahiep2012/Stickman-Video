@@ -44,8 +44,9 @@ function parseArgs(argv) {
     bgm: null,
     fps: 30,
     fadeDur: 0.35,
-    bgmLufs: -30, // Exact calibrated BGM loudness (sits ~14 dB below -16 LUFS voice in pauses, ~17-18 dB under speech)
-    voLufs: -16,
+    bgmRelDb: -8.0, // Default BGM level: -8.0 dB relative to -16.0 LUFS voiceover (-24.0 LUFS in pauses, ~-27 to -28 LUFS under speech)
+    bgmLufs: -24.0, // Calibrated BGM loudness (= voLufs + bgmRelDb)
+    voLufs: -16.0,
     paperOpacity: 0.14,
     noPaper: false,
     noBgm: false,
@@ -63,8 +64,20 @@ function parseArgs(argv) {
     else if (a === '--bgm') opts.bgm = argv[++i];
     else if (a === '--fps') opts.fps = Number(argv[++i]);
     else if (a === '--fade-dur') opts.fadeDur = Number(argv[++i]);
-    else if (a === '--bgm-lufs') opts.bgmLufs = Number(argv[++i]);
-    else if (a === '--bgm-db') opts.bgmLufs = Number(argv[++i]); // backwards-compat alias
+    else if (a === '--bgm-lufs') {
+      opts.bgmLufs = Number(argv[++i]);
+      opts.bgmRelDb = Number((opts.bgmLufs - opts.voLufs).toFixed(1));
+    }
+    else if (a === '--bgm-db') {
+      const val = Number(argv[++i]);
+      if (val > -18.0 && val <= 0) {
+        opts.bgmRelDb = val;
+        opts.bgmLufs = Number((opts.voLufs + val).toFixed(1));
+      } else {
+        opts.bgmLufs = val;
+        opts.bgmRelDb = Number((val - opts.voLufs).toFixed(1));
+      }
+    }
     else if (a === '--paper-opacity') opts.paperOpacity = Number(argv[++i]);
     else if (a === '--no-paper') opts.noPaper = true;
     else if (a === '--no-bgm') opts.noBgm = true;
@@ -298,7 +311,7 @@ async function buildSeamlessBgm(bgmPath, totalDur, audioCuts, bgmLufs, outWavPat
     cutExpr = terms.join('*');
   }
 
-  // Normalize ANY BGM track to exact -18 LUFS first, then shift cleanly to target bgmLufs (e.g. -30 LUFS)
+  // Normalize ANY BGM track to exact -18 LUFS first, then shift cleanly to target bgmLufs (default -24.0 LUFS = -8.0 dB under -16.0 LUFS VO)
   const shiftDb = (bgmLufs - (-18.0)).toFixed(1);
   filterParts.push(
     `${bgmStreamLabel}` +
@@ -326,7 +339,7 @@ async function buildSeamlessBgm(bgmPath, totalDur, audioCuts, bgmLufs, outWavPat
 /**
  * Master 3-Layer Audio Mix:
  *   Layer 1: Polished Narration calibrated to -16 LUFS
- *   Layer 2: Seamless BGM calibrated to bgmLufs (~ -30 LUFS) with gentle 3-4 dB Sidechain Ducking + AUDIO CUTs
+ *   Layer 2: Seamless BGM calibrated to bgmLufs (default -24.0 LUFS = -8.0 dB under -16.0 LUFS VO) with gentle 3-4 dB Sidechain Ducking + AUDIO CUTs
  *   Layer 3: Restrained Editorial Micro-SFX cues at exact timestamps
  *   Master : EBU R128 loudnorm (-14 LUFS, -1.5 dBTP) -> 48kHz Stereo AAC
  */
@@ -449,7 +462,7 @@ async function main() {
   console.log('======================================================================');
   console.log(`  📂 Project : ${projectDir}`);
   console.log(`  🎞️  Shots   : ${shots.length} shots | Plan=${totalDur.toFixed(3)}s | Audio=${audioDur.toFixed(3)}s`);
-  console.log(`  🎵 BGM     : ${bgmPath ? path.basename(bgmPath) : 'OFF'} (Target=${opts.bgmLufs} LUFS under ${opts.voLufs} LUFS VO + Gentle Ducking)`);
+  console.log(`  🎵 BGM     : ${bgmPath ? path.basename(bgmPath) : 'OFF'} (Level=${opts.bgmRelDb.toFixed(1)} dB vs VO -> ${opts.bgmLufs.toFixed(1)} LUFS under ${opts.voLufs.toFixed(1)} LUFS VO + Gentle Ducking)`);
   console.log(`  🔊 SFX/Cut : ${(plan.sfxCues || []).length} Micro-SFX cues | ${(plan.audioCuts || []).length} AUDIO CUTs | Master -14 LUFS`);
   console.log(`  📄 Texture : ${opts.audioOnly ? 'PRESERVED (Stream Copy)' : (paperPath ? `Living Paper 8fps (${Math.round(opts.paperOpacity * 100)}%) + Warm Vignette` : 'OFF')}`);
   console.log('======================================================================');

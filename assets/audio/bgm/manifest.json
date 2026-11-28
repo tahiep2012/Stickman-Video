@@ -2,6 +2,9 @@
   "channel": "Người Lữ Hành Khăn Choàng (B6 & B6-EN)",
   "source": "YouTube Audio Library (Royalty-Free, Attribution Not Required)",
   "default_fallback": "assets/audio/Vibe Tracks - Universal.mp3",
+  "default_bgm_db": -8.0,
+  "default_bgm_lufs": -24.0,
+  "default_vo_lufs": -16.0,
   "default_bgm": {
     "file": "assets/audio/Vibe Tracks - Universal.mp3",
     "title": "Universal",
