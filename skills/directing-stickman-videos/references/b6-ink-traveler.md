@@ -40,7 +40,7 @@ Color Lock: ONLY the protagonist wears the calm muted slate-blue scarf and thin 
 ```
 
 ### Khối 4 · Aspect Ratio Anchor (Chọn đúng theo khung hình video)
-- **Khung hình `16:9` (YouTube ngang — `1920x1080`, nhịp 3–5 giây/cảnh bất biến cho mọi video)**:
+- **Khung hình 16:9 (YouTube ngang — 1920x1080, nhịp 3–5s/cảnh nửa đầu và 5–8s/cảnh nửa sau)**:
   ```text
   16:9 widescreen cinematic full-frame composition, wide illustrated editorial background spreading edge-to-edge across the entire frame.
   ```
